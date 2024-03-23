@@ -9,20 +9,23 @@ export default {
 </script>
 
 <template>
-  <title>Pernikahan Farhan dan Risma</title>
-  <div>
 
-    <header class="mt-4">
-      <h1>Pernikahan Farhan dan Risma</h1>
-    </header>
+        <title>Pernikahan Farhan dan Risma</title>
+    
+        <div class="container mt-3">
+           
+            <Nav></Nav>
+            <header class="m-3">
+                <h1>You are Invited to The Weeding of</h1>
+            </header>
 
-   <Nav></Nav>
+            <body class="d-flex flex-column">
+                <router-view></router-view>
+            </body>
 
-    <router-view></router-view>
-   
-    <footer>
-      <p>© 2024 My Vue.js App</p>
-    </footer>
+            <footer class="mt-auto">
+              <p>© 2024 My Vue.js App</p>
+            </footer>
+        </div>
 
-  </div>
 </template>
