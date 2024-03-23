@@ -1,0 +1,25 @@
+@import './base.css';
+
+.navi {
+  color: #333;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.navi:hover {
+  color: #555;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #2c3e50;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f8f8;
+}
