@@ -2,6 +2,11 @@
 import '../assets/home.css'; 
 </script>
 <template>
+  
+  <header class="mt-3">
+     <h1>You are Invited to The Weeding of</h1>
+  </header>
+
   <center>
       <div class="card mt-4 w-50 w-md-25 mb-4 rounded-circle">
         <img src="../assets/fotonikah.jpg" class="card-img-top rounded-circle img-fluid"  style="object-fit: cover; object-position: center; height: 250px;"/>
@@ -70,7 +75,7 @@ import '../assets/home.css';
     <div class="card bg-dark text-white" style="height: 300px;">
       <img src="../assets/cewe.jpg" class="card-img img-fluid" alt="..." style="height: 100%; width: 100%; object-fit: cover;">
       <div class="card-img-overlay d-flex flex-column justify-content-end align-items-center text-wrap">
-        <h5 class="card-title">Farhan Mahendra</h5>
+        <h5 class="card-title">Risma Mahendra</h5>
       </div>
     </div>
   </div>

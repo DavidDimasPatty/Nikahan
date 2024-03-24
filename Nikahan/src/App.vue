@@ -15,9 +15,6 @@ export default {
         <div class="container mt-3">
            
             <Nav></Nav>
-            <header class="m-3">
-                <h1>You are Invited to The Weeding of</h1>
-            </header>
 
             <body class="d-flex flex-column">
                 <router-view></router-view>
