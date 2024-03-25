@@ -8,14 +8,14 @@ export default {
 
   methods: {
     continueToHomePage() {
-      // Sembunyikan overlay
-      document.getElementById("overlay").style.display = "none";
-      // Tampilkan halaman utama dengan animasi
-      document.getElementById("main-content").style.display = "block";
-      // Tambahkan animasi pada halaman utama
-      document.getElementById("main-content").classList.add("fade-in");
+      document.getElementById("overlay").classList.add("fade-out");
+      setTimeout(() => {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+        document.getElementById("main-content").classList.add("fade-in");
+      }, 100); 
     }
-  }
+}
 }
 
 </script>
@@ -44,6 +44,19 @@ export default {
   text-align: center;
 }
 
+.fade-out {
+  animation: fade-out-animation 0.5s ease-in-out;
+}
+
+@keyframes fade-out-animation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .fade-in {
   animation: fade-in-animation 0.5s ease-in-out;
 }
@@ -62,11 +75,12 @@ export default {
         <title>Pernikahan Farhan dan Risma</title>
         <div id="overlay" class="overlay">
           <div class="overlay-content">
-            <center>
-              <h2 class="text-white">Welcome to Our Wedding</h2>
-                <div class="card mt-4 w-50 w-md-25 mb-4">
+            <center class="align-items-center justify-content-center">
+              <h2 class="text-white">Halo, David </h2>
+              <h2 class="text-white">You're Inved to The Wedding Of </h2>
+                <div class="card mt-4 col-md-6 mb-4">
                   <div class="rounded-top overflow-hidden">
-                    <img src="./assets/fotonikah.jpg" class="card-img-top img-fluid" style="object-fit: cover; object-position: center; height: 250px;"/>
+                    <img src="./assets/fotonikah.jpg" class="card-img-top img-fluid" style="object-fit: cover; object-position: center;"/>
                   </div>
                 </div>
                 <h1 class="text-white">Farhan & Risma</h1>
@@ -76,7 +90,7 @@ export default {
           </center>
           </div>
         </div>
-        <div class="container mt-3">
+        <div class="container mt-3" id="main-content">
            
             <Nav></Nav>
             <body class="d-flex flex-column">

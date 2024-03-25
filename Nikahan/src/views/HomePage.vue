@@ -230,22 +230,16 @@ import '../assets/home.css';
       <div class="col-md-12 col-lg-10">
         <div class="card text-dark">
           <div class="card-body p-4">
-            <h4 class="mb-0">Recent comments</h4>
-            <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
-
             <div class="d-flex flex-start">
               <img class="rounded-circle shadow-1-strong me-3"
                 src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="60"
                 height="60" />
               <div>
                 <h6 class="fw-bold mb-1">Maggie Marsh</h6>
-                <div class="d-flex align-items-center mb-3">
+                <div class="d-flex align-items-center justify-content-center mb-3 is-centered">
                   <p class="mb-0">
                     March 07, 2021
                   </p>
-                  <a href="#!" class="link-muted"><i class="fas fa-pencil-alt ms-2"></i></a>
-                  <a href="#!" class="link-muted"><i class="fas fa-redo-alt ms-2"></i></a>
-                  <a href="#!" class="link-muted"><i class="fas fa-heart ms-2"></i></a>
                 </div>
                 <p class="mb-0">
                   Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -266,13 +260,10 @@ import '../assets/home.css';
                 height="60" />
               <div>
                 <h6 class="fw-bold mb-1">Lara Stewart</h6>
-                <div class="d-flex align-items-center mb-3">
+                <div class="d-flex align-items-center justify-content-center mb-3 is-centered">
                   <p class="mb-0">
-                    March 15, 2021      
+                    March 07, 2021
                   </p>
-                  <a href="#!" class="link-muted"><i class="fas fa-pencil-alt ms-2"></i></a>
-                  <a href="#!" class="text-success"><i class="fas fa-redo-alt ms-2"></i></a>
-                  <a href="#!" class="link-danger"><i class="fas fa-heart ms-2"></i></a>
                 </div>
                 <p class="mb-0">
                   Contrary to popular belief, Lorem Ipsum is not simply random text. It
@@ -295,13 +286,10 @@ import '../assets/home.css';
                 height="60" />
               <div>
                 <h6 class="fw-bold mb-1">Alexa Bennett</h6>
-                <div class="d-flex align-items-center mb-3">
+                <div class="d-flex align-items-center justify-content-center mb-3 is-centered">
                   <p class="mb-0">
-                    March 24, 2021
+                    March 07, 2021
                   </p>
-                  <a href="#!" class="link-muted"><i class="fas fa-pencil-alt ms-2"></i></a>
-                  <a href="#!" class="link-muted"><i class="fas fa-redo-alt ms-2"></i></a>
-                  <a href="#!" class="link-muted"><i class="fas fa-heart ms-2"></i></a>
                 </div>
                 <p class="mb-0">
                   There are many variations of passages of Lorem Ipsum available, but the
@@ -322,13 +310,10 @@ import '../assets/home.css';
                 height="60" />
               <div>
                 <h6 class="fw-bold mb-1">Betty Walker</h6>
-                <div class="d-flex align-items-center mb-3">
+                <div class="d-flex align-items-center justify-content-center mb-3 is-centered">
                   <p class="mb-0">
-                    March 30, 2021
+                    March 07, 2021
                   </p>
-                  <a href="#!" class="link-muted"><i class="fas fa-pencil-alt ms-2"></i></a>
-                  <a href="#!" class="link-muted"><i class="fas fa-redo-alt ms-2"></i></a>
-                  <a href="#!" class="link-muted"><i class="fas fa-heart ms-2"></i></a>
                 </div>
                 <p class="mb-0">
                   It uses a dictionary of over 200 Latin words, combined with a handful of
