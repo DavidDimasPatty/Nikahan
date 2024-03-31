@@ -28,20 +28,20 @@ export default {
   left: 0;
   width: 100%; 
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999; 
 }
 
+
 .overlay-content {
-  background-color: black;
+  background-color: white;
   width: 100%; 
   height: 100%;
   padding: 20px;
   border-radius: 10px;
-  text-align: center;
+  text-align: center; 
 }
 
 .fade-out {
@@ -74,18 +74,26 @@ export default {
 
         <title>Pernikahan Farhan dan Risma</title>
         <div id="overlay" class="overlay">
-          <div class="overlay-content">
-            <center class="align-items-center justify-content-center">
-              <h2 class="text-white">Halo, David </h2>
-              <h2 class="text-white">You're Inved to The Wedding Of </h2>
-                <div class="card mt-4 col-md-6 mb-4">
-                  <div class="rounded-top overflow-hidden">
-                    <img src="./assets/fotonikah.jpg" class="card-img-top img-fluid" style="object-fit: cover; object-position: center;"/>
-                  </div>
+          <div class="overlay-content d-flex align-items-center justify-content-center">
+            <center>
+              <div class="row d-flex align-items-center justify-content-center top-0">
+                <h2 class="text-black">Halo, David </h2>
+                <h2 class="text-black">You're Invited to The Wedding Of </h2>
+              </div>  
+              <div class="card mt-4 col-md-6 mb-4" style="z-index: 1122;">
+                   <div class="position-absolute top-0 end-0 w-200" >
+                      <img src="./assets/bgH1.png" class="img-fluid">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 w-200">
+                      <img src="./assets/bgH2.png" class="img-fluid">
+                    </div>
+                    <div class="rounded-top overflow-hidden" style="z-index: 2122;">
+                      <img src="./assets/fotonikah.jpg" class="card-img-top img-fluid" style="object-fit: cover; object-position: center; z-index: 2000;"/>
+                   </div>
                 </div>
-                <h1 class="text-white">Farhan & Risma</h1>
-                <h5 class="text-white">Minggu, 23 Maret 2025</h5>
-                <h5 class="text-white">Gedung Perkumpulan 3A</h5>
+                <h1 class="text-black">Farhan & Risma</h1>
+                <h5 class="text-black">Minggu, 23 Maret 2025</h5>
+                <h5 class="text-black">Gedung Perkumpulan 3A</h5>
               <button @click="continueToHomePage" class="btn btn-dark mt-4">Buka Undangan</button>
           </center>
           </div>

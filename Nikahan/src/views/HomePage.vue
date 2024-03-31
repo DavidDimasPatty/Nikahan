@@ -10,8 +10,8 @@ import '../assets/home.css';
   </header>
 
   <center>
-      <div class="card mt-4 w-50 w-md-25 mb-4 rounded-circle">
-        <img src="../assets/fotonikah.jpg" class="card-img-top rounded-circle img-fluid"  style="object-fit: cover; object-position: center; height: 250px;"/>
+      <div class="card col-md-4 mt-4 mb-4 rounded-circle">
+        <img src="../assets/fotonikah.jpg" class="card-img-top rounded-circle img-fluid"  style="object-fit: cover; object-position: center;"/>
       </div>
       <h1>Farhan & Risma</h1>
       <small>Minggu, 23 Maret 2025</small>
@@ -239,6 +239,7 @@ import '../assets/home.css';
                 <div class="d-flex align-items-center justify-content-center mb-3 is-centered">
                   <p class="mb-0">
                     March 07, 2021
+                    <span class="badge bg-success">Datang</span>
                   </p>
                 </div>
                 <p class="mb-0">
@@ -263,6 +264,7 @@ import '../assets/home.css';
                 <div class="d-flex align-items-center justify-content-center mb-3 is-centered">
                   <p class="mb-0">
                     March 07, 2021
+                    <span class="badge bg-success">Datang</span>
                   </p>
                 </div>
                 <p class="mb-0">
@@ -289,6 +291,7 @@ import '../assets/home.css';
                 <div class="d-flex align-items-center justify-content-center mb-3 is-centered">
                   <p class="mb-0">
                     March 07, 2021
+                    <span class="badge bg-danger">Tidak Datang</span>
                   </p>
                 </div>
                 <p class="mb-0">
@@ -313,6 +316,7 @@ import '../assets/home.css';
                 <div class="d-flex align-items-center justify-content-center mb-3 is-centered">
                   <p class="mb-0">
                     March 07, 2021
+                    <span class="badge bg-danger">Tidak Datang</span>
                   </p>
                 </div>
                 <p class="mb-0">
