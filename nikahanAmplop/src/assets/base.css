@@ -113,7 +113,8 @@ body {
 }
 
 .front {
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/39132/poke-bg.gif);
+ background-color: #806700;
+
 }
 .front h1 {
   position: relative;
@@ -142,7 +143,7 @@ body {
 }
 
 .face.back {
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/39132/poke-bg.jpg);
+ background-color: #e6b900;
   color: #000;
   overflow: hidden;
 }

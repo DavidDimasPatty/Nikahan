@@ -7,6 +7,7 @@ export default {
     const button = ref(null);
     const envelope = ref(null);
     const flipped = ref(false);
+    const firstClick = ref(true);
 
     function pullOut() {
       gsap.to(".flap", {
@@ -58,15 +59,20 @@ export default {
         ease: "circ.inOut",
         onComplete: toggleText
       }, "moveDown+=0.15");
+      firstClick.value = false; 
     }
 
     function toggleFlip() {
-      if (!envelope.value.classList.contains("is-open")) {
+      console.log("masuk");
+      console.log(firstClick.value);
+      console.log(flipped.value);
+      if (firstClick.value) {
+        console.log("masuk2");
         return;
       }
 
-      const ry = !flipped.value ? 180 : 0;
-      flipped.value = (!flipped.value) ? true : false;
+      const ry = (!flipped.value) ? 180 : 0;
+	    flipped.value = (!flipped.value) ? true : false;
 
       gsap.to(".card", {
         duration: 1,
@@ -82,14 +88,19 @@ export default {
       button.value.textContent = text;
     }
 
-    onMounted(() => {
-      button.value.addEventListener("click", pullOut);
-      button.value.addEventListener("click", toggleFlip);
-    });
-
+    const handleButtonClick = () => {
+      if (firstClick.value) {
+        pullOut();
+      }
+      else{
+        toggleFlip();
+      }
+    }
+    
     return {
       button,
-      envelope
+      envelope,
+      handleButtonClick
     };
   }
 };
@@ -101,13 +112,15 @@ export default {
     <div class="mask">
       <div class="card">
         <div class="face front">
-          <h1><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/39132/poke-logo.svg"/><span class="extrude">Invitation Card</span></h1>
+          Nikahan
         </div>
-        <div class="face back"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/39132/poke-peeps.png"/></div>
+        <div class="face back">
+         Nikahan Euy
+        </div>
       </div>
     </div>
   </div>
   <div class="flap"></div>
-  <button ref="button">You're Invited!</button>
+  <button @click="handleButtonClick" ref="button">You're Invited!</button>
 </div>
 </template>
