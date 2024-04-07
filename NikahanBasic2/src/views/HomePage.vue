@@ -1,7 +1,95 @@
 <script>
 import '../assets/home.css'; 
+export default {
+  data() {
+    return {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0
+    };
+  },
+  mounted() {
+    setInterval(this.updateTimer, 1000);
+  },
+  methods: {
+    updateTimer() {
+      let future = Date.parse("June 11, 2020 11:30:00");
+      let now = new Date();
+      let diff = future - now;
+
+      this.days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      this.hours = Math.floor(diff / (1000 * 60 * 60)) - this.days * 24;
+      this.minutes = Math.floor(diff / (1000 * 60)) - this.hours * 60 - this.days * 24 * 60;
+      this.seconds = Math.floor(diff / 1000) - this.minutes * 60 - this.hours * 60 * 60 - this.days * 24 * 60 * 60;
+    }
+  }
+};
 </script>
 
+<style>
+.gallery {
+  --g: 4px;   /* the gap */
+  --s: 400px; /* the size */
+  display: grid;
+  border-radius: 50%;
+}
+.gallery > img {
+  grid-area: 1/1;
+  width: 400px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: translate(var(--_x,0),var(--_y,0));
+  cursor: pointer;
+  z-index: 0;
+  transition: .3s, z-index 0s .3s;
+}
+.gallery img:hover {
+  --_i: 1;
+  z-index: 1;
+  transition: transform .2s, clip-path .3s .2s, z-index 0s;
+}
+.gallery:hover img {
+  transform: translate(0,0);
+}
+.gallery > img:nth-child(1) {
+  clip-path: polygon(50% 50%,calc(50%*var(--_i,0)) calc(120%*var(--_i,0)),0 calc(100%*var(--_i,0)),0 0,100% 0,100% calc(100%*var(--_i,0)),calc(100% - 50%*var(--_i,0)) calc(120%*var(--_i,0)));
+  --_y: calc(-1*var(--g))
+}
+.gallery > img:nth-child(2) {
+  clip-path: polygon(50% 50%,calc(100% - 120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100% - 100%*var(--_i,0)) 0,100% 0,100% 100%,calc(100% - 100%*var(--_i,0)) 100%,calc(100% - 120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
+  --_x: var(--g)
+}
+.gallery > img:nth-child(3) {
+  clip-path: polygon(50% 50%,calc(100% - 50%*var(--_i,0)) calc(100% - 120%*var(--_i,0)),100% calc(100% - 120%*var(--_i,0)),100% 100%,0 100%,0 calc(100% - 100%*var(--_i,0)),calc(50%*var(--_i,0)) calc(100% - 120%*var(--_i,0)));
+  --_y: var(--g)
+}
+.gallery > img:nth-child(4) {
+  clip-path: polygon(50% 50%,calc(120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100%*var(--_i,0)) 0,0 0,0 100%,calc(100%*var(--_i,0)) 100%,calc(120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
+  --_x: calc(-1*var(--g))
+}
+
+.timer {
+  font-size: 2em;
+  font-weight: 100;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 20px #000000;
+}
+
+.timer div {
+  display: inline-block;
+  min-width: 90px;
+}
+
+.timer div span {
+  color: #000000;
+  display: block;
+  font-size: 0.35em;
+  font-weight: 400;
+}
+
+</style>
 
 <template>
 
@@ -10,48 +98,22 @@ import '../assets/home.css';
   </header>
 
   <center>
-      <div class="card col-md-4 mt-4 mb-4 rounded-circle">
-        <img src="../assets/fotonikah.jpg" class="card-img-top rounded-circle img-fluid"  style="object-fit: cover; object-position: center;"/>
-      </div>
+    <div class="gallery align-items-center justify-content-center mb-4 mt-3">
+      <img src="../assets/fotonikah.jpg" alt="a hot air balloon">
+      <img src="../assets/nikah1.jpg" alt="a sky photo of an old city">
+      <img src="../assets/nikah2.jpg" alt="a small boat">
+      <img src="../assets/nikah3.jpg" alt="a forest">
+    </div>
+
       <h1>Farhan & Risma</h1>
       <small>Minggu, 23 Maret 2025</small>
 
-      <div class="container mt-4">
-        <div class="row align-items-center justify-content-center g-2">
-          <div class="col">
-            <div class="card shadow rounded bg-light">
-              <div class="card-body">
-                <h6 class="card-title mt-auto">Hari</h6>
-                  <h4>05</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow rounded bg-light">
-              <div class="card-body">
-                <h6 class="card-title mt-auto">Jam</h6>
-                  <h4>10</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow rounded bg-light">
-              <div class="card-body">
-                <h6 class="card-title mt-auto">Menit</h6>
-                  <h4>32</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow rounded bg-light">
-              <div class="card-body">
-                <h6 class="card-title mt-auto">Detik</h6>
-                  <h4>15</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-     </div>
+      <div class="timer container mt-4">
+      <div>{{ days }}<span>days</span></div>
+      <div>{{ hours }}<span>hours</span></div>
+      <div>{{ minutes }}<span>minutes</span></div>
+      <div>{{ seconds }}<span>seconds</span></div>
+    </div>
   </center>
 
   <div class="container mb-2">

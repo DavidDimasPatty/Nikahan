@@ -31,6 +31,7 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 10; 
+  display: flex;
 }
 .layerWrap{
   width: 100%; 
@@ -49,6 +50,7 @@ export default {
   width: 100%; 
   height: 100%;
   text-align: center; 
+  position: relative; 
 }
 
 .fade-out {
@@ -84,10 +86,11 @@ export default {
 }
 
 .svg1{
-position: absolute;
-width: 100%;
-display: flex;
-top: 38vh;
+  position: absolute;
+  width: 100%; /* Atur lebar SVG agar responsif */
+  display: flex;
+  top: 44%; /* Sesuaikan posisi SVG relatif terhadap overlay-content atau overlay-content2 */
+  transform: translateY(-38%); 
 }
 
 .olbawah{
@@ -102,10 +105,9 @@ top: 38vh;
   <title>Pernikahan Farhan & Risma</title>
   <div id="overlay" class="overlay">
 
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="svg2">
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="svg2">
         <path fill="white" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,250.7C384,277,480,299,576,277.3C672,256,768,192,864,165.3C960,139,1056,149,1152,176C1248,203,1344,245,1392,266.7L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z" ></path>
-    </svg>
+    </svg> -->
 
     <div class="overlay-content">         
       <div class="layerWrap">
