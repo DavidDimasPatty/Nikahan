@@ -1,9 +1,15 @@
 <script>
-import Nav from './components/Nav.vue';
-
+import Nav from "./components/Nav.vue";
+import axios from "axios";
 export default {
   components: {
     Nav,
+  },
+  data() {
+    return {
+      // Inisialisasi array untuk menyimpan data dari web service
+      eventData: [],
+    };
   },
 
   methods: {
@@ -13,35 +19,44 @@ export default {
         document.getElementById("overlay").style.display = "none";
         document.getElementById("main-content").style.display = "block";
         document.getElementById("main-content").classList.add("fade-in");
-      }, 100); 
-    }
-}
-}
-
+      }, 100);
+    },
+  },
+  mounted() {
+    // Panggil web service saat komponen diinisialisasi
+    axios
+      .get("https://localhost:7241/Nikahan/cekDataTRXSHopee")
+      .then((response) => {
+        console.log(response.data);
+        this.eventData = response.data;
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  },
+};
 </script>
-
 
 <style scoped>
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; 
+  z-index: 9999;
 }
-
 
 .overlay-content {
   background-color: white;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   padding: 20px;
   border-radius: 10px;
-  text-align: center; 
+  text-align: center;
 }
 
 .fade-out {
@@ -71,43 +86,48 @@ export default {
 }
 </style>
 <template>
-
-        <title>Pernikahan Farhan dan Risma</title>
-        <div id="overlay" class="overlay">
-          <div class="overlay-content d-flex align-items-center justify-content-center">
-            <center>
-              <div class="row d-flex align-items-center justify-content-center top-0">
-                <h2 class="text-black">Halo, David </h2>
-                <h2 class="text-black">You're Invited to The Wedding Of </h2>
-              </div>  
-              <div class="card mt-4 col-md-6 mb-4" style="z-index: 1122;">
-                   <div class="position-absolute top-0 end-0 w-200" >
+  <title>Pernikahan Farhan dan Risma</title>
+  <div id="overlay" class="overlay">
+    <div
+      class="overlay-content d-flex align-items-center justify-content-center"
+    >
+      <center>
+        <div class="row d-flex align-items-center justify-content-center top-0">
+          <h2 class="text-black">Halo, David</h2>
+          <h2 class="text-black">You're Invited to The Wedding Of</h2>
+        </div>
+        <div class="card mt-4 col-md-6 mb-4" style="z-index: 1122;">
+          <!-- <div class="position-absolute top-0 end-0 w-200" >
                       <img src="./assets/bgH1.png" class="img-fluid">
                     </div>
                     <div class="position-absolute bottom-0 start-0 w-200">
                       <img src="./assets/bgH2.png" class="img-fluid">
-                    </div>
-                    <div class="rounded-top overflow-hidden" style="z-index: 2122;">
-                      <img src="./assets/fotonikah.jpg" class="card-img-top img-fluid" style="object-fit: cover; object-position: center; z-index: 2000;"/>
-                   </div>
-                </div>
-                <h1 class="text-black">Farhan & Risma</h1>
-                <h5 class="text-black">Minggu, 23 Maret 2025</h5>
-                <h5 class="text-black">Gedung Perkumpulan 3A</h5>
-              <button @click="continueToHomePage" class="btn btn-dark mt-4">Buka Undangan</button>
-          </center>
+                    </div> -->
+          <div class="rounded-top overflow-hidden" style="z-index: 2122;">
+            <img
+              src="./assets/fotonikah.jpg"
+              class="card-img-top img-fluid"
+              style="object-fit: cover; object-position: center; z-index: 2000;"
+            />
           </div>
         </div>
-        <div class="container mt-3" id="main-content">
-           
-            <Nav></Nav>
-            <body class="d-flex flex-column">
-                <router-view></router-view>
-            </body>
+        <h1 class="text-black">Farhan & Risma</h1>
+        <h5 class="text-black">Minggu, 23 Maret 2025</h5>
+        <h5 class="text-black">Gedung Perkumpulan 3A</h5>
+        <button @click="continueToHomePage" class="btn btn-dark mt-4">
+          Buka Undangan
+        </button>
+      </center>
+    </div>
+  </div>
+  <div class="container mt-3" id="main-content">
+    <Nav></Nav>
+    <body class="d-flex flex-column">
+      <router-view></router-view>
+    </body>
 
-            <footer class="mt-auto">
-              <p>© 2024 My Vue.js App</p>
-            </footer>
-        </div>
-
+    <footer class="mt-auto">
+      <p>© 2024 My Vue.js App</p>
+    </footer>
+  </div>
 </template>
