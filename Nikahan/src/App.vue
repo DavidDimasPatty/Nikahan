@@ -1,15 +1,53 @@
 <script>
 import Nav from "./components/Nav.vue";
 import axios from "axios";
+import { onMounted } from 'vue';
+import {useRoute,useRouter} from "vue-router";
+import { ref } from 'vue';
 export default {
   components: {
     Nav,
   },
-  data() {
-    return { 
-      eventData: [],
+  setup() {
+    const router = useRouter();
+    const route = useRoute();
+    const eventData = ref([]);
+    const namaCowo = ref();
+    const namaCewe = ref();
+    const tglNikah = ref();
+    const alamatNikah = ref();
+
+    const fetchEventData = async () => {
+      const id = route.params.id;
+      try {
+        const response = await axios.get("https://localhost:7241/Nikahan/allDataForm?trx_id=" + id);
+        console.log(response.data);
+        eventData.value =  response.data; 
+        namaCowo.value= response.data["dataNikahan"]["namaCowo"];
+        namaCewe.value= response.data["dataNikahan"]["namaCewe"];
+        tglNikah.value=response.data["nikah"]["tglAkad"];
+        alamatNikah.value=response.data["nikah"]["alamat"];
+        // Lakukan sesuatu dengan data
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    onMounted(async () => {
+      await router.isReady().then( async() => {
+        console.log(route.params.id);
+         await fetchEventData();
+      });
+    });
+    return {
+      eventData,
+      namaCowo,
+      namaCewe,
+      tglNikah,
+      alamatNikah
     };
   },
+
   methods: {
     continueToHomePage() {
       document.getElementById("overlay").classList.add("fade-out");
@@ -19,23 +57,9 @@ export default {
         document.getElementById("main-content").classList.add("fade-in");
       }, 100);
     },
-    async fetchEventData(){
-   const id = this.$route.params.id;
-    await axios
-      .get("https://localhost:7241/Nikahan/allDataForm?trx_id="+id)
-      .then((response) => {
-        console.log(response.data);
-        this.eventData = response.data;
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-    }
   },
 
-  created() {
-    this.fetchEventData(); 
-  },
+
 };
 </script>
 
@@ -87,8 +111,8 @@ export default {
   }
 }
 </style>
-<template v-if="eventData.length">
-  <title>Pernikahan Farhan dan Risma</title>
+<template>
+  <title>Pernikahan {{ namaCowo }} & {{ namaCewe }}</title>
   <div id="overlay" class="overlay">
     <div
       class="overlay-content d-flex align-items-center justify-content-center"
@@ -113,9 +137,9 @@ export default {
             />
           </div>
         </div>
-        <h1 class="text-black">{{eventData["dataNikahan"]["namaCowo"]}} & {{eventData["dataNikahan"]["namaCewe"]}}</h1>
-        <h5 class="text-black">Minggu, 23 Maret 2025</h5>
-        <h5 class="text-black">Gedung Perkumpulan 3A</h5>
+        <h1 class="text-black">{{ namaCowo }} & {{ namaCewe }}</h1>
+        <h5 class="text-black">{{tglNikah}}</h5>
+        <h5 class="text-black">{{alamatNikah}}</h5>
         <button @click="continueToHomePage" class="btn btn-dark mt-4">
           Buka Undangan
         </button>
