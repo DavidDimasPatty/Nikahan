@@ -6,12 +6,10 @@ export default {
     Nav,
   },
   data() {
-    return {
-      // Inisialisasi array untuk menyimpan data dari web service
+    return { 
       eventData: [],
     };
   },
-
   methods: {
     continueToHomePage() {
       document.getElementById("overlay").classList.add("fade-out");
@@ -21,11 +19,10 @@ export default {
         document.getElementById("main-content").classList.add("fade-in");
       }, 100);
     },
-  },
-  mounted() {
-    // Panggil web service saat komponen diinisialisasi
-    axios
-      .get("https://localhost:7241/Nikahan/cekDataTRXSHopee")
+    async fetchEventData(){
+   const id = this.$route.params.id;
+    await axios
+      .get("https://localhost:7241/Nikahan/allDataForm?trx_id="+id)
       .then((response) => {
         console.log(response.data);
         this.eventData = response.data;
@@ -33,6 +30,11 @@ export default {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
+    }
+  },
+
+  created() {
+    this.fetchEventData(); 
   },
 };
 </script>
@@ -85,7 +87,7 @@ export default {
   }
 }
 </style>
-<template>
+<template v-if="eventData.length">
   <title>Pernikahan Farhan dan Risma</title>
   <div id="overlay" class="overlay">
     <div
@@ -111,7 +113,7 @@ export default {
             />
           </div>
         </div>
-        <h1 class="text-black">Farhan & Risma</h1>
+        <h1 class="text-black">{{eventData["dataNikahan"]["namaCowo"]}} & {{eventData["dataNikahan"]["namaCewe"]}}</h1>
         <h5 class="text-black">Minggu, 23 Maret 2025</h5>
         <h5 class="text-black">Gedung Perkumpulan 3A</h5>
         <button @click="continueToHomePage" class="btn btn-dark mt-4">

@@ -80,6 +80,7 @@ export default {
 .timer div {
   display: inline-block;
   min-width: 90px;
+  font-size: 0.9em;
 }
 
 .timer div span {
