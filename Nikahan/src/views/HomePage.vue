@@ -1,5 +1,56 @@
 <script>
 import "../assets/home.css";
+import { computed, watch,ref } from 'vue';
+import store from '../store/index.js'; 
+
+export default {
+  computed: {
+    googleMapsUrl() {
+      // Ambil nilai longitude dari data
+      const longt = store.getters.getData["nikah"]["longt"];
+      const lat = store.getters.getData["nikah"]["lat"];
+      console.log(lat);
+      // Bangun URL Google Maps dengan longitude yang diambil
+      return `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15845.029593698011!2d${longt}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1711286546661!5m2!1sid!2sid`;
+    }
+  },
+  setup() {
+    const data = computed(() => store.getters.getData);
+    const targetDate = computed(() => new Date(data.value["nikah"]["tglAkad"]));
+
+    const days = ref(0);
+    const hours = ref(0);
+    const minutes = ref(0);
+    const seconds = ref(0);
+    // Mengupdate countdown setiap detik
+    setInterval(() => {
+      updateCountdown();
+    }, 1000);
+
+    const updateCountdown = () => {
+      const now = new Date();
+      const difference = targetDate.value - now;
+      days.value = Math.floor(difference / (1000 * 60 * 60 * 24));
+      hours.value = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      minutes.value = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      seconds.value = Math.floor((difference % (1000 * 60)) / 1000);
+    };
+
+    // Pantau perubahan pada data, dan update countdown jika ada perubahan
+    watch(data, () => {
+      // Update countdown
+      updateCountdown();
+    });
+
+    return {
+      data,
+      days,
+      hours,
+      minutes,
+      seconds
+    };
+  },
+};
 </script>
 
 <template>
@@ -15,8 +66,8 @@ import "../assets/home.css";
         style="object-fit: cover; object-position: center;"
       />
     </div>
-    <h1>Farhan & Risma</h1>
-    <small>Minggu, 23 Maret 2025</small>
+    <h1>{{ data["dataNikahan"]["namaCowo"] }} & {{ data["dataNikahan"]["namaCewe"] }}</h1>
+    <small>{{data["nikah"]["tglAkad"].substring(0,10)}}</small>
 
     <div class="container mt-4">
       <div class="row align-items-center justify-content-center g-2">
@@ -24,7 +75,7 @@ import "../assets/home.css";
           <div class="card shadow rounded bg-light">
             <div class="card-body">
               <h6 class="card-title mt-auto">Hari</h6>
-              <h4>05</h4>
+              <h4>{{ days }}</h4>
             </div>
           </div>
         </div>
@@ -32,7 +83,7 @@ import "../assets/home.css";
           <div class="card shadow rounded bg-light">
             <div class="card-body">
               <h6 class="card-title mt-auto">Jam</h6>
-              <h4>10</h4>
+              <h4>{{ hours }}</h4>
             </div>
           </div>
         </div>
@@ -40,7 +91,7 @@ import "../assets/home.css";
           <div class="card shadow rounded bg-light">
             <div class="card-body">
               <h6 class="card-title mt-auto">Menit</h6>
-              <h4>32</h4>
+              <h4>{{ minutes }}</h4>
             </div>
           </div>
         </div>
@@ -48,7 +99,7 @@ import "../assets/home.css";
           <div class="card shadow rounded bg-light">
             <div class="card-body">
               <h6 class="card-title mt-auto">Detik</h6>
-              <h4>15</h4>
+              <h4>{{ seconds }}</h4>
             </div>
           </div>
         </div>
@@ -94,7 +145,7 @@ import "../assets/home.css";
         <div
           class="card-img-overlay d-flex flex-column justify-content-end align-items-center text-wrap"
         >
-          <h5 class="card-title">Risma Mahendra</h5>
+          <h5 class="card-title">{{data["dataNikahan"]["namaCewe"]}}</h5>
         </div>
       </div>
     </div>
@@ -102,7 +153,7 @@ import "../assets/home.css";
 
   <div class="row mt-3">
     <small>Putri yang tercinta dari:</small>
-    <h6>Bapak Ujang & Ibu Vero</h6>
+    <h6>{{data["dataNikahan"]["namaOrtuCewe1"]}} & {{data["dataNikahan"]["namaOrtuCewe2"]}}</h6>
   </div>
 
   <div class="container">
@@ -111,7 +162,7 @@ import "../assets/home.css";
 
   <div class="row">
     <small>Putra yang tercinta dari:</small>
-    <h6>Bapak David & Ibu Vero</h6>
+    <h6>{{data["dataNikahan"]["namaOrtuCowo1"]}} & {{data["dataNikahan"]["namaOrtuCowo2"]}}</h6>
   </div>
 
   <div class="row justify-content-center mt-3">
@@ -126,7 +177,7 @@ import "../assets/home.css";
         <div
           class="card-img-overlay d-flex flex-column justify-content-end align-items-center text-wrap"
         >
-          <h5 class="card-title">Farhan Mahendra</h5>
+          <h5 class="card-title">{{data["dataNikahan"]["namaCowo"]}}</h5>
         </div>
       </div>
     </div>
@@ -269,20 +320,20 @@ import "../assets/home.css";
     <div class="row">
       <div class="col">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15845.029593698011!2d107.5150141!3d-6.85972325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1711286546661!5m2!1sid!2sid"
+          :src="googleMapsUrl"
           style="border: 0;"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
+     
       <div
         class="col d-flex flex-column justify-content-center align-items-center"
       >
         <h5>Gedung Perkumpulan 3A</h5>
         <h6>
-          Jl. Cilame No.32, RT.05/ RW.04, Kecamatan Cilame, Kelurahan Ngamprah,
-          Kabupaten Bandung Barat
+          {{data["nikah"]["alamat"]}}
         </h6>
       </div>
     </div>

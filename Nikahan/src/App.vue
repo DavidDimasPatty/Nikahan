@@ -4,6 +4,8 @@ import axios from "axios";
 import { onMounted } from 'vue';
 import {useRoute,useRouter} from "vue-router";
 import { ref } from 'vue';
+import { useStore } from 'vuex';
+import store from './store/index.js'; 
 export default {
   components: {
     Nav,
@@ -25,8 +27,9 @@ export default {
         eventData.value =  response.data; 
         namaCowo.value= response.data["dataNikahan"]["namaCowo"];
         namaCewe.value= response.data["dataNikahan"]["namaCewe"];
-        tglNikah.value=response.data["nikah"]["tglAkad"];
+        tglNikah.value=response.data["nikah"]["tglAkad"].substring(0,10);
         alamatNikah.value=response.data["nikah"]["alamat"];
+        store.dispatch('setData', response.data);
         // Lakukan sesuatu dengan data
       } catch (error) {
         console.error("Error fetching data:", error);
