@@ -352,13 +352,14 @@ export default {
   <div class="container mt-3">
     <div class="row flex-column justify-content-center align-items-center">
       <div class="col-md-3">
-        <img src="../assets/QR1.jpg" width="200" />
+        <h4>  {{data["dataGift"][0]["namaBank"]}}</h4>
+     
+        <h4> No Rekening :  {{data["dataGift"][0]["noRek"]}}</h4>
       </div>
       <div
         class="mt-3 col-md-2 d-flex flex-column justify-content-center align-items-center"
       >
-        <h5>Atas Nama :</h5>
-        <h6>Farhan Mahendra</h6>
+      <h4> Atas Nama :  {{data["dataGift"][0]["an"]}}</h4>
       </div>
     </div>
   </div>
