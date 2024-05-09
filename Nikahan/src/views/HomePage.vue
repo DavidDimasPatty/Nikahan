@@ -17,7 +17,7 @@ export default {
   setup() {
     const data = computed(() => store.getters.getData);
     const targetDate = computed(() => new Date(data.value["nikah"]["tglAkad"]));
-
+    const isMuted= ref(false);
     const days = ref(0);
     const hours = ref(0);
     const minutes = ref(0);
@@ -36,18 +36,26 @@ export default {
       seconds.value = Math.floor((difference % (1000 * 60)) / 1000);
     };
 
+    const toggleMute = () => {
+    const music = document.getElementById('bg-music');
+    isMuted.value = !isMuted.value;
+    music.muted = isMuted.value; // Menggunakan nilai isMuted.value, bukan isMuted
+  }
+
     // Pantau perubahan pada data, dan update countdown jika ada perubahan
     watch(data, () => {
       // Update countdown
       updateCountdown();
     });
-
+    
     return {
       data,
       days,
       hours,
       minutes,
-      seconds
+      seconds,
+      isMuted,
+      toggleMute
     };
   },
 };
@@ -59,9 +67,18 @@ export default {
   </header>
 
   <center>
+  <div id="app">
+    <audio id="bg-music" loop autoplay>
+      <source :src="data.dataSong.urlSong" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <button @click="toggleMute" class="sticky-button btn btn-dark">{{ isMuted ? 'Unmute' : 'Mute' }}</button>
+  </div>
+
     <div class="card col-md-4 mt-4 mb-4 rounded-circle">
       <img
-        src="../assets/fotonikah.jpg"
+        :src='data["fotoGallery"][1]["url"]'
         class="card-img-top rounded-circle img-fluid"
         style="object-fit: cover; object-position: center;"
       />
@@ -137,7 +154,7 @@ export default {
     <div class="col-6 col-md-3">
       <div class="card bg-dark text-white" style="height: 300px;">
         <img
-          src="../assets/cewe.jpg"
+          :src='data["fotoGallery"][5]["url"]'
           class="card-img img-fluid"
           alt="..."
           style="height: 100%; width: 100%; object-fit: cover;"
@@ -169,7 +186,7 @@ export default {
     <div class="col-6 col-md-3">
       <div class="card bg-dark text-white" style="height: 300px;">
         <img
-          src="../assets/cowo.jpg"
+         :src='data["fotoGallery"][4]["url"]'
           class="card-img img-fluid"
           alt="..."
           style="height: 100%; width: 100%; object-fit: cover;"
@@ -195,114 +212,26 @@ export default {
 
   <div class="container py-5">
     <div class="main-timeline-2">
-      <div class="timeline-2 left-2">
-        <div class="card">
-          <img
-            src="../assets/gambar 3.jpg"
-            class="card-img-top"
-            alt="Responsive image"
-          />
-          <div class="card-body p-4">
-            <h4 class="fw-bold mb-4">Perkenalan</h4>
-            <p class="text-muted mb-4">
-              <i class="far fa-clock" aria-hidden="true"></i> 2017
-            </p>
-            <p class="mb-0">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
+      <div class="container py-5">
+      <div class="main-timeline-2">
+        <div v-for="(item, i) in data.dataLoveStory"  :class="i % 2 === 1 ? 'timeline-2 left-2' : 'timeline-2 right-2'">
+          <div class="card">
+            <img
+              :src="item.url"
+              class="card-img-top"
+              alt="Responsive image"
+            />
+            <div class="card-body p-4">
+              <h4 class="fw-bold mb-4">{{ item.judul }}</h4>
+              <!-- <p class="text-muted mb-4">
+                <i class="far fa-clock" aria-hidden="true"></i> {{ item.year }}
+              </p> -->
+              <p class="mb-0">{{ item.isi }}</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="timeline-2 right-2">
-        <div class="card">
-          <img
-            src="../assets/gambar 4.jpg"
-            class="card-img-top"
-            alt="Responsive image"
-          />
-          <div class="card-body p-4">
-            <h4 class="fw-bold mb-4">Masa Pacaran</h4>
-            <p class="text-muted mb-4">
-              <i class="far fa-clock" aria-hidden="true"></i> 2016
-            </p>
-            <p class="mb-0">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-2 left-2">
-        <div class="card">
-          <img
-            src="../assets/gambar 2.jpg"
-            class="card-img-top"
-            alt="Responsive image"
-          />
-          <div class="card-body p-4">
-            <h4 class="fw-bold mb-4">Lamaran</h4>
-            <p class="text-muted mb-4">
-              <i class="far fa-clock" aria-hidden="true"></i> 2015
-            </p>
-            <p class="mb-0">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-2 right-2">
-        <div class="card">
-          <img
-            src="../assets/gambar 1.png"
-            class="card-img-top"
-            alt="Responsive image"
-          />
-          <div class="card-body p-4">
-            <h4 class="fw-bold mb-4">Pernikahan</h4>
-            <p class="text-muted mb-4">
-              <i class="far fa-clock" aria-hidden="true"></i> 2014
-            </p>
-            <p class="mb-0">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
-          </div>
-        </div>
-      </div>
+    </div>
     </div>
   </div>
 

@@ -18,6 +18,7 @@ export default {
     const namaCewe = ref();
     const tglNikah = ref();
     const alamatNikah = ref();
+    const fotoGalleryCover = ref();
 
     const fetchEventData = async () => {
       const id = route.params.id;
@@ -29,6 +30,8 @@ export default {
         namaCewe.value= response.data["dataNikahan"]["namaCewe"];
         tglNikah.value=response.data["nikah"]["tglAkad"].substring(0,10);
         alamatNikah.value=response.data["nikah"]["alamat"];
+        fotoGalleryCover.value=response.data["fotoGallery"][0]["url"];
+        console.log(fotoGalleryCover);
         store.dispatch('setData', response.data);
         // Lakukan sesuatu dengan data
       } catch (error) {
@@ -47,7 +50,8 @@ export default {
       namaCowo,
       namaCewe,
       tglNikah,
-      alamatNikah
+      alamatNikah,
+      fotoGalleryCover
     };
   },
 
@@ -134,7 +138,7 @@ export default {
                     </div> -->
           <div class="rounded-top overflow-hidden" style="z-index: 2122;">
             <img
-              src="./assets/fotonikah.jpg"
+              :src="fotoGalleryCover"
               class="card-img-top img-fluid"
               style="object-fit: cover; object-position: center; z-index: 2000;"
             />

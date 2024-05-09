@@ -112,3 +112,10 @@
     left: 0%;
   }
 }
+
+.sticky-button {
+  position: fixed;
+  bottom: 20px; /* Sesuaikan jarak dari bawah layar */
+  right: 20px; /* Sesuaikan jarak dari kanan layar */
+  z-index: 109;
+}
