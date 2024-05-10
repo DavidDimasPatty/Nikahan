@@ -1,6 +1,6 @@
 <script>
 import "../assets/home.css";
-import { computed, watch,ref } from 'vue';
+import { computed, watch,ref,onMounted } from 'vue';
 import store from '../store/index.js'; 
 
 export default {
@@ -17,7 +17,6 @@ export default {
   setup() {
     const data = computed(() => store.getters.getData);
     const targetDate = computed(() => new Date(data.value["nikah"]["tglAkad"]));
-    const isMuted= ref(false);
     const days = ref(0);
     const hours = ref(0);
     const minutes = ref(0);
@@ -36,26 +35,21 @@ export default {
       seconds.value = Math.floor((difference % (1000 * 60)) / 1000);
     };
 
-    const toggleMute = () => {
-    const music = document.getElementById('bg-music');
-    isMuted.value = !isMuted.value;
-    music.muted = isMuted.value; // Menggunakan nilai isMuted.value, bukan isMuted
-  }
+
 
     // Pantau perubahan pada data, dan update countdown jika ada perubahan
     watch(data, () => {
       // Update countdown
       updateCountdown();
     });
+
     
     return {
       data,
       days,
       hours,
       minutes,
-      seconds,
-      isMuted,
-      toggleMute
+      seconds
     };
   },
 };
@@ -66,15 +60,7 @@ export default {
     <h1>You are Invited to The Weeding of</h1>
   </header>
 
-  <center>
-  <div id="app">
-    <audio id="bg-music" loop autoplay>
-      <source :src="data.dataSong.urlSong" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-
-    <button @click="toggleMute" class="sticky-button btn btn-dark">{{ isMuted ? 'Unmute' : 'Mute' }}</button>
-  </div>
+  <div class="justify-content-center align-items-center">
 
     <div class="card col-md-4 mt-4 mb-4 rounded-circle">
       <img
@@ -122,11 +108,11 @@ export default {
         </div>
       </div>
     </div>
-  </center>
+  </div>
 
   <div class="container mb-2">
     <hr class="mt-4" />
-    <center>
+    <div class="justify-content-center align-items-center">
       <blockquote class="blockquote w-75">
         <p class="mb-3">
           "Mencintai dan dicintai adalah puncak kebahagiaan dan kekayaan. Semoga
@@ -137,7 +123,7 @@ export default {
           Someone famous in <cite title="Source Title">Bang Toyib</cite>
         </footer>
       </blockquote>
-    </center>
+    </div>
     <hr class="my-4" />
   </div>
 

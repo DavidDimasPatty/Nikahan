@@ -19,6 +19,9 @@ export default {
     const tglNikah = ref();
     const alamatNikah = ref();
     const fotoGalleryCover = ref();
+    const isLoading = ref(true);
+    const laguBG=ref('');
+    const isMuted= ref(false);
 
     const fetchEventData = async () => {
       const id = route.params.id;
@@ -28,21 +31,30 @@ export default {
         eventData.value =  response.data; 
         namaCowo.value= response.data["dataNikahan"]["namaCowo"];
         namaCewe.value= response.data["dataNikahan"]["namaCewe"];
+        laguBG.value= response.data["dataSong"]["urlSong"];
         tglNikah.value=response.data["nikah"]["tglAkad"].substring(0,10);
         alamatNikah.value=response.data["nikah"]["alamat"];
         fotoGalleryCover.value=response.data["fotoGallery"][0]["url"];
-        console.log(fotoGalleryCover);
         store.dispatch('setData', response.data);
+        isLoading.value = false;
         // Lakukan sesuatu dengan data
       } catch (error) {
+        isLoading.value = false;
         console.error("Error fetching data:", error);
       }
     };
 
+    const toggleMute = () => {
+    const music = document.getElementById('bg-music');
+    isMuted.value = !isMuted.value;
+    music.muted = isMuted.value; // Menggunakan nilai isMuted.value, bukan isMuted
+  }
+
     onMounted(async () => {
       await router.isReady().then( async() => {
+        isLoading.value = true; 
         console.log(route.params.id);
-         await fetchEventData();
+        fetchEventData();
       });
     });
     return {
@@ -51,7 +63,11 @@ export default {
       namaCewe,
       tglNikah,
       alamatNikah,
-      fotoGalleryCover
+      fotoGalleryCover,
+      isLoading,
+      laguBG,
+      isMuted,
+      toggleMute
     };
   },
 
@@ -117,9 +133,41 @@ export default {
     opacity: 1;
   }
 }
+
+.spinner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #000;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 </style>
 <template>
   <title>Pernikahan {{ namaCowo }} & {{ namaCewe }}</title>
+  <div v-if="isLoading" class="spinner-overlay">
+      <div class="spinner"></div>
+  </div>
+
   <div id="overlay" class="overlay">
     <div
       class="overlay-content d-flex align-items-center justify-content-center"
@@ -153,8 +201,19 @@ export default {
       </center>
     </div>
   </div>
-  <div class="container mt-3" id="main-content">
+
+  <div id="app">
+    <audio id="bg-music" loop autoplay>
+      <source :src="laguBG" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <button @click="toggleMute" class="sticky-button btn btn-dark">{{ isMuted ? 'Unmute' : 'Mute' }}</button>
+  </div>
+
+  <div class="container mt-3" id="main-content" v-if="!isLoading">
     <Nav></Nav>
+
     <body class="d-flex flex-column">
       <router-view></router-view>
     </body>
