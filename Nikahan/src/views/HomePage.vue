@@ -35,11 +35,7 @@ export default {
       seconds.value = Math.floor((difference % (1000 * 60)) / 1000);
     };
 
-
-
-    // Pantau perubahan pada data, dan update countdown jika ada perubahan
     watch(data, () => {
-      // Update countdown
       updateCountdown();
     });
 

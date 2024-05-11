@@ -1,8 +1,21 @@
+<script>
+import {useRoute,useRouter} from "vue-router";
+export default {
+  setup() {
+    const route = useRoute();
+    const id = route.params.id;
+    return{
+    id
+   }   
+}
+}
+</script>
+
 <template>
     <div>
         <center>
-            <router-link to="/" class="me-3 navi">Home</router-link> 
-            <router-link to="/Galeri" class="navi">Galeri</router-link> 
+            <router-link :to="'/' + id" class="me-3 navi">Home</router-link> 
+            <router-link :to="'/Galeri/' + id" class="navi">Galeri</router-link> 
         </center>
     </div>
 </template>

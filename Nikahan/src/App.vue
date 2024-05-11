@@ -40,8 +40,22 @@ export default {
         // Lakukan sesuatu dengan data
       } catch (error) {
         isLoading.value = false;
-        console.error("Error fetching data:", error);
+        console.log("Error fetching data:", error);
       }
+    };
+
+    const addAudioElement = (urlSong) => {
+      const audioElement = document.createElement('audio');
+      audioElement.id = 'bg-music';
+      audioElement.loop = true;
+      audioElement.autoplay = true;
+      const sourceElement = document.createElement('source');
+      sourceElement.src = urlSong;
+      sourceElement.type = 'audio/mpeg';
+      audioElement.appendChild(sourceElement);
+      console.log("masukkk");
+      const appDiv = document.getElementById('appButt');
+      appDiv.appendChild(audioElement);
     };
 
     const toggleMute = () => {
@@ -57,6 +71,19 @@ export default {
         fetchEventData();
       });
     });
+
+    const continueToHomePage=()=>{
+    if (laguBG.value) {
+          addAudioElement(laguBG.value);
+        }
+      document.getElementById("overlay").classList.add("fade-out");
+      setTimeout(() => {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+        document.getElementById("main-content").classList.add("fade-in");
+      }, 100);
+   }
+   
     return {
       eventData,
       namaCowo,
@@ -67,20 +94,11 @@ export default {
       isLoading,
       laguBG,
       isMuted,
-      toggleMute
+      toggleMute,
+      continueToHomePage
     };
   },
 
-  methods: {
-    continueToHomePage() {
-      document.getElementById("overlay").classList.add("fade-out");
-      setTimeout(() => {
-        document.getElementById("overlay").style.display = "none";
-        document.getElementById("main-content").style.display = "block";
-        document.getElementById("main-content").classList.add("fade-in");
-      }, 100);
-    },
-  },
 
 
 };
@@ -202,16 +220,12 @@ export default {
     </div>
   </div>
 
-  <div id="app">
-    <audio id="bg-music" loop autoplay>
-      <source :src="laguBG" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-
+  <div id="appButt">
     <button @click="toggleMute" class="sticky-button btn btn-dark">{{ isMuted ? 'Unmute' : 'Mute' }}</button>
   </div>
 
   <div class="container mt-3" id="main-content" v-if="!isLoading">
+
     <Nav></Nav>
 
     <body class="d-flex flex-column">
