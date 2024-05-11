@@ -105,6 +105,12 @@ export default {
 </script>
 
 <style scoped>
+
+#main-content{
+  background-image: url('/src/assets/THEME 1/LAYER 1/00.BACKGROUND THEME 1.png');
+  background-size:fill;
+  background-repeat: no-repeat;
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -115,10 +121,11 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  background-image: url('/src/assets/THEME 1/LAYER 1/00.BACKGROUND THEME 1.png');
+  background-size:cover;
 }
 
 .overlay-content {
-  background-color: white;
   width: 100%;
   height: 100%;
   padding: 20px;
@@ -179,6 +186,7 @@ export default {
     transform: rotate(360deg);
   }
 }
+
 </style>
 <template>
   <title>Pernikahan {{ namaCowo }} & {{ namaCewe }}</title>
@@ -224,11 +232,11 @@ export default {
     <button @click="toggleMute" class="sticky-button btn btn-dark">   <i :class="'bi bi-volume' + (isMuted ? '-mute':'-up' )"></i></button>
   </div>
 
-  <div class="container mt-3" id="main-content" v-if="!isLoading">
+  <div  id="main-content" v-if="!isLoading">
 
-    <Nav></Nav>
 
     <body class="d-flex flex-column mb-5">
+      <Nav></Nav>
       <router-view></router-view>
     </body>
 

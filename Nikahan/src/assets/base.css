@@ -83,4 +83,6 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('THEME 1/LAYER 1/00.BACKGROUND THEME 1.png');
+  background-size:fill;
 }

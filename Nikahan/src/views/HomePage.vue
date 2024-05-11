@@ -86,12 +86,10 @@ export default {
 </script>
 
 <template>
-  <header class="mt-3">
+
+
+  <div class="justify-content-center align-items-center" id="bgAll">
     <h1>You are Invited to The Weeding of</h1>
-  </header>
-
-  <div class="justify-content-center align-items-center">
-
     <div class="card col-md-4 mt-4 mb-4 rounded-circle">
       <img
         :src='data["fotoGallery"][1]["url"]'
@@ -216,7 +214,7 @@ export default {
     </div>
   </div>
 
-  <div class="container mt-5">
+  <div class="mt-5">
     <div class="row">
       <div class="col text-center">
         <hr class="w-25 d-inline-block mt-0 mb-2" />
