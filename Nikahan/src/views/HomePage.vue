@@ -1,5 +1,6 @@
 <script>
 import "../assets/home.css";
+import axios from "axios";
 import { computed, watch,ref,onMounted } from 'vue';
 import store from '../store/index.js'; 
 
@@ -16,11 +17,16 @@ export default {
   },
   setup() {
     const data = computed(() => store.getters.getData);
+    const dataKomen=ref(data.value["dataKomen"]);
     const targetDate = computed(() => new Date(data.value["nikah"]["tglAkad"]));
     const days = ref(0);
     const hours = ref(0);
     const minutes = ref(0);
     const seconds = ref(0);
+    const isiKomen=ref("");
+    const namaKomen=ref("");
+    const statusKomen=ref(true);
+    const idAcara=ref(data.value["dataNikahan"]["id"]);
     // Mengupdate countdown setiap detik
     setInterval(() => {
       updateCountdown();
@@ -39,13 +45,41 @@ export default {
       updateCountdown();
     });
 
+     const  postKomen =async ()=>{
+        try {
+          const res = await fetch('https://localhost:7241/Nikahan/postComment', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+             idAcara: idAcara.value,
+             nama: namaKomen.value,
+             status: JSON.parse(statusKomen.value),
+             isi: isiKomen.value,
+             jenis: "Nikahan", 
+            })
+        });
+        const data = await res.json(); // Mengambil data dari respons
+        dataKomen.value=data;
+        console.log('Post berhasil:', data); // Menampilkan data respons
+        } catch (error) {
+          console.error('Error posting:', error);
+        }
+      }
     
     return {
       data,
       days,
       hours,
       minutes,
-      seconds
+      seconds,
+      isiKomen,
+      namaKomen,
+      statusKomen,
+      idAcara,
+      postKomen,
+      dataKomen
     };
   },
 };
@@ -286,163 +320,56 @@ export default {
   </div>
 
   <section>
-    <div class="container my-1 py-5">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-12 col-lg-10">
-          <div class="card text-dark">
-            <div class="card-body p-4">
-              <div class="d-flex flex-start">
-                <img
-                  class="rounded-circle shadow-1-strong me-3"
-                  src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp"
-                  alt="avatar"
-                  width="60"
-                  height="60"
-                />
-                <div>
-                  <h6 class="fw-bold mb-1">Maggie Marsh</h6>
-                  <div
-                    class="d-flex align-items-center justify-content-center mb-3 is-centered"
-                  >
-                    <p class="mb-0">
-                      March 07, 2021
-                      <span class="badge bg-success">Datang</span>
-                    </p>
-                  </div>
+    <div class="container py-5">
+      <div class="row d-flex justify-content-start align-items-start">
+      <div class="col-md-12 col-lg-10">
+        <div class="card text-dark" v-for="(item, i) in dataKomen" :key="i">
+          <div class="card-body" style="align-self: start;">
+            <div>
+              <div>
+                <h6 class="fw-bold d-flex justify-content-start align-items-start">{{ item.nama }}</h6>
+                <div class="d-flex align-items-start justify-content-start mb-3 is-start">
                   <p class="mb-0">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it.
+                    <span class="badge bg-success" v-if="item.status === true">Datang</span>
+                    <span class="badge bg-danger" v-else>Tidak Datang</span>
                   </p>
                 </div>
-              </div>
-            </div>
-
-            <hr class="my-0" />
-
-            <div class="card-body p-4">
-              <div class="d-flex flex-start">
-                <img
-                  class="rounded-circle shadow-1-strong me-3"
-                  src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(26).webp"
-                  alt="avatar"
-                  width="60"
-                  height="60"
-                />
-                <div>
-                  <h6 class="fw-bold mb-1">Lara Stewart</h6>
-                  <div
-                    class="d-flex align-items-center justify-content-center mb-3 is-centered"
-                  >
-                    <p class="mb-0">
-                      March 07, 2021
-                      <span class="badge bg-success">Datang</span>
-                    </p>
-                  </div>
-                  <p class="mb-0">
-                    Contrary to popular belief, Lorem Ipsum is not simply random
-                    text. It has roots in a piece of classical Latin literature
-                    from 45 BC, making it over 2000 years old. Richard
-                    McClintock, a Latin professor at Hampden-Sydney College in
-                    Virginia, looked up one of the more obscure Latin words,
-                    consectetur, from a Lorem Ipsum passage, and going through
-                    the cites.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <hr class="my-0" style="height: 1px;" />
-
-            <div class="card-body p-4">
-              <div class="d-flex flex-start">
-                <img
-                  class="rounded-circle shadow-1-strong me-3"
-                  src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(33).webp"
-                  alt="avatar"
-                  width="60"
-                  height="60"
-                />
-                <div>
-                  <h6 class="fw-bold mb-1">Alexa Bennett</h6>
-                  <div
-                    class="d-flex align-items-center justify-content-center mb-3 is-centered"
-                  >
-                    <p class="mb-0">
-                      March 07, 2021
-                      <span class="badge bg-danger">Tidak Datang</span>
-                    </p>
-                  </div>
-                  <p class="mb-0">
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in some
-                    form, by injected humour, or randomised words which don't
-                    look even slightly believable. If you are going to use a
-                    passage of Lorem Ipsum, you need to be sure.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <hr class="my-0" />
-
-            <div class="card-body p-4">
-              <div class="d-flex flex-start">
-                <img
-                  class="rounded-circle shadow-1-strong me-3"
-                  src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(24).webp"
-                  alt="avatar"
-                  width="60"
-                  height="60"
-                />
-                <div>
-                  <h6 class="fw-bold mb-1">Betty Walker</h6>
-                  <div
-                    class="d-flex align-items-center justify-content-center mb-3 is-centered"
-                  >
-                    <p class="mb-0">
-                      March 07, 2021
-                      <span class="badge bg-danger">Tidak Datang</span>
-                    </p>
-                  </div>
-                  <p class="mb-0">
-                    It uses a dictionary of over 200 Latin words, combined with
-                    a handful of model sentence structures, to generate Lorem
-                    Ipsum which looks reasonable. The generated Lorem Ipsum is
-                    therefore always free from repetition, injected humour, or
-                    non-characteristic words etc.
-                  </p>
-                </div>
+                <p class="mb-0">
+                  {{ item.isi }}
+                </p>
               </div>
             </div>
           </div>
+          <hr class="my-0" />
         </div>
       </div>
     </div>
+    </div>
 
-    <div class="card-footer py-2 border-0">
+    <div class="card-footer border-0">
+      <h2 class="d-inline-block me-1 ms-1">Kirim Ucapan Anda</h2>
       <div class="d-flex flex-start w-100">
-        <img
-          class="rounded-circle shadow-1-strong me-3"
-          src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp"
-          alt="avatar"
-          width="40"
-          height="40"
-        />
         <div class="form-outline w-100">
+          <input type="text" placeholder="Masukan Nama Anda" class="form-control" v-model="namaKomen"/>
+          <select class="form-control" v-model="statusKomen">
+            <option disabled selected>Pilih Status Kehadiran</option>
+            <option value="true">Datang</option>
+            <option value="false">Tidak Datang</option>
+          </select>
           <textarea
             class="form-control"
             id="textAreaExample"
             rows="4"
             style="background: #fff;"
+            placeholder="Masukan Pesan Anda Untuk Kedua Mempelai"
+            v-model="isiKomen"
           ></textarea>
         </div>
       </div>
       <div class="float-end mt-2 pt-1">
         <div class="row">
           <div class="col">
-            <button type="button" class="btn btn-primary btn-sm">Post</button>
+            <button type="button" class="btn btn-primary btn-sm" @click="postKomen">Post</button>
           </div>
         </div>
       </div>

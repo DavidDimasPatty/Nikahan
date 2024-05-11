@@ -29,33 +29,6 @@ setup(){
 
       </div>
 
-      <!-- <div class="col-lg-4 mb-4 mb-lg-0">
-        <img
-          src="../assets/nikah3.jpg"
-          class="w-100 shadow-1-strong rounded mb-4"
-          alt="Mountains in the Clouds"
-        />
-
-        <img
-          src="../assets/nikah4.jpg"
-          class="w-100 shadow-1-strong rounded mb-4"
-          alt="Boat on Calm Water"
-        />
-      </div>
-
-      <div class="col-lg-4 mb-4 mb-lg-0">
-        <img
-          src="../assets/nikah5.jpg"
-          class="w-100 shadow-1-strong rounded mb-4"
-          alt="Waves at Sea"
-        />
-
-        <img
-          src="../assets/nikah6.jpg"
-          class="w-100 shadow-1-strong rounded mb-4"
-          alt="Yosemite National Park"
-        />
-      </div> -->
     </div>
   </div>
 </template>

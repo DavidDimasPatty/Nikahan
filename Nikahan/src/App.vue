@@ -221,14 +221,14 @@ export default {
   </div>
 
   <div id="appButt">
-    <button @click="toggleMute" class="sticky-button btn btn-dark">{{ isMuted ? 'Unmute' : 'Mute' }}</button>
+    <button @click="toggleMute" class="sticky-button btn btn-dark">   <i :class="'bi bi-volume' + (isMuted ? '-mute':'-up' )"></i></button>
   </div>
 
   <div class="container mt-3" id="main-content" v-if="!isLoading">
 
     <Nav></Nav>
 
-    <body class="d-flex flex-column">
+    <body class="d-flex flex-column mb-5">
       <router-view></router-view>
     </body>
 
