@@ -84,17 +84,70 @@ export default {
   },
 };
 </script>
-
+<style>
+#commentBG{
+  background: url('/src/assets/THEME 1/LAYER 9/01.LAYER BACKROUND 2.png') left top repeat, url('/src/assets/THEME 1/LAYER 9/01.LAYER BACKROUND 3.png') right bottom no-repeat,url('/src/assets/THEME 1/LAYER 9/01.LAYER BACKROUND 1.png') center no-repeat;
+  background-size:contain,contain,100% 100%;
+}
+#weddingGift{
+  background: url('/src/assets/THEME 1/LAYER 7/01.LAYER LEFT 2.png') left top no-repeat, url('/src/assets/THEME 1/LAYER 7/02.LAYER RIGHT 2.png') right bottom no-repeat,url('/src/assets/THEME 1/LAYER 7/01.LAYER LEFT 1.png') left top no-repeat,url('/src/assets/THEME 1/LAYER 7/02.LAYER RIGHT 1.png') right top no-repeat;
+  background-size:contain,contain,100% 100%,100% 100%;
+}
+#lovestory{
+  background: url('/src/assets/THEME 1/LAYER 4/03.LAYER MID 4.png') center no-repeat,url('/src/assets/THEME 1/LAYER 4/01.LAYER LEFT 1.png') left top no-repeat,url("/src/assets/THEME 1/LAYER 4/02.LAYER RIGHT 1.png")  right top no-repeat,url('/src/assets/THEME 1/LAYER 4/03.LAYER MID 1.png') center no-repeat;
+  background-size:cover, 50% 100%, 50% 100%,100% 100%;
+}
+#pasangan{
+  background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') center no-repeat,url("/src/assets/THEME 1/LAYER 3/02.LAYER RIGHT 2.png")  center no-repeat,url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 1.png') left top no-repeat,url('/src/assets/THEME 1/LAYER 3/02.LAYER RIGHT 1.png') top no-repeat;
+  background-size:contain,contain,contain,cover;
+}
+#quotes{
+  background: url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url("/src/assets/THEME 1/LAYER 2/03.LAYER MID 1.png")  center no-repeat,url('/src/assets/THEME 1/LAYER 2/01.LAYER LEFT 1.png') left top no-repeat,url('/src/assets/THEME 1/LAYER 2/02.LAYER\ RIGHT\ 1.png') right top no-repeat;
+  background-size:cover,cover,contain,contain;
+}
+#layer1-1{
+  position:absolute; 
+  top:0;
+  left:0; 
+  pointer-events: none; 
+  height: inherit;
+    width: inherit;
+}
+#layer1-2{
+  position:absolute; 
+  top:0;
+  left:0; 
+  pointer-events: none;
+}
+#layer1-3{
+  position:absolute; 
+  top:0;
+  right:0; 
+   pointer-events: none; 
+   height: inherit;
+    width: inherit;
+}
+#layer1-4{
+  position:absolute; 
+  bottom:0;
+  right:0;
+  pointer-events: none;
+}
+#bgAll{
+  background: url("/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png") left top repeat, url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png') right top repeat, url('/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png') left top no-repeat,url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png') right bottom no-repeat;
+  background-size:contain, contain, 100%,100%;
+}
+</style>
 <template>
 
 
   <div class="justify-content-center align-items-center" id="bgAll">
     <h1>You are Invited to The Weeding of</h1>
-    <div class="card col-md-4 mt-4 mb-4 rounded-circle">
+    <div class="mt-4 mb-4 rounded-circle">
       <img
         :src='data["fotoGallery"][1]["url"]'
-        class="card-img-top rounded-circle img-fluid"
-        style="object-fit: cover; object-position: center;"
+        class="rounded-circle img-fluid"
+        style="max-width: 100%;"
       />
     </div>
     <h1>{{ data["dataNikahan"]["namaCowo"] }} & {{ data["dataNikahan"]["namaCewe"] }}</h1>
@@ -136,13 +189,33 @@ export default {
         </div>
       </div>
     </div>
+            <!-- <img
+              src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png"
+              class="img-fluid h-100"
+              id="layer1-1"
+            />
+            <img
+              src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png"
+              class="img-fluid"
+              id="layer1-2"
+            />
+            <img
+              src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png"
+              class="img-fluid h-100"
+              id="layer1-3"
+        
+            />
+            <img
+              src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png"
+              class="img-fluid"
+              id="layer1-4"
+            /> -->
   </div>
 
-  <div class="container mb-2">
+  <div class="d-flex justify-content-center align-items-center" id="quotes">
     <hr class="mt-4" />
-    <div class="justify-content-center align-items-center">
       <blockquote class="blockquote w-75">
-        <p class="mb-3">
+        <p >
           "Mencintai dan dicintai adalah puncak kebahagiaan dan kekayaan. Semoga
           kalian tidak pernah melupakan harta berharga ini sepanjang hari
           bersama."
@@ -151,70 +224,78 @@ export default {
           Someone famous in <cite title="Source Title">Bang Toyib</cite>
         </footer>
       </blockquote>
-    </div>
-    <hr class="my-4" />
+
+   
+     <!-- <img
+              src="/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png"
+              class="img-fluid h-100"
+              style="position:absolute;  pointer-events: none;  object-fit: fill;"
+     /> -->
   </div>
 
-  <div class="container mb-4">
-    <div class="row">
-      <h5>
-        Dengan Memohon Rahmat dan Ridho dari Allah SWT, Kami Bermasksud
-        Menyelenggarakan Pernikahan
-      </h5>
-    </div>
-  </div>
-
-  <div class="row justify-content-center mt-2">
-    <div class="col-6 col-md-3">
-      <div class="card bg-dark text-white" style="height: 300px;">
-        <img
-          :src='data["fotoGallery"][5]["url"]'
-          class="card-img img-fluid"
-          alt="..."
-          style="height: 100%; width: 100%; object-fit: cover;"
-        />
-        <div
-          class="card-img-overlay d-flex flex-column justify-content-end align-items-center text-wrap"
-        >
-          <h5 class="card-title">{{data["dataNikahan"]["namaCewe"]}}</h5>
+  <div id="pasangan">
+      <div>
+        <div class="row">
+          <h5>
+            Dengan Memohon Rahmat dan Ridho dari Allah SWT, Kami Bermasksud
+            Menyelenggarakan Pernikahan
+          </h5>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="row mt-3">
-    <small>Putri yang tercinta dari:</small>
-    <h6>{{data["dataNikahan"]["namaOrtuCewe1"]}} & {{data["dataNikahan"]["namaOrtuCewe2"]}}</h6>
-  </div>
-
-  <div class="container">
-    <h1>{{ "&" }}</h1>
-  </div>
-
-  <div class="row">
-    <small>Putra yang tercinta dari:</small>
-    <h6>{{data["dataNikahan"]["namaOrtuCowo1"]}} & {{data["dataNikahan"]["namaOrtuCowo2"]}}</h6>
-  </div>
-
-  <div class="row justify-content-center mt-3">
-    <div class="col-6 col-md-3">
-      <div class="card bg-dark text-white" style="height: 300px;">
-        <img
-         :src='data["fotoGallery"][4]["url"]'
-          class="card-img img-fluid"
-          alt="..."
-          style="height: 100%; width: 100%; object-fit: cover;"
-        />
-        <div
-          class="card-img-overlay d-flex flex-column justify-content-end align-items-center text-wrap"
-        >
-          <h5 class="card-title">{{data["dataNikahan"]["namaCowo"]}}</h5>
+      <div class="row justify-content-center mt-2">
+        <div class="col-6 col-md-3">
+          <div class="card bg-dark text-white" style="height: 300px;">
+            <img
+              :src='data["fotoGallery"][5]["url"]'
+              class="card-img img-fluid"
+              alt="..."
+              style="height: 100%; width: 100%; object-fit: cover;"
+            />
+            <div
+              class="card-img-overlay d-flex flex-column justify-content-end align-items-center text-wrap"
+            >
+              <h5 class="card-title">{{data["dataNikahan"]["namaCewe"]}}</h5>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="mt-5">
+      <div class="row mt-3">
+        <small>Putri yang tercinta dari:</small>
+        <h6>{{data["dataNikahan"]["namaOrtuCewe1"]}} & {{data["dataNikahan"]["namaOrtuCewe2"]}}</h6>
+      </div>
+
+      <div class="container">
+        <h1>{{ "&" }}</h1>
+      </div>
+
+      <div class="row">
+        <small>Putra yang tercinta dari:</small>
+        <h6>{{data["dataNikahan"]["namaOrtuCowo1"]}} & {{data["dataNikahan"]["namaOrtuCowo2"]}}</h6>
+      </div>
+
+      <div class="row justify-content-center mt-3">
+        <div class="col-6 col-md-3">
+          <div class="card bg-dark text-white" style="height: 300px;">
+            <img
+            :src='data["fotoGallery"][4]["url"]'
+              class="card-img img-fluid"
+              alt="..."
+              style="height: 100%; width: 100%; object-fit: cover;"
+            />
+            <div
+              class="card-img-overlay d-flex flex-column justify-content-end align-items-center text-wrap"
+            >
+              <h5 class="card-title">{{data["dataNikahan"]["namaCowo"]}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div id="lovestory">
+  <div>
     <div class="row">
       <div class="col text-center">
         <hr class="w-25 d-inline-block mt-0 mb-2" />
@@ -248,8 +329,10 @@ export default {
     </div>
     </div>
   </div>
+</div>
 
-  <div class="container mt-5">
+<div id="weddingGift">
+  <div class="container">
     <div class="row">
       <div class="col text-center">
         <hr class="w-25 d-inline-block mt-0 mb-2" />
@@ -306,8 +389,10 @@ export default {
       </div>
     </div>
   </div>
+</div>
 
-  <div class="container mt-5">
+<div id="commentBG">
+  <div class="container">
     <div class="row">
       <div class="col text-center">
         <hr class="w-25 d-inline-block mt-0 mb-2" />
@@ -373,4 +458,5 @@ export default {
       </div>
     </div>
   </section>
+</div>  
 </template>

@@ -108,8 +108,7 @@ export default {
 
 #main-content{
   background-image: url('/src/assets/THEME 1/LAYER 1/00.BACKGROUND THEME 1.png');
-  background-size:fill;
-  background-repeat: no-repeat;
+  background-size:contain;
 }
 .overlay {
   position: fixed;
@@ -117,19 +116,17 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
   background-image: url('/src/assets/THEME 1/LAYER 1/00.BACKGROUND THEME 1.png');
-  background-size:cover;
+  background-size:contain;
 }
 
 .overlay-content {
   width: 100%;
   height: 100%;
   padding: 20px;
-  border-radius: 10px;
   text-align: center;
 }
 
@@ -199,10 +196,12 @@ export default {
       class="overlay-content d-flex align-items-center justify-content-center"
     >
       <center>
-        <div class="row d-flex align-items-center justify-content-center top-0">
+        <div>
           <h2 class="text-black">Halo, David</h2>
           <h2 class="text-black">You're Invited to The Wedding Of</h2>
         </div>
+
+
         <div class="card mt-4 col-md-6 mb-4" style="z-index: 1122;">
           <!-- <div class="position-absolute top-0 end-0 w-200" >
                       <img src="./assets/bgH1.png" class="img-fluid">
@@ -226,6 +225,27 @@ export default {
         </button>
       </center>
     </div>
+
+          <img
+              src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png"
+              class="card-img-top img-fluid"
+              style="z-index:99;position:absolute; top:0;left:0;height: 100%;  pointer-events: none; "
+            />
+            <img
+              src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png"
+              class="card-img-top img-fluid"
+              style="z-index:99;position:absolute; top:0;left:0; pointer-events: none; "
+            />
+            <img
+              src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png"
+              class="card-img-top img-fluid"
+              style="z-index: 99;position:absolute; top:0;right:0;height: 100%;  pointer-events: none; "
+            />
+            <img
+              src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png"
+              class="card-img-top img-fluid"
+              style="z-index:99;position:absolute; bottom:0;right:0;  pointer-events: none; "
+            />
   </div>
 
   <div id="appButt">
@@ -235,7 +255,7 @@ export default {
   <div  id="main-content" v-if="!isLoading">
 
 
-    <body class="d-flex flex-column mb-5">
+    <body class="mb-5">
       <Nav></Nav>
       <router-view></router-view>
     </body>
