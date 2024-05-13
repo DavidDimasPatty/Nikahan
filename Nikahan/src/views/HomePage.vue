@@ -2,7 +2,7 @@
 import "../assets/home.css";
 import axios from "axios";
 import { computed, watch,ref,onMounted } from 'vue';
-import store from '../store/index.js'; 
+import store from '../store/index.js';
 
 export default {
   computed: {
@@ -57,7 +57,7 @@ export default {
              nama: namaKomen.value,
              status: JSON.parse(statusKomen.value),
              isi: isiKomen.value,
-             jenis: "Nikahan", 
+             jenis: "Nikahan",
             })
         });
         const data = await res.json(); // Mengambil data dari respons
@@ -67,7 +67,7 @@ export default {
           console.error('Error posting:', error);
         }
       }
-    
+
     return {
       data,
       days,
@@ -94,62 +94,97 @@ export default {
   background-size:contain,contain,100% 100%,100% 100%;
 }
 #lovestory{
-  background: url('/src/assets/THEME 1/LAYER 4/03.LAYER MID 4.png') center no-repeat,url('/src/assets/THEME 1/LAYER 4/01.LAYER LEFT 1.png') left top no-repeat,url("/src/assets/THEME 1/LAYER 4/02.LAYER RIGHT 1.png")  right top no-repeat,url('/src/assets/THEME 1/LAYER 4/03.LAYER MID 1.png') center no-repeat;
-  background-size:cover, 50% 100%, 50% 100%,100% 100%;
+  background: url('/src/assets/THEME 1/LAYER 4/03.LAYER MID 4.png') center no-repeat,url('/src/assets/THEME 1/LAYER 4/01.LAYER LEFT 1.png') left top no-repeat,url("/src/assets/THEME 1/LAYER 4/02.LAYER RIGHT 1.png")  right top no-repeat;
+  background-size:cover, cover, cover;
 }
 #pasangan{
   background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') center no-repeat,url("/src/assets/THEME 1/LAYER 3/02.LAYER RIGHT 2.png")  center no-repeat,url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 1.png') left top no-repeat,url('/src/assets/THEME 1/LAYER 3/02.LAYER RIGHT 1.png') top no-repeat;
-  background-size:contain,contain,contain,cover;
+  background-size:contain,contain,100% 100%,cover;
 }
 #quotes{
   background: url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url("/src/assets/THEME 1/LAYER 2/03.LAYER MID 1.png")  center no-repeat,url('/src/assets/THEME 1/LAYER 2/01.LAYER LEFT 1.png') left top no-repeat,url('/src/assets/THEME 1/LAYER 2/02.LAYER\ RIGHT\ 1.png') right top no-repeat;
-  background-size:cover,cover,contain,contain;
+  background-size:cover,100% 100%,cover,cover;
+  height: 100vh;
 }
-#layer1-1{
-  position:absolute; 
-  top:0;
-  left:0; 
-  pointer-events: none; 
-  height: inherit;
-    width: inherit;
-}
-#layer1-2{
-  position:absolute; 
-  top:0;
-  left:0; 
-  pointer-events: none;
-}
-#layer1-3{
-  position:absolute; 
-  top:0;
-  right:0; 
-   pointer-events: none; 
-   height: inherit;
-    width: inherit;
-}
-#layer1-4{
-  position:absolute; 
-  bottom:0;
-  right:0;
-  pointer-events: none;
-}
+
 #bgAll{
-  background: url("/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png") left top repeat, url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png') right top repeat, url('/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png') left top no-repeat,url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png') right bottom no-repeat;
-  background-size:contain, contain, 100%,100%;
+  background: url("/src/assets/THEME 1/LAYER 1/03.LAYER\ MID\ 1.png") center no-repeat,url("/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png") left top repeat, url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png') right top repeat, url('/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png') left top no-repeat,url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png') right bottom no-repeat;
+  background-size: cover,cover,cover,  cover, cover,cover;
 }
+
+#circleFig{
+  background:  url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 2.png") center no-repeat;
+  background-size: 200% 200% ;
+}
+
+/* Warna */
+.gold-background {
+  background: linear-gradient(45deg, rgba(255, 215, 0, 0.8), rgba(255, 255, 255, 0.5));
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  border-radius: 100vw;
+}
+
+.cardBG{
+  background-color:burlywood ;
+  border-radius: 5vw;
+}
+
+#imgFrame{
+  position: absolute;
+  width: 100vw;
+}
+
+/* Media queries untuk layar ponsel */
+@media screen and (max-width: 767px) {
+  #commentBG {
+    background: url('/src/assets/THEME 1/LAYER 9/01.LAYER BACKROUND 1.png') center no-repeat;
+    background-size: 100% 100%;
+  }
+
+  #weddingGift {
+    background: url('/src/assets/THEME 1/LAYER 7/01.LAYER LEFT 1.png') left top no-repeat,
+                url('/src/assets/THEME 1/LAYER 7/02.LAYER RIGHT 1.png') right top no-repeat;
+    background-size: 100% 100%, 100% 100%;
+  }
+
+  #lovestory {
+    background: url("/src/assets/THEME 1/LAYER 4/02.LAYER RIGHT 1.png")  right top no-repeat;
+    background-size: cover;
+  }
+
+  #pasangan {
+    background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 1.png') left top no-repeat;
+    background-size: 100% 100%;
+  }
+
+  #quotes {
+    background: url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 1.png')  center no-repeat;
+    background-size: 100% 100%;
+  }
+
+  #bgAll{
+      background:  url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat;
+      background-size: cover;  
+  }
+  
+
+}
+
 </style>
 <template>
 
-
-  <div class="justify-content-center align-items-center" id="bgAll">
-    <h1>You are Invited to The Weeding of</h1>
-    <div class="mt-4 mb-4 rounded-circle">
+  <div id="bgAll">      
+    <h1 class="mb-4"> You are Invited to The Weeding</h1>  
+     
+    <div  id="circleFig">
       <img
-        :src='data["fotoGallery"][1]["url"]'
-        class="rounded-circle img-fluid"
-        style="max-width: 100%;"
-      />
-    </div>
+            :src='data["fotoGallery"][1]["url"]'
+            class="rounded-circle"
+            style="width: 50vw;"
+            id="imgCoverBG"
+        />
+      </div>
+
     <h1>{{ data["dataNikahan"]["namaCowo"] }} & {{ data["dataNikahan"]["namaCewe"] }}</h1>
     <small>{{data["nikah"]["tglAkad"].substring(0,10)}}</small>
 
@@ -189,32 +224,12 @@ export default {
         </div>
       </div>
     </div>
-            <!-- <img
-              src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png"
-              class="img-fluid h-100"
-              id="layer1-1"
-            />
-            <img
-              src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png"
-              class="img-fluid"
-              id="layer1-2"
-            />
-            <img
-              src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png"
-              class="img-fluid h-100"
-              id="layer1-3"
-        
-            />
-            <img
-              src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png"
-              class="img-fluid"
-              id="layer1-4"
-            /> -->
+
   </div>
 
   <div class="d-flex justify-content-center align-items-center" id="quotes">
     <hr class="mt-4" />
-      <blockquote class="blockquote w-75">
+      <blockquote class="blockquote">
         <p >
           "Mencintai dan dicintai adalah puncak kebahagiaan dan kekayaan. Semoga
           kalian tidak pernah melupakan harta berharga ini sepanjang hari
@@ -224,18 +239,11 @@ export default {
           Someone famous in <cite title="Source Title">Bang Toyib</cite>
         </footer>
       </blockquote>
-
-   
-     <!-- <img
-              src="/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png"
-              class="img-fluid h-100"
-              style="position:absolute;  pointer-events: none;  object-fit: fill;"
-     /> -->
   </div>
 
-  <div id="pasangan">
-      <div>
-        <div class="row">
+<div id="pasangan">
+      <div class="col d-flex justify-content-center align-items-center">
+        <div class="">
           <h5>
             Dengan Memohon Rahmat dan Ridho dari Allah SWT, Kami Bermasksud
             Menyelenggarakan Pernikahan
@@ -243,13 +251,12 @@ export default {
         </div>
       </div>
 
-      <div class="row justify-content-center mt-2">
+      <div class="d-flex justify-content-center mt-2">
         <div class="col-6 col-md-3">
           <div class="card bg-dark text-white" style="height: 300px;">
             <img
               :src='data["fotoGallery"][5]["url"]'
               class="card-img img-fluid"
-              alt="..."
               style="height: 100%; width: 100%; object-fit: cover;"
             />
             <div
@@ -261,7 +268,7 @@ export default {
         </div>
       </div>
 
-      <div class="row mt-3">
+      <div class="mt-3">
         <small>Putri yang tercinta dari:</small>
         <h6>{{data["dataNikahan"]["namaOrtuCewe1"]}} & {{data["dataNikahan"]["namaOrtuCewe2"]}}</h6>
       </div>
@@ -270,12 +277,12 @@ export default {
         <h1>{{ "&" }}</h1>
       </div>
 
-      <div class="row">
+      <div class="">
         <small>Putra yang tercinta dari:</small>
         <h6>{{data["dataNikahan"]["namaOrtuCowo1"]}} & {{data["dataNikahan"]["namaOrtuCowo2"]}}</h6>
       </div>
 
-      <div class="row justify-content-center mt-3">
+      <div class="d-flex justify-content-center mt-3">
         <div class="col-6 col-md-3">
           <div class="card bg-dark text-white" style="height: 300px;">
             <img
@@ -295,19 +302,18 @@ export default {
 </div>
 
 <div id="lovestory">
-  <div>
-    <div class="row">
+
+  <div class="container pt-4">
+    <div class="row gold-background">
       <div class="col text-center">
-        <hr class="w-25 d-inline-block mt-0 mb-2" />
-        <h2 class="d-inline-block me-1 ms-1">Love Story</h2>
-        <hr class="w-25 d-inline-block mt-0 mb-2" />
+        <h2 class="d-inline-block me-1 ms-1 text-white">LOVE STORY</h2>
       </div>
     </div>
   </div>
 
-  <div class="container py-5">
+  <div class="container py-3">
     <div class="main-timeline-2">
-      <div class="container py-5">
+      <div class="container py-3">
       <div class="main-timeline-2">
         <div v-for="(item, i) in data.dataLoveStory"  :class="i % 2 === 1 ? 'timeline-2 left-2' : 'timeline-2 right-2'">
           <div class="card">
@@ -332,12 +338,11 @@ export default {
 </div>
 
 <div id="weddingGift">
-  <div class="container">
-    <div class="row">
+
+  <div class="container pb-2">
+    <div class="row gold-background">
       <div class="col text-center">
-        <hr class="w-25 d-inline-block mt-0 mb-2" />
-        <h2 class="d-inline-block me-1 ms-1">Lokasi</h2>
-        <hr class="w-25 d-inline-block mt-0 mb-2" />
+        <h2 class="d-inline-block me-1 ms-1 text-white">LOKASI</h2>
       </div>
     </div>
   </div>
@@ -353,7 +358,7 @@ export default {
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-     
+
       <div
         class="col d-flex flex-column justify-content-center align-items-center"
       >
@@ -366,20 +371,18 @@ export default {
   </div>
 
   <div class="container mt-5">
-    <div class="row">
+    <div class="row gold-background">
       <div class="col text-center">
-        <hr class="w-25 d-inline-block mt-0 mb-2" />
-        <h2 class="d-inline-block me-1 ms-1">Weeding Gift</h2>
-        <hr class="w-25 d-inline-block mt-0 mb-2" />
+        <h2 class="d-inline-block me-1 ms-1 text-white">WEDDING GIFT</h2>
       </div>
     </div>
   </div>
 
-  <div class="container mt-3">
+  <div class="container pb-3">
     <div class="row flex-column justify-content-center align-items-center">
       <div class="col-md-3">
         <h4>  {{data["dataGift"][0]["namaBank"]}}</h4>
-     
+
         <h4> No Rekening :  {{data["dataGift"][0]["noRek"]}}</h4>
       </div>
       <div
@@ -392,49 +395,23 @@ export default {
 </div>
 
 <div id="commentBG">
-  <div class="container">
+
+
+  <div class="container pb-3">
     <div class="row">
-      <div class="col text-center">
-        <hr class="w-25 d-inline-block mt-0 mb-2" />
-        <h2 class="d-inline-block me-1 ms-1">Ucapan</h2>
-        <hr class="w-25 d-inline-block mt-0 mb-2" />
+      <div class="col text-center gold-background">
+        <h2 class="d-inline-block me-1 ms-1 text-white">UCAPAN SPESIAL</h2>
       </div>
     </div>
   </div>
 
   <section>
-    <div class="container py-5">
-      <div class="row d-flex justify-content-start align-items-start">
-      <div class="col-md-12 col-lg-10">
-        <div class="card text-dark" v-for="(item, i) in dataKomen" :key="i">
-          <div class="card-body" style="align-self: start;">
-            <div>
-              <div>
-                <h6 class="fw-bold d-flex justify-content-start align-items-start">{{ item.nama }}</h6>
-                <div class="d-flex align-items-start justify-content-start mb-3 is-start">
-                  <p class="mb-0">
-                    <span class="badge bg-success" v-if="item.status === true">Datang</span>
-                    <span class="badge bg-danger" v-else>Tidak Datang</span>
-                  </p>
-                </div>
-                <p class="mb-0">
-                  {{ item.isi }}
-                </p>
-              </div>
-            </div>
-          </div>
-          <hr class="my-0" />
-        </div>
-      </div>
-    </div>
-    </div>
 
-    <div class="card-footer border-0">
-      <h2 class="d-inline-block me-1 ms-1">Kirim Ucapan Anda</h2>
-      <div class="d-flex flex-start w-100">
-        <div class="form-outline w-100">
-          <input type="text" placeholder="Masukan Nama Anda" class="form-control" v-model="namaKomen"/>
-          <select class="form-control" v-model="statusKomen">
+    <div>
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="w-75">
+          <input type="text" placeholder="Masukan Nama Anda" class="form-control mb-2" v-model="namaKomen"/>
+          <select class="form-control mb-2" v-model="statusKomen">
             <option disabled selected>Pilih Status Kehadiran</option>
             <option value="true">Datang</option>
             <option value="false">Tidak Datang</option>
@@ -449,14 +426,41 @@ export default {
           ></textarea>
         </div>
       </div>
-      <div class="float-end mt-2 pt-1">
-        <div class="row">
+      <div>
+        <div class="mt-2 pb-2">
           <div class="col">
-            <button type="button" class="btn btn-primary btn-sm" @click="postKomen">Post</button>
+            <button type="button" class="btn btn-dark btn-md" @click="postKomen">Post</button>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="container">
+      <div>
+      <div class="col-md-12 col-lg-10">
+        <div class="card text-dark mb-2" v-for="(item, i) in dataKomen" :key="i" style="background-color: transparent; border: 0;">
+          <div class="card-body cardBG" style="align-items: start;">
+            <div>
+              <div>
+                <h6 class="fw-bold d-flex justify-content-start align-items-start">{{ item.nama }}</h6>
+                <div class="d-flex align-items-start justify-content-start">
+                  <p>
+                    <span class="badge bg-success" v-if="item.status === true">Datang</span>
+                    <span class="badge bg-danger" v-else>Tidak Datang</span>
+                  </p>
+                </div>
+                <p style="text-align: start;">
+                  {{item.isi}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
   </section>
-</div>  
+</div>
 </template>

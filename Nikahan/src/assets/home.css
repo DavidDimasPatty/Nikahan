@@ -7,7 +7,7 @@
   content: "";
   position: absolute;
   width: 3px;
-  background-color: black;
+  background-color: goldenrod;
   top: 0;
   bottom: 0;
   left: 50%;
@@ -28,7 +28,7 @@
   width: 25px;
   height: 25px;
   right: -11px;
-  background-color: black;
+  background-color: gold;
   top: 15px;
   border-radius: 50%;
   z-index: 1;

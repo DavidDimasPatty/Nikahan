@@ -107,8 +107,8 @@ export default {
 <style scoped>
 
 #main-content{
-  background-image: url('/src/assets/THEME 1/LAYER 1/00.BACKGROUND THEME 1.png');
-  background-size:contain;
+  /* background-image: url('/src/assets/THEME 1/LAYER 1/00.BACKGROUND THEME 1.png');
+  background-size:contain; */
 }
 .overlay {
   position: fixed;
@@ -126,7 +126,6 @@ export default {
 .overlay-content {
   width: 100%;
   height: 100%;
-  padding: 20px;
   text-align: center;
 }
 
@@ -158,8 +157,6 @@ export default {
 
 .spinner-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.5);
@@ -252,15 +249,13 @@ export default {
     <button @click="toggleMute" class="sticky-button btn btn-dark">   <i :class="'bi bi-volume' + (isMuted ? '-mute':'-up' )"></i></button>
   </div>
 
-  <div  id="main-content" v-if="!isLoading">
-
-
+  <div  id="main-content" v-if="!isLoading" style="background-color: black;">
     <body class="mb-5">
       <Nav></Nav>
       <router-view></router-view>
     </body>
 
-    <footer class="mt-auto">
+    <footer class="mt-auto" style="background-color: black;">
       <p>© 2024 My Vue.js App</p>
     </footer>
   </div>
