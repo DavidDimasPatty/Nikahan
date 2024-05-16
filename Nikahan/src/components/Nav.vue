@@ -14,25 +14,26 @@ export default {
 <template>
     <div id="wrapper" class="pb-3">
         <center id="pinggir">
-            <router-link :to="'/' + id" class="navi" style="color:white;">Home</router-link> 
-            <router-link :to="'/Galeri/' + id" class="navi" style="color:white;">Galeri</router-link> 
+            <router-link :to="'/' + id" class="navi" style="color:black;">Home</router-link> 
+            <router-link :to="'/Galeri/' + id" class="navi" style="color:black;">Galeri</router-link> 
         </center>
     </div>
 </template>
 
 <style>
     .router-link-active {
-        border-bottom: 2px solid white; 
+        border-bottom: 2px solid black; 
     }
     #wrapper{
         /* background-image: url('/src/assets/THEME 1/LAYER 1/00.BACKGROUND THEME 1.png');
         background-size:contain;
-        background-position: center; */
-        background-color: black;
+        background-position: center;
+        background-color: black; */
+        background-color: white;
     }
     #pinggir{
-        color:white;
-        /* background: url("/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png") top no-repeat, url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png') right top no-repeat;
+        /* color:white;
+        background: url("/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png") top no-repeat, url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png') right top no-repeat;
         background-size:cover, cover; */
     }
 </style>
