@@ -20,6 +20,13 @@ setup(){
 <template>
 
   <div id="bgGallery">
+    <div id="wrapper" class="">
+        <center id="pinggir">
+            <router-link :to="'/' + id" class="navi" style="color:black;">Home</router-link> 
+            <router-link :to="'/Galeri/' + id" class="navi" style="color:black;">Galeri</router-link> 
+        </center>
+    </div>
+    
     <h1>{{ data["dataNikahan"]["namaCowo"] }} & {{ data["dataNikahan"]["namaCewe"] }} Gallery</h1>
     <div class="row">
      

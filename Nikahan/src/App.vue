@@ -251,7 +251,7 @@ export default {
 
   <div  id="main-content" v-if="!isLoading" style="background-color: black;">
     <body class="mb-5">
-      <Nav></Nav>
+      <!-- <Nav></Nav> -->
       <router-view></router-view>
     </body>
 

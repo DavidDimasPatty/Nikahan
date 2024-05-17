@@ -26,6 +26,8 @@ export default {
     const isiKomen=ref("");
     const namaKomen=ref("");
     const statusKomen=ref(true);
+    const route = useRoute();
+    const id = route.params.id;
     const idAcara=ref(data.value["dataNikahan"]["id"]);
     // Mengupdate countdown setiap detik
     setInterval(() => {
@@ -66,7 +68,7 @@ export default {
         } catch (error) {
           console.error('Error posting:', error);
         }
-      }
+      }      
 
     return {
       data,
@@ -85,14 +87,14 @@ export default {
 };
 </script>
 <style>
-#commentBG{
+/* #commentBG{
   background: url('/src/assets/THEME 1/LAYER 9/01.LAYER BACKROUND 2.png') left top repeat, url('/src/assets/THEME 1/LAYER 9/01.LAYER BACKROUND 3.png') right bottom no-repeat,url('/src/assets/THEME 1/LAYER 9/01.LAYER BACKROUND 1.png') center no-repeat;
   background-size:contain,contain,100% 100%;
-}
-#weddingGift{
+} */
+/* #weddingGift{
   background: url('/src/assets/THEME 1/LAYER 7/01.LAYER LEFT 2.png') left top no-repeat, url('/src/assets/THEME 1/LAYER 7/02.LAYER RIGHT 2.png') right bottom no-repeat,url('/src/assets/THEME 1/LAYER 7/01.LAYER LEFT 1.png') left top no-repeat,url('/src/assets/THEME 1/LAYER 7/02.LAYER RIGHT 1.png') right top no-repeat;
   background-size:contain,contain,100% 100%,100% 100%;
-}
+} */
 #lovestory{
   background: url('/src/assets/THEME 1/LAYER 4/03.LAYER MID 4.png') center no-repeat;
   background-size:cover;
@@ -109,7 +111,7 @@ export default {
 
 #bgAll{
   background: url("/src/assets/THEME 1/LAYER 1/03.LAYER\ MID\ 1.png") center no-repeat,url("/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png") left top repeat, url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png') right top repeat, url('/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png') left top no-repeat,url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png') right bottom no-repeat;
-  background-size: cover,cover,cover,  cover, cover,cover;
+  background-size: cover,cover,100%,  100%, cover,cover;
 }
 
 #circleFig{
@@ -292,16 +294,17 @@ main {
   font-family: 'Roboto', sans-serif;
 }
 
+  
 .cardsLS {
-  width: 24rem;
-  height: 36rem;
+  width:260px;
+  height: 300px;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   position: relative;
   color: rgb(240, 240, 240);
   box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
- 
+  
   img {
     position: absolute;
     object-fit: cover;
@@ -321,34 +324,33 @@ main {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: normal;
     text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.85);
+    width:100%;
+    border-radius: 20px 20px 0px 0px/ 20px 20px 0px 0px;
+    bottom: 0px;
   }
   
-  p, a {
+  p{
     position: absolute;
     opacity: 0;
-    max-width: 80%;
+    width: 100%;
+    inset: 79px auto auto 30px;
     transition: opacity .3s ease-out;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100%;
+    text-align: start;
   }
-  
-  p {
-    inset: auto auto 80px 30px;
-  }
-  
-  a {
-    inset: auto auto 40px 30px;
-    color: inherit;
-    text-decoration: none;
-  }
-  
+ 
   &:hover h2 {
     inset: auto auto 220px 30px;
     transition: inset .3s ease-out;
   }
   
-  &:hover p, &:hover a {
+  &:hover p{
     opacity: 1;
     transition: opacity .5s .1s ease-in;
   }
+
   
   &:hover img {
     transition: opacity .3s ease-in;
@@ -357,24 +359,20 @@ main {
 
 }
 
-.material-symbols-outlined {
-  vertical-align: middle;
-}
-
 
 
 /* Media queries untuk layar ponsel */
 @media screen and (max-width: 767px) {
-  #commentBG {
+  /* #commentBG {
     background: url('/src/assets/THEME 1/LAYER 9/01.LAYER BACKROUND 1.png') center no-repeat;
     background-size: 100% 100%;
-  }
-
+  } */
+/* 
   #weddingGift {
     background: url('/src/assets/THEME 1/LAYER 7/01.LAYER LEFT 1.png') left top no-repeat,
                 url('/src/assets/THEME 1/LAYER 7/02.LAYER RIGHT 1.png') right top no-repeat;
     background-size: 100% 100%, 100% 100%;
-  }
+  } */
 
   /* #lovestory {
     background: url("/src/assets/THEME 1/LAYER 4/02.LAYER RIGHT 1.png")  right top no-repeat;
@@ -419,14 +417,175 @@ main {
     border-radius: 30% 30% 20% 20% / 20% 20% 20% 20%;
     overflow: hidden;
   }
+}
 
+
+.cardBank{
+  width: 320px;
+  height: 190px;
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+  perspective:600px;
+  
+}
+
+.card__part{
+    box-shadow: 1px 1px #aaa3a3;
+    top: 0;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    display: inline-block;
+    width: 320px;
+    height: 190px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    background-color: gold;
+    -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.card__front{
+  padding: 18px;
+  -webkit-transform: rotateY(0);
+  -moz-transform: rotateY(0);
+}
+
+.card__back {
+  padding: 18px 0;
+-webkit-transform: rotateY(-180deg);
+-moz-transform: rotateY(-180deg);
+}
+
+.card__black-line {
+    margin-top: 5px;
+    height: 38px;
+    background-color: #303030;
+}
+
+.card__logo {
+    height: 16px;
+}
+
+.card__front-logo{
+      position: absolute;
+    top: 18px;
+    right: 18px;
+}
+.card__square {
+    border-radius: 5px;
+    height: 30px;
+}
+
+.card_numer {
+    display: block;
+    width: 100%;
+    word-spacing: 4px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.card__space-75 {
+    width: 75%;
+    float: left;
+}
+
+.card__space-25 {
+    width: 25%;
+    float: left;
+}
+
+.card__label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 1px;
+}
+
+.card__info {
+    margin-bottom: 0;
+    margin-top: 5px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card__back-content {
+    padding: 15px 15px 0;
+}
+.card__secret--last {
+    color: #303030;
+    text-align: right;
+    margin: 0;
+    font-size: 14px;
+}
+
+.card__secret {
+    padding: 5px 12px;
+    background-color: #fff;
+    position:relative;
+}
+
+.card__secret:before{
+  content:'';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  height: calc(100% + 6px);
+  width: calc(100% - 42px);
+  border-radius: 4px;
+  background: repeating-linear-gradient(45deg, #ededed, #ededed 5px, #f9f9f9 5px, #f9f9f9 10px);
+}
+
+.card__back-logo {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.card__back-square {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.cardBank:hover .card__front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
 
 }
 
+.cardBank:hover .card__back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+}
 </style>
 <template>
 
-  <div id="bgAll" style="height: 100%;">      
+  <div id="bgAll" style="height: 100%;">   
+
+    <div>
+        <div>
+            <router-link :to="'/' + id" class="navi" style="color:black;">Home</router-link> 
+            <router-link :to="'/Galeri/' + id" class="navi" style="color:black;">Galeri</router-link> 
+        </div>
+    </div>   
+
     <h1 class="mb-4"> You are Invited to The Weeding</h1>  
      
     <div  id="circleFig">
@@ -562,14 +721,9 @@ main {
                   {{ item.judul }}
                 </h2>
                 <p>
+                  <br>
                   {{ item.isi }}
                 </p>
-                <a href="#" class="button">
-                  Find out more 
-                  <span class="material-symbols-outlined">
-                    arrow_right_alt
-                  </span>
-                </a>
               </div>
             </div>
           </main>
@@ -664,19 +818,33 @@ main {
     </div>
   </div>
 
-  <div class="container pb-3">
-    <div class="row flex-column justify-content-center align-items-center">
-      <div class="col-md-3">
-        <h4>  {{data["dataGift"][0]["namaBank"]}}</h4>
-
-        <h4> No Rekening :  {{data["dataGift"][0]["noRek"]}}</h4>
+  <div class="d-flex justify-content-center align-items-center mt-5 mb-5">
+      <div class="cardBank" >
+        <div class="card__front card__part">
+          <img class="card__front-square card__square" >
+          <p class="card_numer">**** **** **** 6258</p>
+          <div class="card__space-75">
+            <span class="card__label">Card holder</span>
+            <p class="card__info">John Doe</p>
+          </div>
+          <div class="card__space-25">
+            <span class="card__label">Expires</span>
+                  <p class="card__info">10/25</p>
+          </div>
+        </div>
+        
+        <div class="card__back card__part">
+          <div class="card__black-line"></div>
+          <div class="card__back-content">
+            <div class="card__secret">
+              <p class="card__secret--last">420</p>
+            </div>
+            <img class="card__back-square card__square">
+            <img class="card__back-logo card__logo">
+            
+          </div>
+        </div>
       </div>
-      <div
-        class="mt-3 col-md-2 d-flex flex-column justify-content-center align-items-center"
-      >
-      <h4> Atas Nama :  {{data["dataGift"][0]["an"]}}</h4>
-      </div>
-    </div>
   </div>
 </div>
 
