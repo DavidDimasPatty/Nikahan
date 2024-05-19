@@ -3,6 +3,7 @@ import "../assets/home.css";
 import axios from "axios";
 import { computed, watch,ref,onMounted } from 'vue';
 import store from '../store/index.js';
+import {useRoute,useRouter} from "vue-router";
 
 export default {
   computed: {
@@ -81,42 +82,185 @@ export default {
       statusKomen,
       idAcara,
       postKomen,
-      dataKomen
+      dataKomen,
+      id
     };
   },
 };
 </script>
 <style>
-/* #commentBG{
-  background: url('/src/assets/THEME 1/LAYER 9/01.LAYER BACKROUND 2.png') left top repeat, url('/src/assets/THEME 1/LAYER 9/01.LAYER BACKROUND 3.png') right bottom no-repeat,url('/src/assets/THEME 1/LAYER 9/01.LAYER BACKROUND 1.png') center no-repeat;
-  background-size:contain,contain,100% 100%;
-} */
-/* #weddingGift{
-  background: url('/src/assets/THEME 1/LAYER 7/01.LAYER LEFT 2.png') left top no-repeat, url('/src/assets/THEME 1/LAYER 7/02.LAYER RIGHT 2.png') right bottom no-repeat,url('/src/assets/THEME 1/LAYER 7/01.LAYER LEFT 1.png') left top no-repeat,url('/src/assets/THEME 1/LAYER 7/02.LAYER RIGHT 1.png') right top no-repeat;
-  background-size:contain,contain,100% 100%,100% 100%;
-} */
-#lovestory{
-  background: url('/src/assets/THEME 1/LAYER 4/03.LAYER MID 4.png') center no-repeat;
+
+@font-face {
+    font-family: "font1";
+    src: url("src/assets/THEME 1REV/FONT THEME 1/SCRIPALT.ttf");
+}
+
+@font-face 
+{
+    font-family: "font2";
+    src: url("src/assets/THEME 1REV/FONT THEME 1/SCRIPTIN.ttf");
+}
+
+@font-face 
+{
+    font-family: "font3";
+    src: url("src/assets/THEME 1REV/FONT THEME 1/Vogue.ttf");
+}
+
+/* ///////////////////////////DIV 1 (UTAMA)////////////////////// */
+#judulAtas{
+  font-family: "font3";
+  color:  goldenrod;
+  text-shadow: 0 0 2px;
+}
+
+#namaPasangan{
+  font-family: "font2";
+  color:  goldenrod;
+  text-shadow: 0 0 2px;
+  font-size: 60px;
+}
+#tanggalNikah{
+  font-family: "font3";
+  color:  goldenrod;
+  text-shadow: 0 0 1px;
+  font-size: 24px;
+}
+.fontWaktu{
+  font-family: "font3";
+  color:  gold !important;
+  text-shadow: 0 0 1px;
+  font-size: 25px;
+}
+.fontDescWaktu{
+  font-family: "font3";
+  color:  gold !important;
+  text-shadow: 0 0 1px;
+  font-size: 30px;
+}
+/* ////////////////////// DIV 2 (QUOTES) //////////////////////////// */
+
+#blockQuotes{
+  font-family: century;
+  color:  gold !important;
+  text-shadow: 0 0 1px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  font-size: 25px;
+}
+
+
+
+/* ////////////////////DIV 3 (PASANGAN)//////////////////////// */
+
+#ucapanDoa{
+  font-family: "font3";
+  color:  gold !important;
+  text-shadow: 0 0 1px;
+  font-size: 25px;
+}
+
+#orangTua1{
+  font-family: "font3";
+  color:  gold !important;
+  text-shadow: 0 0 1px;
+  font-size: 25px;
+}
+
+#orangTua2{
+  font-family: century;
+  color:  gold !important;
+  text-shadow: 0 0 1px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  font-size: 25px;
+}
+
+.framePasangan{
+  position: absolute;
+  width: 250px;
+  top:200px;
+}
+
+/* ///////////////////////////////////////////////////// */
+#commentBG{
+  background: url('src/assets/THEME 1REV/7.WEDDING GIFT & UCAPAN/TENGAH.png') center no-repeat;
   background-size:cover;
-}
-#pasangan{
-  background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') center no-repeat,url("/src/assets/THEME 1/LAYER 3/02.LAYER RIGHT 2.png")  center no-repeat,url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 1.png') left top no-repeat,url('/src/assets/THEME 1/LAYER 3/02.LAYER RIGHT 1.png') top no-repeat;
-  background-size:contain,contain,cover,cover;
-}
-#quotes{
-  background: url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url("/src/assets/THEME 1/LAYER 2/03.LAYER MID 1.png")  center no-repeat;
-  background-size:cover,100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
+#weddingGift{
+  background: url('src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background-size:cover;
+  height: 100vh;
+  position: relative;
+}
+
+.weddCard{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#lovestory{
+  background: url('src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background-size:cover;
+}
+
+#pasangan{
+  background: url('/src/assets/THEME 1REV/3.PASANGANNYA/KIRI.png') left no-repeat,url('/src/assets/THEME 1REV/3.PASANGANNYA/KANAN.png') right no-repeat;
+  background-size:contain,contain;
+  height: 100%;
+  position: relative;
+}
+
+#quotes{
+  background: url('/src/assets/THEME 1/LAYER 2/02.LAYER RIGHT 2.png') right repeat,url('/src/assets/THEME 1/LAYER 2/01.LAYER LEFT 2.png')  left no-repeat, url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url("/src/assets/THEME 1/LAYER 2/03.LAYER MID 1.png")  center no-repeat;
+  background-size:cover,cover,cover,cover;
+  height: 100vh;
+  position: relative;
+}
+
 #bgAll{
-  background: url("/src/assets/THEME 1/LAYER 1/03.LAYER\ MID\ 1.png") center no-repeat,url("/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png") left top repeat, url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png') right top repeat, url('/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png') left top no-repeat,url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png') right bottom no-repeat;
-  background-size: cover,cover,100%,  100%, cover,cover;
+  background: url("/src/assets/THEME 1REV/1.AWAL/TENGAH.png") center no-repeat,url("/src/assets/THEME 1REV/1.AWAL/KIRI.png") left top no-repeat, url('/src/assets/THEME 1REV/1.AWAL/KANAN.png') right top no-repeat;
+  background-size: cover,contain,contain;
+  height: 100vh;
+}
+
+#lokasiBG{
+  background: url("/src/assets/THEME 1REV/5.LOKASI/KIRI.png") left no-repeat,url("/src/assets/THEME 1REV/5.LOKASI/KANAN.png") right no-repeat;
+  background-size: contain,contain;
+  height: 100vh;
 }
 
 #circleFig{
-  background:  url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 2.png") center no-repeat;
-  background-size: 200% 200% ;
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#contentUtama{
+  margin: 0;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width:80%;
+}
+
+#quotesPasangan{
+  top: 35%;
+  width: 30%;
+  position:absolute;
 }
 
 /* Warna */
@@ -127,8 +271,9 @@ export default {
 }
 
 .cardBG{
-  background-color:burlywood ;
-  border-radius: 5vw;
+  background: url('/src/assets/THEME 1REV/3.PASANGANNYA/KANAN.png') right no-repeat,url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat;
+  background-size:contain,20%;
+  height: 150px;
 }
 
 #imgFrame{
@@ -137,11 +282,11 @@ export default {
 }
 
 .cardImg{
-  background-color: lightgreen;
   height: 400px;
   width: 250px;
   border-radius: 100px 100px 30px 30px / 60px 60px 30px 30px;
   overflow: hidden;
+  position: relative;
 }
 
 .cardsExcKiri {
@@ -362,7 +507,7 @@ main {
 
 
 /* Media queries untuk layar ponsel */
-@media screen and (max-width: 767px) {
+@media screen and (max-width:1200px) {
   /* #commentBG {
     background: url('/src/assets/THEME 1/LAYER 9/01.LAYER BACKROUND 1.png') center no-repeat;
     background-size: 100% 100%;
@@ -385,13 +530,22 @@ main {
   }
 
   #quotes {
-    background: url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 1.png')  center no-repeat;
-    background-size: cover;
+    background:  url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url("/src/assets/THEME 1/LAYER 2/03.LAYER MID 1.png")  center no-repeat;
+    background-size:cover,cover;
+    height: 100vh;
+    position: relative;
   }
 
+  #quotesPasangan{
+  top: 35%;
+  width: 100%;
+  position:absolute;
+}
+
   #bgAll{
-      background:  url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat;
-      background-size: cover;  
+    background: url("/src/assets/THEME 1REV/1.AWAL/TENGAH.png") center no-repeat;
+    background-size: cover;
+    height: 100vh;  
   }
 
   .cardsExcKiri{
@@ -574,75 +728,113 @@ main {
     -webkit-transform: rotateY(0deg);
     -moz-transform: rotateY(0deg);
 }
+
+#commentOne{
+  border-radius: 10px;
+  width: 75%;
+
+}
+#cardscroll{
+  border-radius: 20px;
+  background-color: whitesmoke;
+  overflow-y: scroll; 
+  height:400px;
+}
+#hari{
+  background: rgb(125,149,185);
+background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+}
+#jam{
+  background: rgb(125,149,185);
+background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+}
+#menit{
+  background: rgb(125,149,185);
+background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+}
+#detik{
+  background: rgb(125,149,185);
+background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+}
 </style>
 <template>
 
-  <div id="bgAll" style="height: 100%;">   
+  <div id="bgAll">   
 
-    <div>
+    <div class="mb-2">
         <div>
             <router-link :to="'/' + id" class="navi" style="color:black;">Home</router-link> 
             <router-link :to="'/Galeri/' + id" class="navi" style="color:black;">Galeri</router-link> 
         </div>
     </div>   
 
-    <h1 class="mb-4"> You are Invited to The Weeding</h1>  
+    <h1 class="mb-4" id="judulAtas"> YOU ARE INVITED TO THE WEDDING OF</h1>  
      
     <div  id="circleFig">
       <img
             :src='data["fotoGallery"][1]["url"]'
             class="rounded-circle"
-            style="width: 50vw;"
+            style="width: 350px;"
             id="imgCoverBG"
         />
-      </div>
+    </div>
 
-    <h1>{{ data["dataNikahan"]["namaCowo"] }} & {{ data["dataNikahan"]["namaCewe"] }}</h1>
-    <small>{{data["nikah"]["tglAkad"].substring(0,10)}}</small>
+    <div id="contentUtama">
+      <h1 id="namaPasangan">{{ data["dataNikahan"]["namaCowo"] }} & {{ data["dataNikahan"]["namaCewe"] }}</h1>
+      <small id="tanggalNikah">{{data["nikah"]["tglAkad"].substring(0,10)}}</small>
 
-    <div class="container mt-4">
-      <div class="row align-items-center justify-content-center g-2">
-        <div class="col">
-          <div class="card shadow rounded bg-light">
-            <div class="card-body">
-              <h6 class="card-title mt-auto">Hari</h6>
-              <h4>{{ days }}</h4>
+      <div class="container mt-4">
+        <div class="row align-items-center justify-content-center g-2">
+
+          <div class="col">
+            <div class="card shadow rounded bg-light" id="hari">
+              <div class="card-body">
+                <h4 class="fontWaktu">{{ days }}</h4>
+                <h6 class="card-title mt-auto fontDescWaktu">Hari</h6>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <div class="card shadow rounded bg-light">
-            <div class="card-body">
-              <h6 class="card-title mt-auto">Jam</h6>
-              <h4>{{ hours }}</h4>
+
+          <div class="col">
+            <div class="card shadow rounded bg-light" id="jam">
+              <div class="card-body">
+                <h4 class="fontWaktu">{{ hours }}</h4>
+                <h6 class="card-title mt-auto fontDescWaktu">Jam</h6>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <div class="card shadow rounded bg-light">
-            <div class="card-body">
-              <h6 class="card-title mt-auto">Menit</h6>
-              <h4>{{ minutes }}</h4>
+
+          <div class="col">
+            <div class="card shadow rounded bg-light" id="menit">
+              <div class="card-body">
+                <h4 class="fontWaktu">{{ minutes }}</h4>
+                <h6 class="card-title mt-auto fontDescWaktu">Menit</h6>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <div class="card shadow rounded bg-light">
-            <div class="card-body">
-              <h6 class="card-title mt-auto">Detik</h6>
-              <h4>{{ seconds }}</h4>
+
+          <div class="col">
+            <div class="card shadow rounded bg-light" id="detik">
+              <div class="card-body">
+                <h4 class="fontWaktu">{{ seconds }}</h4>
+                <h6 class="card-title mt-auto fontDescWaktu">Detik</h6>
+              </div>
             </div>
           </div>
+          
         </div>
       </div>
     </div>
-
   </div>
 
   <div class="d-flex justify-content-center align-items-center" id="quotes">
-    <hr class="mt-4" />
-      <blockquote class="blockquote">
-        <p >
+    <hr class=""/>
+      <blockquote class="blockquote" id="quotesPasangan">
+        <p id="blockQuotes">
           "Mencintai dan dicintai adalah puncak kebahagiaan dan kekayaan. Semoga
           kalian tidak pernah melupakan harta berharga ini sepanjang hari
           bersama."
@@ -656,7 +848,7 @@ main {
 <div id="pasangan">
       <div class="d-flex justify-content-center align-items-center">
         <div class="">
-          <h5>
+          <h5 id="ucapanDoa">
             Dengan Memohon Rahmat dan Ridho dari Allah SWT, Kami Bermasksud
             Menyelenggarakan Pernikahan
           </h5>
@@ -672,9 +864,16 @@ main {
         </div>
       </div>
 
+      <div>
+        <img
+              src='/src/assets\THEME 1\LAYER 3\03.LAYER MID 3.png'
+              class="framePasangan"
+          />
+      </div>
+
       <div class="mt-3">
-        <small>Putri yang tercinta dari:</small>
-        <h6>{{data["dataNikahan"]["namaOrtuCewe1"]}} & {{data["dataNikahan"]["namaOrtuCewe2"]}}</h6>
+        <small id="orangTua1">Putri yang tercinta dari:</small>
+        <h6 id="orangTua2">{{data["dataNikahan"]["namaOrtuCewe1"]}} & {{data["dataNikahan"]["namaOrtuCewe2"]}}</h6>
       </div>
 
       <div class="container">
@@ -682,8 +881,8 @@ main {
       </div>
 
       <div class="">
-        <small>Putra yang tercinta dari:</small>
-        <h6>{{data["dataNikahan"]["namaOrtuCowo1"]}} & {{data["dataNikahan"]["namaOrtuCowo2"]}}</h6>
+        <small id="orangTua1">Putra yang tercinta dari:</small>
+        <h6 id="orangTua2">{{data["dataNikahan"]["namaOrtuCowo1"]}} & {{data["dataNikahan"]["namaOrtuCowo2"]}}</h6>
       </div>
 
       <div class="d-flex justify-content-center mt-2">
@@ -744,63 +943,65 @@ main {
     </div>
   </div>
 
-<div class="container">
-  <div class="row">
+<div id="lokasiBG"> 
+  <div class="container">
+    <div class="row">
 
-    <div class="col justify-content-center align-items-center lokasiKiri">
-      <div class="cardsExcKiri">
-        <div class="image-container">
-          <img  :src='data["fotoGallery"][4]["url"]' class="card-img" alt="Photo">
+      <div class="col justify-content-center align-items-center lokasiKiri">
+        <div class="cardsExcKiri">
+          <div class="image-container">
+            <img  :src='data["fotoGallery"][4]["url"]' class="card-img" alt="Photo">
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="col">
+      <div class="col">
 
-      <div class="row mb-4">
-        <figure class="image-block">
-          <h1>Resepsi</h1>
-          <img :src='data["fotoGallery"][4]["url"]' alt="" />
-          <h2>
-              More Info
-          </h2>
-          <figcaption>
-            <h3>
-              More Info
-            </h3>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            <button>
-              More Info
-            </button>
-          </figcaption>
-        </figure>
+        <div class="row mb-4">
+          <figure class="image-block">
+            <h1>Resepsi</h1>
+            <img :src='data["fotoGallery"][4]["url"]' alt="" />
+            <h2>
+                More Info
+            </h2>
+            <figcaption>
+              <h3>
+                More Info
+              </h3>
+              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+              <button>
+                More Info
+              </button>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="row">
+          <figure class="image-block">
+            <h1>Akad Nikah</h1>
+            <img :src='data["fotoGallery"][4]["url"]' alt="" />
+            <h2>
+                More Info
+            </h2>
+            <figcaption>
+              <h3>
+                More Info
+              </h3>
+              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+              <button>
+                More Info
+              </button>
+            </figcaption>
+          </figure>
+        </div>
+
       </div>
 
-      <div class="row">
-        <figure class="image-block">
-          <h1>Akad Nikah</h1>
-          <img :src='data["fotoGallery"][4]["url"]' alt="" />
-          <h2>
-              More Info
-          </h2>
-          <figcaption>
-            <h3>
-              More Info
-            </h3>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            <button>
-              More Info
-            </button>
-          </figcaption>
-        </figure>
-      </div>
-
-    </div>
-
-    <div class="col justify-content-center align-items-center lokasiKanan">
-      <div class="cardsExcKanan">
-        <div class="image-container">
-          <img  :src='data["fotoGallery"][4]["url"]' class="card-img" alt="Photo">
+      <div class="col justify-content-center align-items-center lokasiKanan">
+        <div class="cardsExcKanan">
+          <div class="image-container">
+            <img  :src='data["fotoGallery"][4]["url"]' class="card-img" alt="Photo">
+          </div>
         </div>
       </div>
     </div>
@@ -808,17 +1009,16 @@ main {
 </div>
 
 
-
-<div id="weddingGift">
-  <div class="container mt-5">
+<div class="container mt-5">
     <div class="row gold-background">
       <div class="col text-center">
         <h2 class="d-inline-block me-1 ms-1 text-white">WEDDING GIFT</h2>
       </div>
     </div>
-  </div>
+</div>
 
-  <div class="d-flex justify-content-center align-items-center mt-5 mb-5">
+<div id="weddingGift">
+  <div class="d-flex justify-content-center align-items-center weddCard">
       <div class="cardBank" >
         <div class="card__front card__part">
           <img class="card__front-square card__square" >
@@ -849,10 +1049,7 @@ main {
 </div>
 
 
-<div id="commentBG">
-
-
-  <div class="container pb-3">
+<div class="container pb-3">
     <div class="row">
       <div class="col text-center gold-background">
         <h2 class="d-inline-block me-1 ms-1 text-white">UCAPAN SPESIAL</h2>
@@ -860,60 +1057,66 @@ main {
     </div>
   </div>
 
-  <section>
+<div id="commentBG">
 
-    <div>
-      <div class="d-flex justify-content-center align-items-center">
-        <div class="w-75">
-          <input type="text" placeholder="Masukan Nama Anda" class="form-control mb-2" v-model="namaKomen"/>
-          <select class="form-control mb-2" v-model="statusKomen">
-            <option disabled selected>Pilih Status Kehadiran</option>
-            <option value="true">Datang</option>
-            <option value="false">Tidak Datang</option>
-          </select>
-          <textarea
-            class="form-control"
-            id="textAreaExample"
-            rows="4"
-            style="background: #fff;"
-            placeholder="Masukan Pesan Anda Untuk Kedua Mempelai"
-            v-model="isiKomen"
-          ></textarea>
+ <div id="commentOne">
+  <div class="d-flex justify-content-center align-items-center mb-4">
+    <div class="card card-primary w-75">
+        <div class="card-body">
+            <input type="text" placeholder="Masukan Nama Anda" class="form-control mb-2" v-model="namaKomen"/>
+            <select class="form-control mb-2" v-model="statusKomen">
+              <option disabled selected>Pilih Status Kehadiran</option>
+              <option value="true">Datang</option>
+              <option value="false">Tidak Datang</option>
+            </select>
+            <textarea
+              class="form-control"
+              id="textAreaExample"
+              rows="4"
+              style="background: #fff;"
+              placeholder="Masukan Pesan Anda Untuk Kedua Mempelai"
+              v-model="isiKomen"
+            ></textarea>
         </div>
-      </div>
-      <div>
-        <div class="mt-2 pb-2">
-          <div class="col">
-            <button type="button" class="btn btn-dark btn-md" @click="postKomen">Post</button>
+        <div class="card-footer">
+          <div class="mt-2 pb-2">
+            <div class="col">
+              <button type="button" class="btn btn-dark btn-md" @click="postKomen">Post</button>
+            </div>
           </div>
         </div>
-      </div>
     </div>
+  </div>
 
-    <div class="container d-flex align-items-center justify-content-center">
-      <div class="col-md-12 col-lg-10">
-        <div class="card text-dark mb-2" v-for="(item, i) in dataKomen" :key="i" style="background-color: transparent; border: 0;">
-          <div class="card-body cardBG" style="align-items: center;">
+  <div>
+    <div class="d-flex justify-content-center align-items-center ">
+      <div class="col-md-12 col-lg-10" id="cardscroll">
+        <hr/>
+        <div class="text-dark mb-2 " v-for="(item, i) in dataKomen" :key="i" style="background-color: transparent; border: 0;">
+         
+          <div class="cardBG" style="align-items: center;">
             <div>
               <div>
-                <h6 class="fw-bold d-flex justify-content-start align-items-start ms-3">{{ item.nama }}</h6>
-                <div class="d-flex align-items-start justify-content-start">
+                <h6 class="fw-bold d-flex justify-content-center align-items-center ms-3">{{ item.nama }}</h6>
+                <div class="d-flex align-items-center justify-content-center">
                   <p>
                     <span class="badge bg-success ms-3" v-if="item.status === true">Datang</span>
                     <span class="badge bg-danger ms-3" v-else>Tidak Datang</span>
                   </p>
                 </div>
-                <p style="text-align: start;" class="ms-3">
+                <p style="text-align: center;" class="ms-3">
                   {{item.isi}}
                 </p>
               </div>
             </div>
           </div>
+          <hr/>
+
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-
-  </section>
 </div>
 </template>

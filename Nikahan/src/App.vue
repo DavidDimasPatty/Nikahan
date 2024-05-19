@@ -256,7 +256,7 @@ export default {
     </body>
 
     <footer class="mt-auto" style="background-color: black;">
-      <p>© 2024 My Vue.js App</p>
+      <p>© 2024 Kartu Sera</p>
     </footer>
   </div>
 </template>
