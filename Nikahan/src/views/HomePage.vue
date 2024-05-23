@@ -111,7 +111,9 @@ export default {
 #judulAtas{
   font-family: "font3";
   color:  goldenrod;
-  text-shadow: 0 0 2px;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
 #namaPasangan{
@@ -158,6 +160,8 @@ export default {
   color:  gold !important;
   text-shadow: 0 0 1px;
   font-size: 25px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
 #orangTua1{
@@ -165,14 +169,16 @@ export default {
   color:  gold !important;
   text-shadow: 0 0 1px;
   font-size: 25px;
+  text-shadow: 2px 0 #000, -2px 0  #000, 0 2px  #000, 0 -2px  #000,
+               1px 1px  #000, -1px -1px  #000, 1px -1px  #000, -1px 1px  #000;
 }
 
 #orangTua2{
   font-family: century;
-  color:  gold !important;
+  color:  whitesmoke !important;
   text-shadow: 0 0 1px;
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  text-shadow: 2px 0 #000, -2px 0  #000, 0 2px  #000, 0 -2px  #000,
+               1px 1px  #000, -1px -1px  #000, 1px -1px  #000, -1px 1px  #000;
   font-size: 25px;
 }
 
@@ -182,6 +188,13 @@ export default {
   top:200px;
 }
 
+#andFont{
+  font-family: "font2";
+  color:  gold !important;
+  text-shadow: 0 0 1px;
+  font-size: 50px;
+}
+
 /* ///////////////////////////////////////////////////// */
 #commentBG{
   background: url('src/assets/THEME 1REV/7.WEDDING GIFT & UCAPAN/TENGAH.png') center no-repeat;
@@ -189,7 +202,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
 }
 
 #weddingGift{
@@ -245,6 +258,10 @@ export default {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+#imgCoverBG{
+  width: 350px;
 }
 
 #contentUtama{
@@ -523,9 +540,19 @@ main {
     background: url("/src/assets/THEME 1/LAYER 4/02.LAYER RIGHT 1.png")  right top no-repeat;
     background-size: cover;
   } */
-
+  
+#weddingGift{
+  background: url('src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background-size:cover;
+  height: 50vh;
+  position: relative;
+}
+  #lokasiBG{
+ background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') left no-repeat;
+    background-size: cover;
+}
   #pasangan {
-    background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') center no-repeat;
+    background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') left no-repeat;
     background-size: cover;
   }
 
@@ -570,6 +597,10 @@ main {
     height: 400px;
     border-radius: 30% 30% 20% 20% / 20% 20% 20% 20%;
     overflow: hidden;
+  }
+
+  #imgCoverBG{
+    width: 41vh;
   }
 }
 
@@ -775,10 +806,10 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
     <h1 class="mb-4" id="judulAtas"> YOU ARE INVITED TO THE WEDDING OF</h1>  
      
     <div  id="circleFig">
+      
       <img
             :src='data["fotoGallery"][1]["url"]'
-            class="rounded-circle"
-            style="width: 350px;"
+            class="rounded-circle mt-4"
             id="imgCoverBG"
         />
     </div>
@@ -864,12 +895,6 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         </div>
       </div>
 
-      <div>
-        <img
-              src='/src/assets\THEME 1\LAYER 3\03.LAYER MID 3.png'
-              class="framePasangan"
-          />
-      </div>
 
       <div class="mt-3">
         <small id="orangTua1">Putri yang tercinta dari:</small>
@@ -877,7 +902,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
       </div>
 
       <div class="container">
-        <h1>{{ "&" }}</h1>
+        <h1 id="andFont">{{ "&" }}</h1>
       </div>
 
       <div class="">
@@ -898,7 +923,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 
 <div id="lovestory">
 
-  <div class="container pt-4">
+  <div class="container pt-4 mt-5">
     <div class="row gold-background">
       <div class="col text-center">
         <h2 class="d-inline-block me-1 ms-1 text-white">LOVE STORY</h2>
@@ -935,7 +960,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 </div>
 
 
-<div class="container pb-2">
+<div class="container pb-2 mt-5">
     <div class="row gold-background">
       <div class="col text-center">
         <h2 class="d-inline-block me-1 ms-1 text-white">LOKASI</h2>
@@ -1049,7 +1074,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 </div>
 
 
-<div class="container pb-3">
+<div class="container pb-3 mt-5">
     <div class="row">
       <div class="col text-center gold-background">
         <h2 class="d-inline-block me-1 ms-1 text-white">UCAPAN SPESIAL</h2>
@@ -1089,7 +1114,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
   </div>
 
   <div>
-    <div class="d-flex justify-content-center align-items-center ">
+    <div class="d-flex justify-content-center align-items-center mb-5">
       <div class="col-md-12 col-lg-10" id="cardscroll">
         <hr/>
         <div class="text-dark mb-2 " v-for="(item, i) in dataKomen" :key="i" style="background-color: transparent; border: 0;">
