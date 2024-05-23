@@ -22,7 +22,7 @@ export default {
 
 <style>
     .router-link-active {
-        border-bottom: 2px solid black; 
+        border-bottom: 2px solid goldenrod; 
     }
     #wrapper{
         background-image: url('THEME 1/LAYER 1/00.BACKGROUND THEME 1.png');

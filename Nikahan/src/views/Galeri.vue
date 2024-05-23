@@ -26,21 +26,33 @@ setup(){
   color:  goldenrod;
   text-shadow: 0 0 2px;
   font-size: 50px;
+  pointer-events: none; 
 }
 
 .gambar{
   width: 300px;
   height: 300px;
 }
-
+#homeNav{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  goldenrod !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+#galNav{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  goldenrod !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
 </style>
 <template>
 
   <div id="bgGallery">
     <div id="wrapper" class="">
-        <div>
-            <router-link :to="'/' + id" class="navi" style="color:black;">Home</router-link> 
-            <router-link :to="'/Galeri/' + id" class="navi" style="color:black;">Galeri</router-link> 
+      <div>
+            <router-link :to="'/' + id" class="navi"  id="homeNav">Home</router-link> 
+            <router-link :to="'/Galeri/' + id" class="navi"id="galNav" >Galeri</router-link> 
         </div>
     </div>
 

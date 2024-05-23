@@ -249,6 +249,7 @@ export default {
   background: url("/src/assets/THEME 1REV/5.LOKASI/KIRI.png") left no-repeat,url("/src/assets/THEME 1REV/5.LOKASI/KANAN.png") right no-repeat;
   background-size: contain,contain;
   height: 100vh;
+  margin-bottom: 100px;
 }
 
 #circleFig{
@@ -791,6 +792,19 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 84%);
   border: none;
 }
+
+#homeNav{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  goldenrod !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+#galNav{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  goldenrod !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
 </style>
 <template>
 
@@ -798,12 +812,12 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 
     <div class="mb-2">
         <div>
-            <router-link :to="'/' + id" class="navi" style="color:black;">Home</router-link> 
-            <router-link :to="'/Galeri/' + id" class="navi" style="color:black;">Galeri</router-link> 
+            <router-link :to="'/' + id" class="navi"  id="homeNav">Home</router-link> 
+            <router-link :to="'/Galeri/' + id" class="navi"id="galNav" >Galeri</router-link> 
         </div>
     </div>   
 
-    <h1 class="mb-4" id="judulAtas"> YOU ARE INVITED TO THE WEDDING OF</h1>  
+    <h1 id="judulAtas"> YOU ARE INVITED TO THE WEDDING OF</h1>  
      
     <div  id="circleFig">
       
@@ -923,7 +937,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 
 <div id="lovestory">
 
-  <div class="container pt-4 mt-5">
+  <div class="container pt-4 mt-5 mb-5">
     <div class="row gold-background">
       <div class="col text-center">
         <h2 class="d-inline-block me-1 ms-1 text-white">LOVE STORY</h2>
@@ -960,7 +974,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 </div>
 
 
-<div class="container pb-2 mt-5">
+<div class="container pb-2 mt-5 mb-5">
     <div class="row gold-background">
       <div class="col text-center">
         <h2 class="d-inline-block me-1 ms-1 text-white">LOKASI</h2>
@@ -1034,7 +1048,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 </div>
 
 
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
     <div class="row gold-background">
       <div class="col text-center">
         <h2 class="d-inline-block me-1 ms-1 text-white">WEDDING GIFT</h2>
@@ -1074,7 +1088,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 </div>
 
 
-<div class="container pb-3 mt-5">
+<div class="container pb-3 mt-5 mb-5">
     <div class="row">
       <div class="col text-center gold-background">
         <h2 class="d-inline-block me-1 ms-1 text-white">UCAPAN SPESIAL</h2>
