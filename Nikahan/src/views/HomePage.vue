@@ -198,7 +198,7 @@ export default {
 /* ///////////////////////////////////////////////////// */
 #commentBG{
   background: url('src/assets/THEME 1REV/7.WEDDING GIFT & UCAPAN/TENGAH.png') center no-repeat;
-  background-size:cover;
+  background-size:100% 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -299,13 +299,52 @@ export default {
   width: 100vw;
 }
 
-.cardImg{
-  height: 400px;
-  width: 250px;
-  border-radius: 100px 100px 30px 30px / 60px 60px 30px 30px;
-  overflow: hidden;
-  position: relative;
+.cardImg 
+{
+            position: relative;
+            height: 400px;
+            width: 250px;
+            border-radius: 150px 150px 30px 30px / 100px 100px 30px 30px;
+            overflow: hidden;
 }
+
+.cardImg2
+{
+            position: relative;
+            height: 400px;
+            width: 250px;
+            border-radius: 150px 150px 30px 30px / 100px 100px 30px 30px;
+            overflow: hidden;
+}
+
+.cardImg::before 
+{
+   content: "";
+   position: absolute;
+   top: 140px;
+   left: 0px;
+   right: 0px;
+   bottom: 0;
+   pointer-events: none; /* Supaya tidak mengganggu interaksi pengguna dengan konten di dalam cardImg */
+   background: url('src/assets/THEME 1/LAYER 3/03.LAYER MID 1.png') no-repeat;
+   background-size: 230px; /* Sesuaikan jika diperlukan */
+   z-index: 1; /* Supaya berada di atas gambar tetapi di bawah konten lainnya jika ada */
+}
+
+.cardImg2::before 
+{
+   content: "";
+   position: absolute;
+   top: 140px;
+   left: 0px;
+   right: 0px;
+   bottom: 0;
+   pointer-events: none; /* Supaya tidak mengganggu interaksi pengguna dengan konten di dalam cardImg */
+   background: url('src/assets/THEME 1/LAYER 3/03.LAYER MID 3.png') no-repeat;
+   background-size: 230px; /* Sesuaikan jika diperlukan */
+   z-index: 1; /* Supaya berada di atas gambar tetapi di bawah konten lainnya jika ada */
+}
+
 
 .cardsExcKiri {
   width: 250px;
@@ -526,10 +565,14 @@ main {
 
 /* Media queries untuk layar ponsel */
 @media screen and (max-width:1200px) {
-  /* #commentBG {
-    background: url('/src/assets/THEME 1/LAYER 9/01.LAYER BACKROUND 1.png') center no-repeat;
-    background-size: 100% 100%;
-  } */
+  #commentBG {
+    background: url('src/assets/THEME 1REV/7.WEDDING GIFT & UCAPAN/TENGAH.png') center no-repeat;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
 /* 
   #weddingGift {
     background: url('/src/assets/THEME 1/LAYER 7/01.LAYER LEFT 1.png') left top no-repeat,
@@ -904,7 +947,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         <div class="cardImg">
           <img
             :src='data["fotoGallery"][5]["url"]'
-            style="width: 100%; height: 100%; object-fit: cover;"
+            style="width: 80%; height: 80%; object-fit: cover;"
             />
         </div>
       </div>
@@ -925,10 +968,10 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
       </div>
 
       <div class="d-flex justify-content-center mt-2">
-        <div class="cardImg">
+        <div class="cardImg2">
           <img
             :src='data["fotoGallery"][4]["url"]'
-            style="width: 100%; height: 100%; object-fit: cover;"
+            style="width: 80%; height: 80%; object-fit: cover;"
             />
         </div>
       </div>
