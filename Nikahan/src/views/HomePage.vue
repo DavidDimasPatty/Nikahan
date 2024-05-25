@@ -413,6 +413,7 @@ figure {
 	justify-content: center;
   border: 5px solid goldenrod;
 	width: 100%;
+  height: 508px;
 	border-radius: 30% 30% 20% 20% / 20% 20% 20% 20%;
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	overflow: hidden;
@@ -425,7 +426,7 @@ figure {
 			opacity: 0;
 			transform: scale(0.7);
 		}
-		img {
+		video {
 			transform: scale(1.25);
 		}
 		figcaption {
@@ -466,9 +467,9 @@ figure {
 		z-index: 999;
     border-radius: inherit;
 	}
-	img {
+	video {
     width: 100%;
-		transition: 0.25s;
+    transition: 0.25s;
 	}
 	figcaption {
 		position: absolute;
@@ -635,7 +636,7 @@ main {
 
   #bgAll{
   background: url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat;
-  background-size: cover,contain,contain;
+  background-size: cover;
   height: 100vh;
   }
 
@@ -869,6 +870,8 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
   text-shadow: 0 0 0px;
   font-size: 20px;
 }
+
+
 </style>
 <template>
 
@@ -1054,7 +1057,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
       <div class="col justify-content-center align-items-center lokasiKiri">
         <div class="cardsExcKiri">
           <div class="image-container">
-            <img  :src='data["fotoGallery"][4]["url"]' class="card-img" alt="Photo">
+            <img  :src='data["fotoGallery"][7]["url"]' class="card-img" alt="Photo">
           </div>
         </div>
       </div>
@@ -1064,7 +1067,9 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         <div class="col mb-4">
           <figure class="image-block">
             <h1>Resepsi</h1>
-            <img :src='data["fotoGallery"][4]["url"]' alt="" />
+            <video autoplay loop muted >
+              <source :src='data["dataVideo"]["urlVideo"]' type="video/mp4">
+            </video>
             <h2>
                 More Info
             </h2>
@@ -1083,7 +1088,9 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         <div class="col">
           <figure class="image-block">
             <h1>Akad Nikah</h1>
-            <img :src='data["fotoGallery"][4]["url"]' alt="" />
+            <video autoplay loop muted >
+              <source :src='data["dataVideo"]["urlVideo"]' type="video/mp4">
+            </video>
             <h2>
                 More Info
             </h2>
@@ -1104,7 +1111,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
       <div class="col justify-content-center align-items-center lokasiKanan">
         <div class="cardsExcKanan">
           <div class="image-container">
-            <img  :src='data["fotoGallery"][4]["url"]' class="card-img" alt="Photo">
+            <img  :src='data["fotoGallery"][6]["url"]' class="card-img" alt="Photo">
           </div>
         </div>
       </div>
