@@ -240,11 +240,17 @@ export default {
   position: relative;
 }
 
-#bgAll{
+/* #bgAll{
   background: url("/src/assets/THEME 1REV/1.AWAL/TENGAH.png") center no-repeat,url("/src/assets/THEME 1REV/1.AWAL/KIRI.png") left top no-repeat, url('/src/assets/THEME 1REV/1.AWAL/KANAN.png') right top no-repeat;
   background-size: cover,contain,contain;
   height: 100vh;
-}
+} */
+
+#bgAll{
+  background: url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat,url("/src/assets/THEME 1REV/1.AWAL/KIRI.png") left top no-repeat, url('/src/assets/THEME 1REV/1.AWAL/KANAN.png') right top no-repeat;
+  background-size: cover,contain,contain;
+  height: 100vh;
+} 
 
 #lokasiBG{
   background: url("/src/assets/THEME 1REV/5.LOKASI/KIRI.png") left no-repeat,url("/src/assets/THEME 1REV/5.LOKASI/KANAN.png") right no-repeat;
@@ -252,37 +258,39 @@ export default {
   height: 100%;
 }
 
-#circleFig{
-  margin: 0;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
 
 #imgCoverBG{
   width: 350px;
 }
 
-#imgCoverBG::before 
+#circleFig
+{  
+  top: 25vh;
+  position: absolute;
+  width: 350px;
+  border-radius: 50%;
+}
+
+#circleFig::after 
 {
    content: "";
    position: absolute;
-   top: 145px;
-   left: 20px;
+   top: -120px;
+   left: -372px;
    right: 0px;
-   bottom: 0;
+   bottom: 0px;
    pointer-events: none; /* Supaya tidak mengganggu interaksi pengguna dengan konten di dalam cardImg */
-   background: url('src/assets/THEME 1/LAYER 3/03.LAYER MID 3.png') no-repeat;
-   background-size: 230px; /* Sesuaikan jika diperlukan */
+   background: url('/src/assets/THEME 1/LAYER 1/03.LAYER MID 2.png') no-repeat;
+   background-size: 1100px; /* Sesuaikan jika diperlukan */
    z-index: 1; /* Supaya berada di atas gambar tetapi di bawah konten lainnya jika ada */
 }
+
+
 
 #contentUtama{
   margin: 0;
   position: absolute;
-  top:91%;
+  top:90vh;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -308,10 +316,6 @@ export default {
   height: 150px;
 }
 
-#imgFrame{
-  position: absolute;
-  width: 100vw;
-}
 
 .cardImg 
 {
@@ -630,9 +634,9 @@ main {
 }
 
   #bgAll{
-    background: url("/src/assets/THEME 1REV/1.AWAL/TENGAH.png") center no-repeat;
-    background-size: cover;
-    height: 100vh;  
+  background: url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat;
+  background-size: cover,contain,contain;
+  height: 100vh;
   }
 
   .cardsExcKiri{
@@ -879,14 +883,15 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 
     <h1 id="judulAtas"> YOU ARE INVITED TO THE WEDDING OF</h1>  
      
-    <div  id="circleFig">
-      
-      <img
+
+    <div class="d-flex justify-content-center mt-2" >
+        <div  id="circleFig">
+          <img
             :src='data["fotoGallery"][1]["url"]'
-            class="rounded-circle mt-4"
-            id="imgCoverBG"
-        />
-    </div>
+            style="width: 80%; height: 80%; object-fit: cover; border-radius: inherit; position: relative; z-index: 0; border: 4px solid goldenrod;"
+            />
+        </div>
+      </div>
 
     <div id="contentUtama">
       <h1 id="namaPasangan">{{ data["dataNikahan"]["namaCowo"] }} & {{ data["dataNikahan"]["namaCewe"] }}</h1>
