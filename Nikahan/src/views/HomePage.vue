@@ -120,25 +120,26 @@ export default {
   font-family: "font2";
   color:  goldenrod;
   text-shadow: 0 0 2px;
-  font-size: 60px;
+  font-size: xx-large;
 }
 #tanggalNikah{
   font-family: "font3";
   color:  goldenrod;
   text-shadow: 0 0 1px;
-  font-size: 24px;
+  font-size: 30px;
 }
 .fontWaktu{
   font-family: "font3";
   color:  gold !important;
   text-shadow: 0 0 1px;
-  font-size: 25px;
+  font-size: large;
 }
+
 .fontDescWaktu{
   font-family: "font3";
   color:  gold !important;
   text-shadow: 0 0 1px;
-  font-size: 30px;
+  font-size: large;
 }
 /* ////////////////////// DIV 2 (QUOTES) //////////////////////////// */
 
@@ -248,8 +249,7 @@ export default {
 #lokasiBG{
   background: url("/src/assets/THEME 1REV/5.LOKASI/KIRI.png") left no-repeat,url("/src/assets/THEME 1REV/5.LOKASI/KANAN.png") right no-repeat;
   background-size: contain,contain;
-  height: 100vh;
-  margin-bottom: 100px;
+  height: 100%;
 }
 
 #circleFig{
@@ -265,14 +265,28 @@ export default {
   width: 350px;
 }
 
+#imgCoverBG::before 
+{
+   content: "";
+   position: absolute;
+   top: 145px;
+   left: 20px;
+   right: 0px;
+   bottom: 0;
+   pointer-events: none; /* Supaya tidak mengganggu interaksi pengguna dengan konten di dalam cardImg */
+   background: url('src/assets/THEME 1/LAYER 3/03.LAYER MID 3.png') no-repeat;
+   background-size: 230px; /* Sesuaikan jika diperlukan */
+   z-index: 1; /* Supaya berada di atas gambar tetapi di bawah konten lainnya jika ada */
+}
+
 #contentUtama{
   margin: 0;
   position: absolute;
-  top: 85%;
+  top:91%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  width:80%;
+  width:100%;
 }
 
 #quotesPasangan{
@@ -335,8 +349,8 @@ export default {
 {
    content: "";
    position: absolute;
-   top: 140px;
-   left: 0px;
+   top: 145px;
+   left: 20px;
    right: 0px;
    bottom: 0;
    pointer-events: none; /* Supaya tidak mengganggu interaksi pengguna dengan konten di dalam cardImg */
@@ -393,9 +407,8 @@ figure {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 50%;
-	min-width: 50%;
-	height: 40%;
+  border: 5px solid goldenrod;
+	width: 100%;
 	border-radius: 30% 30% 20% 20% / 20% 20% 20% 20%;
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	overflow: hidden;
@@ -419,8 +432,8 @@ figure {
 	}
 	h1 {
 		position: absolute;
-		top: 50px;
-		left: 20px;
+		top: 8%;
+		left: 10%;
 		margin: 0;
 		padding: 0;
 		color: white;
@@ -439,27 +452,28 @@ figure {
     background-color: rgba(0, 0, 0, 0.85);
 		font-size: 20px;
     width: 100%;
-    line-height: 1;
+	  min-width: 50%;
+    line-height: 3;
     margin: 0;
 		padding: 0;
 		opacity: 1;
 		transform: scale(1);
 		transition: 0.25s ease;
 		z-index: 999;
+    border-radius: inherit;
 	}
 	img {
-		height: 50vh;
+    width: 100%;
 		transition: 0.25s;
 	}
 	figcaption {
 		position: absolute;
 		bottom: -100%;
-		left: 0;
-		width:inherit;
+    width: 100%;
 		margin: 0;
-    border-radius:10%,10%,0%,0%;
     background-color: rgba(0, 0, 0, 0.85);
 		box-shadow: 0 0 20px black;
+    border-radius: inherit;
 		color: white;
 		transition: 0.25s;
 		h3 {
@@ -505,8 +519,8 @@ main {
   cursor: pointer;
   position: relative;
   color: rgb(240, 240, 240);
-  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
-  
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2); 
+
   img {
     position: absolute;
     object-fit: cover;
@@ -516,6 +530,8 @@ main {
     left: 0;
     opacity: 0.9;
     transition: opacity .2s ease-out;
+    border: 5px solid goldenrod;
+    border-radius: inherit;
   }
 
   h2 {
@@ -603,12 +619,12 @@ main {
   #quotes {
     background:  url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url("/src/assets/THEME 1/LAYER 2/03.LAYER MID 1.png")  center no-repeat;
     background-size:cover,cover;
-    height: 100vh;
+    height: 120vh;
     position: relative;
   }
 
   #quotesPasangan{
-  top: 35%;
+  top: 32%;
   width: 100%;
   position:absolute;
 }
@@ -646,6 +662,7 @@ main {
   #imgCoverBG{
     width: 41vh;
   }
+ 
 }
 
 
@@ -947,7 +964,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         <div class="cardImg">
           <img
             :src='data["fotoGallery"][5]["url"]'
-            style="width: 80%; height: 80%; object-fit: cover;"
+            style="width: 80%; height: 80%; object-fit: cover; border-radius: inherit; position: relative; z-index: 0; border: 4px solid goldenrod;"
             />
         </div>
       </div>
@@ -971,7 +988,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         <div class="cardImg2">
           <img
             :src='data["fotoGallery"][4]["url"]'
-            style="width: 80%; height: 80%; object-fit: cover;"
+            style="width: 80%; height: 80%; object-fit: cover;border-radius: inherit; position: relative; z-index: 0; border: 4px solid goldenrod;"
             />
         </div>
       </div>
@@ -1037,9 +1054,9 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         </div>
       </div>
 
-      <div class="col">
+      <div class="col exTengah">
 
-        <div class="row mb-4">
+        <div class="col mb-4">
           <figure class="image-block">
             <h1>Resepsi</h1>
             <img :src='data["fotoGallery"][4]["url"]' alt="" />
@@ -1058,7 +1075,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
           </figure>
         </div>
 
-        <div class="row">
+        <div class="col">
           <figure class="image-block">
             <h1>Akad Nikah</h1>
             <img :src='data["fotoGallery"][4]["url"]' alt="" />
