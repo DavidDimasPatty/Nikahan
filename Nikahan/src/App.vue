@@ -29,8 +29,8 @@ export default {
         const response = await axios.get("https://localhost:7241/Nikahan/allDataForm?trx_id=" + id);
         console.log(response.data);
         eventData.value =  response.data; 
-        namaCowo.value= response.data["dataNikahan"]["namaCowo"];
-        namaCewe.value= response.data["dataNikahan"]["namaCewe"];
+        namaCowo.value= response.data["dataNikahan"]["namaPendekCowo"];
+        namaCewe.value= response.data["dataNikahan"]["namaPendekCewe"];
         laguBG.value= response.data["dataSong"]["urlSong"];
         tglNikah.value=response.data["nikah"]["tglAkad"].substring(0,10);
         alamatNikah.value=response.data["nikah"]["alamat"];

@@ -124,7 +124,7 @@ export default {
 }
 
 #namaCewe{
-  font-family: "font1";
+  font-family: "font3";
   color:  goldenrod;
   text-shadow: 0 0 2px;
   font-size: 50px;
@@ -214,12 +214,17 @@ export default {
 }
 
 #weddingGift{
+  /* background: url('src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background-size:cover; */
+  height: 50vh;
+  position: relative;
+  
+}
+#bgWeddingGift{
   background: url('src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
   background-size:cover;
   height: 100vh;
-  position: relative;
 }
-
 .weddCard{
   position: absolute;
   top: 40%;
@@ -228,6 +233,14 @@ export default {
   transform: translate(-50%, -50%);
 }
 
+.noKomen{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-wrap: wrap;
+  font-size: 30px;
+}
 #lovestory{
   background: url('src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
   background-size:cover;
@@ -614,9 +627,9 @@ main {
   } */
   
 #weddingGift{
-  background: url('src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
-  background-size:cover;
-  height: 50vh;
+  /* background: url('src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background-size:cover; */
+  height: 45vh;
   position: relative;
 }
   #lokasiBG{
@@ -843,6 +856,7 @@ main {
   background-color: whitesmoke;
   overflow-y: scroll; 
   height:400px;
+  min-width: 80%;
 }
 #hari{
   background: rgb(125,149,185);
@@ -898,13 +912,13 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         <div  id="circleFig">
           <img
             :src='data["fotoGallery"][1]["url"]'
-            style="width: 80%; height: 80%; object-fit: cover; border-radius: inherit; position: relative; z-index: 0; border: 4px solid goldenrod;"
+            style="width: 280px; height: 280px; object-fit: cover; border-radius: inherit; position: relative; z-index: 0; border: 4px solid goldenrod;"
             />
         </div>
       </div>
 
     <div id="contentUtama">
-      <h1 id="namaPasangan">{{ data["dataNikahan"]["namaCowo"] }} & {{ data["dataNikahan"]["namaCewe"] }}</h1>
+      <h1 id="namaPasangan">{{ data["dataNikahan"]["namaPendekCowo"] }} & {{ data["dataNikahan"]["namaPendekCewe"] }}</h1>
       <small id="tanggalNikah">{{data["nikah"]["tglAkad"].substring(0,10)}}</small>
 
       <div class="container mt-4">
@@ -955,12 +969,10 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
     <hr class=""/>
       <blockquote class="blockquote" id="quotesPasangan">
         <p id="blockQuotes">
-          "Mencintai dan dicintai adalah puncak kebahagiaan dan kekayaan. Semoga
-          kalian tidak pernah melupakan harta berharga ini sepanjang hari
-          bersama."
+          {{data["dataNikahan"]["quotes"]}}
         </p>
         <footer class="blockquote-footer">
-          Someone famous in <cite title="Source Title">Bang Toyib</cite>
+          <cite title="Source Title">  {{data["dataNikahan"]["authorQuotes"]}}</cite>
         </footer>
       </blockquote>
   </div>
@@ -969,45 +981,45 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
       <div class="d-flex justify-content-center align-items-center">
         <div class="">
           <h5 id="ucapanDoa">
-            Dengan Memohon Rahmat dan Ridho dari Allah SWT, Kami Bermasksud
-            Menyelenggarakan Pernikahan
+            {{data["dataNikahan"]["ajakan"]}}
           </h5>
         </div>
       </div>
     
-      <div class="d-flex justify-content-center mt-2">
+      <div class="mt-3">
+        <small id="orangTua1">{{data["dataNikahan"]["ceweSebagai"] }}</small>
+        <h6 id="orangTua2">{{data["dataNikahan"]["namaOrtuCewe1"]}} & {{data["dataNikahan"]["namaOrtuCewe2"]}}</h6>
+      </div>
+
+      <div class="d-flex justify-content-center mt-5">
         <div class="cardImg">
           <img
             :src='data["fotoGallery"][5]["url"]'
             style="width: 80%; height: 80%; object-fit: cover; border-radius: inherit; position: relative; z-index: 0; border: 4px solid goldenrod;"
             />
-            <h6 id="namaCewe">{{data["dataNikahan"]["namaCewe"] }}</h6>
         </div>
       </div>
-
-
-      <div class="mt-3">
-        <small id="orangTua1">Putri yang tercinta dari:</small>
-        <h6 id="orangTua2">{{data["dataNikahan"]["namaOrtuCewe1"]}} & {{data["dataNikahan"]["namaOrtuCewe2"]}}</h6>
-      </div>
+      
+      <h6 id="namaCewe">{{data["dataNikahan"]["namaCewe"] }}</h6>
 
       <div class="container">
-        <h1 id="andFont">{{ "&" }}</h1>
+        <h1 id="andFont" class="mb-5">{{ "&" }}</h1>
       </div>
 
-      <div class="">
-        <small id="orangTua1">Putra yang tercinta dari:</small>
-        <h6 id="orangTua2">{{data["dataNikahan"]["namaOrtuCowo1"]}} & {{data["dataNikahan"]["namaOrtuCowo2"]}}</h6>
-      </div>
+      <h6 id="namaCewe">{{data["dataNikahan"]["namaCowo"] }}</h6>
 
-      <div class="d-flex justify-content-center mt-2">
+      <div class="d-flex justify-content-center mt-5">
         <div class="cardImg2">
           <img
             :src='data["fotoGallery"][4]["url"]'
             style="width: 80%; height: 80%; object-fit: cover;border-radius: inherit; position: relative; z-index: 0; border: 4px solid goldenrod;"
             />
-            <h6 id="namaCewe">{{data["dataNikahan"]["namaCowo"] }}</h6>
         </div>
+      </div>
+
+      <div class="">
+        <small id="orangTua1">{{data["dataNikahan"]["cowoSebagai"] }}</small>
+        <h6 id="orangTua2">{{data["dataNikahan"]["namaOrtuCowo1"]}} & {{data["dataNikahan"]["namaOrtuCowo2"]}}</h6>
       </div>
 
 </div>
@@ -1080,13 +1092,20 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
               <source :src='data["dataVideo"]["urlVideo"]' type="video/mp4">
             </video>
             <h2>
-                More Info
+                Lokasi Resepsi
             </h2>
             <figcaption>
               <h3>
-                More Info
+                Lokasi
               </h3>
-              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+              <p>
+                <div>
+                   Alamat Resepsi : {{data.resepsi.alamat}}
+                </div>
+                <div>
+                   Tanggal Resepsi : {{data.resepsi.tglResepsi.substring(0,10)}}
+                </div>
+              </p>
               <button>
                 Buka Google Maps
               </button>
@@ -1101,13 +1120,20 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
               <source :src='data["dataVideo"]["urlVideo"]' type="video/mp4">
             </video>
             <h2>
-                More Info
+              Lokasi Akad Nikah
             </h2>
             <figcaption>
               <h3>
-                More Info
+                Lokasi
               </h3>
-              <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+              <p>
+                <div>
+                   Alamat Akad : {{data.nikah.alamat}}
+                </div>
+                <div>
+                   Tanggal Akad : {{data.nikah.tglAkad.substring(0,10)}}
+                </div>
+              </p>
               <button>
                 Buka Google Maps
               </button>
@@ -1129,7 +1155,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 </div>
 
 
-<div class="container mt-5 mb-5">
+<div class="container mt-5 ">
     <div class="row gold-background">
       <div class="col text-center">
         <h2 class="d-inline-block me-1 ms-1 text-white">WEDDING GIFT</h2>
@@ -1137,39 +1163,62 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
     </div>
 </div>
 
-<div id="weddingGift">
-  <div class="d-flex justify-content-center align-items-center weddCard">
-      <div class="cardBank" >
-        <div class="card__front card__part">
-          <img class="card__front-square card__square" >
-          <p class="card_numer">**** **** **** 6258</p>
-          <div class="card__space-75">
-            <span class="card__label">Card holder</span>
-            <p class="card__info">John Doe</p>
-          </div>
-          <div class="card__space-25">
-            <span class="card__label">Expires</span>
-                  <p class="card__info">10/25</p>
-          </div>
-        </div>
-        
-        <div class="card__back card__part">
-          <div class="card__black-line"></div>
-          <div class="card__back-content">
-            <div class="card__secret">
-              <p class="card__secret--last">420</p>
+<div id="bgWeddingGift">
+  <div v-for="(item, i) in data.dataGift" id="weddingGift">
+    <div v-if="item.method==='Transfer Bank'" class="d-flex justify-content-center align-items-center weddCard">
+        <div class="cardBank">
+          <div class="card__front card__part">
+            <p>{{item.namaBank}}</p>
+            <p class="card_numer">{{item.noRek}}</p>
+            <div class="card__space-100">
+              <span class="card__label">Atas Nama:</span>
+              <p class="card__info">{{item.an}}</p>
             </div>
-            <img class="card__back-square card__square">
-            <img class="card__back-logo card__logo">
-            
+          </div>
+          
+          <div class="card__back card__part">
+            <div class="card__black-line"></div>
+            <div class="card__back-content">
+              <div class="card__secret">
+                <p class="card__secret--last">420</p>
+              </div>
+              <img class="card__back-square card__square">
+              <img class="card__back-logo card__logo">
+              
+            </div>
           </div>
         </div>
-      </div>
+    </div>
+
+    <div  v-else-if="item.method!='Transfer Bank'" class="d-flex justify-content-center align-items-center weddCard">
+        <div class="cardBank">
+          <div class="card__front card__part">
+            <p>{{item.method}}</p>
+            <p class="card_numer">{{item.noHP}}</p>
+            <div class="card__space-100">
+              <span class="card__label">Atas Nama</span>
+              <p class="card__info">{{item.an}}</p>
+            </div>
+          </div>
+          
+          <div class="card__back card__part">
+            <div class="card__black-line"></div>
+            <div class="card__back-content">
+              <div class="card__secret">
+                <p class="card__secret--last">420</p>
+              </div>
+              <img class="card__back-square card__square">
+              <img class="card__back-logo card__logo">
+              
+            </div>
+          </div>
+        </div>
+    </div>
+
   </div>
 </div>
 
-
-<div class="container pb-3 mt-5 mb-5">
+<div class="container pb-3 mt-5">
     <div class="row">
       <div class="col text-center gold-background">
         <h2 class="d-inline-block me-1 ms-1 text-white">UCAPAN SPESIAL</h2>
@@ -1209,6 +1258,15 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
   </div>
 
   <div>
+  <div v-if="dataKomen.length === 0" class="text-dark mb-2">
+        <div class="card card-primary">
+            <div class="card-body">
+              <div class="noKomen">Belum ada komentar untuk ditampilkan.</div>
+            </div>
+        </div>
+  </div>
+
+  <div v-else>
     <div class="d-flex justify-content-center align-items-center mb-5">
       <div class="col-md-12 col-lg-10" id="cardscroll">
         <hr/>
@@ -1233,6 +1291,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
           <hr/>
 
         </div>
+      </div>
       </div>
     </div>
   </div>

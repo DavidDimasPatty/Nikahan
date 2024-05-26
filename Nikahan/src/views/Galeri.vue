@@ -33,6 +33,7 @@ setup(){
 .gambar{
   width: 300px;
   height: 300px;
+  object-fit: cover;
 }
 #homeNav{
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -57,7 +58,7 @@ setup(){
         </div>
     </div>
 
-    <h1 id="namaPasangan" class="mt-3 mb-5">{{ data["dataNikahan"]["namaCowo"] }} & {{ data["dataNikahan"]["namaCewe"] }}'s Gallery</h1>
+    <h1 id="namaPasangan" class="mt-3 mb-5">{{ data["dataNikahan"]["namaPendekCowo"] }} & {{ data["dataNikahan"]["namaPendekCewe"] }}'s Gallery</h1>
     <div class="container d-flex justify-content-center align-items-center"> 
       <div class="row"> 
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0" v-for="(item, i) in data.fotoGallery.slice(3)" >
