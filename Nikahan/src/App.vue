@@ -105,6 +105,22 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+    font-family: "font1";
+    src: url("src/assets/THEME 1REV/FONT THEME 1/SCRIPALT.ttf");
+}
+
+@font-face 
+{
+    font-family: "font2";
+    src: url("src/assets/THEME 1REV/FONT THEME 1/SCRIPTIN.ttf");
+}
+
+@font-face 
+{
+    font-family: "font3";
+    src: url("src/assets/THEME 1REV/FONT THEME 1/Vogue.ttf");
+}
 
 #main-content{
   /* background-image: url('/src/assets/THEME 1/LAYER 1/00.BACKGROUND THEME 1.png');
@@ -112,8 +128,6 @@ export default {
 }
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -181,7 +195,60 @@ export default {
   }
 }
 
+.visitor{
+  font-family: "font3";
+  color:  goldenrod;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.greetings{
+  font-family: "font3";
+  color:  goldenrod;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.namaPasangan{
+  font-family: "font2";
+  color:  goldenrod;
+  text-shadow: 0 0 4px;
+  font-size: 40px;
+}
+.tanggalNikah{
+  font-family: "font3";
+  color:  goldenrod;
+  font-size: 18px;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.lokasiNikah{
+  font-family: "font3";
+  color:  goldenrod;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.imageAwal{
+  position: relative;
+  border:2px solid goldenrod;
+  height: 350px;
+  width: 250px;
+  border-radius: 150px 150px 30px 30px / 100px 100px 30px 30px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.btnUndangan{
+  border-radius: 10px;
+  background-color: goldenrod;
+  color:white;
+  border:none;
+}
 </style>
+
 <template>
   <title>Pernikahan {{ namaCowo }} & {{ namaCewe }}</title>
   <div v-if="isLoading" class="spinner-overlay">
@@ -194,30 +261,23 @@ export default {
     >
       <center>
         <div>
-          <h2 class="text-black">Halo, David</h2>
-          <h2 class="text-black">You're Invited to The Wedding Of</h2>
+          <h2 class="visitor">Halo, David</h2>
+          <h2 class="greetings">You're Invited to The Wedding Of</h2>
         </div>
 
 
-        <div class="card mt-4 col-md-6 mb-4" style="z-index: 1122;">
-          <!-- <div class="position-absolute top-0 end-0 w-200" >
-                      <img src="./assets/bgH1.png" class="img-fluid">
-                    </div>
-                    <div class="position-absolute bottom-0 start-0 w-200">
-                      <img src="./assets/bgH2.png" class="img-fluid">
-                    </div> -->
-          <div class="rounded-top overflow-hidden" style="z-index: 2122;">
+        <div class="" style="z-index: 1122;">
+          <div style="z-index: 2122;">
             <img
               :src="fotoGalleryCover"
-              class="card-img-top img-fluid"
-              style="object-fit: cover; object-position: center; z-index: 2000;"
+              class="imageAwal"
             />
           </div>
         </div>
-        <h1 class="text-black">{{ namaCowo }} & {{ namaCewe }}</h1>
-        <h5 class="text-black">{{tglNikah}}</h5>
-        <h5 class="text-black">{{alamatNikah}}</h5>
-        <button @click="continueToHomePage" class="btn btn-dark mt-4">
+        <h1 class="namaPasangan mt-1">{{ namaCowo }} & {{ namaCewe }}</h1>
+        <h5 class="tanggalNikah">{{tglNikah}}</h5>
+        <h5 class="lokasiNikah">{{alamatNikah}}</h5>
+        <button @click="continueToHomePage" class="btnUndangan">
           Buka Undangan
         </button>
       </center>

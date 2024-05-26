@@ -122,6 +122,13 @@ export default {
   text-shadow: 0 0 2px;
   font-size: xx-large;
 }
+
+#namaCewe{
+  font-family: "font1";
+  color:  goldenrod;
+  text-shadow: 0 0 2px;
+  font-size: 50px;
+}
 #tanggalNikah{
   font-family: "font3";
   color:  goldenrod;
@@ -167,11 +174,11 @@ export default {
 
 #orangTua1{
   font-family: "font3";
-  color:  gold !important;
+  color:  #ad8b43 !important;
   text-shadow: 0 0 1px;
   font-size: 25px;
-  text-shadow: 2px 0 #000, -2px 0  #000, 0 2px  #000, 0 -2px  #000,
-               1px 1px  #000, -1px -1px  #000, 1px -1px  #000, -1px 1px  #000;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
 #orangTua2{
@@ -974,6 +981,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
             :src='data["fotoGallery"][5]["url"]'
             style="width: 80%; height: 80%; object-fit: cover; border-radius: inherit; position: relative; z-index: 0; border: 4px solid goldenrod;"
             />
+            <h6 id="namaCewe">{{data["dataNikahan"]["namaCewe"] }}</h6>
         </div>
       </div>
 
@@ -998,6 +1006,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
             :src='data["fotoGallery"][4]["url"]'
             style="width: 80%; height: 80%; object-fit: cover;border-radius: inherit; position: relative; z-index: 0; border: 4px solid goldenrod;"
             />
+            <h6 id="namaCewe">{{data["dataNikahan"]["namaCowo"] }}</h6>
         </div>
       </div>
 
@@ -1079,7 +1088,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
               </h3>
               <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
               <button>
-                More Info
+                Buka Google Maps
               </button>
             </figcaption>
           </figure>
@@ -1100,7 +1109,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
               </h3>
               <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
               <button>
-                More Info
+                Buka Google Maps
               </button>
             </figcaption>
           </figure>
