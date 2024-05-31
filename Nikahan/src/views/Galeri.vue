@@ -7,9 +7,11 @@ setup(){
   const data = computed(() => store.getters.getData);
   const route = useRoute();
   const id = route.params.id;
+  const visitor = route.params.visitor;
   return{
     data,
-    id
+    id,
+    visitor
   }
 }
 
@@ -53,8 +55,8 @@ setup(){
   <div id="bgGallery">
     <div id="wrapper" class="">
       <div>
-            <router-link :to="'/' + id" class="navi"  id="homeNav">Home</router-link> 
-            <router-link :to="'/Galeri/' + id" class="navi"id="galNav" >Galeri</router-link> 
+            <router-link :to="'/' + id+'/'+visitor" class="navi"  id="homeNav">Home</router-link> 
+            <router-link :to="'/Galeri/' + id+'/'+visitor" class="navi"id="galNav" >Galeri</router-link> 
         </div>
     </div>
 

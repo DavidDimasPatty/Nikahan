@@ -22,7 +22,8 @@ export default {
     const isLoading = ref(true);
     const laguBG=ref('');
     const isMuted= ref(false);
-
+    const visitor = ref();
+    
     const fetchEventData = async () => {
       const id = route.params.id;
       try {
@@ -67,6 +68,7 @@ export default {
     onMounted(async () => {
       await router.isReady().then( async() => {
         isLoading.value = true; 
+        visitor.value=route.params.visitor;
         console.log(route.params.id);
         fetchEventData();
       });
@@ -95,7 +97,8 @@ export default {
       laguBG,
       isMuted,
       toggleMute,
-      continueToHomePage
+      continueToHomePage,
+      visitor
     };
   },
 
@@ -261,7 +264,7 @@ export default {
     >
       <center>
         <div>
-          <h2 class="visitor">Halo, David</h2>
+          <h2 class="visitor">Halo, {{ visitor }}</h2>
           <h2 class="greetings">You're Invited to The Wedding Of</h2>
         </div>
 

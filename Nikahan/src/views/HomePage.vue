@@ -29,6 +29,7 @@ export default {
     const statusKomen=ref(true);
     const route = useRoute();
     const id = route.params.id;
+    const visitor = route.params.visitor;
     const idAcara=ref(data.value["dataNikahan"]["id"]);
     // Mengupdate countdown setiap detik
     setInterval(() => {
@@ -69,7 +70,23 @@ export default {
         } catch (error) {
           console.error('Error posting:', error);
         }
-      }      
+      }
+      
+      const  openGoogleMapsResepsi =()=>
+      {
+        var longt = parseFloat(store.getters.getData["resepsi"]["longt"]);
+        var lat = parseFloat(store.getters.getData["resepsi"]["lat"]);
+        const url = `https://www.google.com/maps?q=${lat},${longt}`;
+        window.open(url, '_blank');
+      }
+
+      const  openGoogleMapsAkad =()=>
+      {
+        var longt = parseFloat(store.getters.getData["nikah"]["longt"]);
+        var lat = parseFloat(store.getters.getData["nikah"]["lat"]);
+        const url = `https://www.google.com/maps?q=${lat},${longt}`;
+        window.open(url, '_blank');
+      }
 
     return {
       data,
@@ -83,7 +100,10 @@ export default {
       idAcara,
       postKomen,
       dataKomen,
-      id
+      id,
+      visitor,
+      openGoogleMapsResepsi,
+      openGoogleMapsAkad
     };
   },
 };
@@ -221,7 +241,7 @@ export default {
   
 }
 #bgWeddingGift{
-  background: url('src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background: url('/src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
   background-size:cover;
   height: 100vh;
 }
@@ -242,7 +262,7 @@ export default {
   font-size: 30px;
 }
 #lovestory{
-  background: url('src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background: url('/src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
   background-size:cover;
 }
 
@@ -491,7 +511,7 @@ figure {
     width: 100%;
     transition: 0.25s;
 	}
-	figcaption {
+	figcaption { 
 		position: absolute;
 		bottom: -100%;
     width: 100%;
@@ -520,7 +540,8 @@ figure {
 			border-radius: 5px;
 			color: white;
 			font-size: 14px;
-			cursor: pointer;
+      cursor: pointer;
+      z-index: 1000; /* Ensure the button is above other elements */
 		}
 	}
 }
@@ -900,8 +921,8 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 
     <div class="mb-2">
         <div>
-            <router-link :to="'/' + id" class="navi"  id="homeNav">Home</router-link> 
-            <router-link :to="'/Galeri/' + id" class="navi"id="galNav" >Galeri</router-link> 
+            <router-link :to="'/' + id+'/'+visitor" class="navi"  id="homeNav">Home</router-link> 
+            <router-link :to="'/Galeri/' + id+'/'+visitor" class="navi"id="galNav" >Galeri</router-link> 
         </div>
     </div>   
 
@@ -1098,15 +1119,13 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
               <h3>
                 Lokasi
               </h3>
-              <p>
                 <div>
                    Alamat Resepsi : {{data.resepsi.alamat}}
                 </div>
                 <div>
                    Tanggal Resepsi : {{data.resepsi.tglResepsi.substring(0,10)}}
                 </div>
-              </p>
-              <button>
+              <button @click="openGoogleMapsResepsi">
                 Buka Google Maps
               </button>
             </figcaption>
@@ -1134,7 +1153,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
                    Tanggal Akad : {{data.nikah.tglAkad.substring(0,10)}}
                 </div>
               </p>
-              <button>
+              <button @click="openGoogleMapsAkad">
                 Buka Google Maps
               </button>
             </figcaption>
@@ -1168,7 +1187,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
     <div v-if="item.method==='Transfer Bank'" class="d-flex justify-content-center align-items-center weddCard">
         <div class="cardBank">
           <div class="card__front card__part">
-            <p>{{item.namaBank}}</p>
+            <p class="text-white">{{item.namaBank}}</p>
             <p class="card_numer">{{item.noRek}}</p>
             <div class="card__space-100">
               <span class="card__label">Atas Nama:</span>
@@ -1193,7 +1212,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
     <div  v-else-if="item.method!='Transfer Bank'" class="d-flex justify-content-center align-items-center weddCard">
         <div class="cardBank">
           <div class="card__front card__part">
-            <p>{{item.method}}</p>
+            <p class="text-white">{{item.method}}</p>
             <p class="card_numer">{{item.noHP}}</p>
             <div class="card__space-100">
               <span class="card__label">Atas Nama</span>
