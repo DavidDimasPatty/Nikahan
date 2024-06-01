@@ -384,7 +384,7 @@ export default {
    right: 0px;
    bottom: 0;
    pointer-events: none; /* Supaya tidak mengganggu interaksi pengguna dengan konten di dalam cardImg */
-   background: url('src/assets/THEME 1/LAYER 3/03.LAYER MID 1.png') no-repeat;
+   background: url('/src/assets/THEME 1/LAYER 3/03.LAYER MID 1.png') no-repeat;
    background-size: 230px; /* Sesuaikan jika diperlukan */
    z-index: 1; /* Supaya berada di atas gambar tetapi di bawah konten lainnya jika ada */
 }
@@ -398,7 +398,7 @@ export default {
    right: 0px;
    bottom: 0;
    pointer-events: none; /* Supaya tidak mengganggu interaksi pengguna dengan konten di dalam cardImg */
-   background: url('src/assets/THEME 1/LAYER 3/03.LAYER MID 3.png') no-repeat;
+   background: url('/src/assets/THEME 1/LAYER 3/03.LAYER MID 3.png') no-repeat;
    background-size: 230px; /* Sesuaikan jika diperlukan */
    z-index: 1; /* Supaya berada di atas gambar tetapi di bawah konten lainnya jika ada */
 }
@@ -508,7 +508,7 @@ figure {
     border-radius: inherit;
 	}
 	video {
-    width: 100%;
+    width: 100vh;
     transition: 0.25s;
 	}
 	figcaption { 
