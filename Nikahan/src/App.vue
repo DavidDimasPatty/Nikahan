@@ -253,73 +253,78 @@ export default {
 </style>
 
 <template>
-  <title>Pernikahan {{ namaCowo }} & {{ namaCewe }}</title>
-  <div v-if="isLoading" class="spinner-overlay">
-      <div class="spinner"></div>
-  </div>
-
-  <div id="overlay" class="overlay">
-    <div
-      class="overlay-content d-flex align-items-center justify-content-center"
-    >
-      <center>
-        <div>
-          <h2 class="visitor">Halo, {{ visitor }}</h2>
-          <h2 class="greetings">You're Invited to The Wedding Of</h2>
-        </div>
-
-
-        <div class="" style="z-index: 1122;">
-          <div style="z-index: 2122;">
-            <img
-              :src="fotoGalleryCover"
-              class="imageAwal"
-            />
-          </div>
-        </div>
-        <h1 class="namaPasangan mt-1">{{ namaCowo }} & {{ namaCewe }}</h1>
-        <h5 class="tanggalNikah">{{tglNikah}}</h5>
-        <h5 class="lokasiNikah">{{alamatNikah}}</h5>
-        <button @click="continueToHomePage" class="btnUndangan">
-          Buka Undangan
-        </button>
-      </center>
+  <div v-if="id!=null || visitor!=null ||tglNikah!=null">
+    <title>Pernikahan {{ namaCowo }} & {{ namaCewe }}</title>
+    <div v-if="isLoading" class="spinner-overlay">
+        <div class="spinner"></div>
     </div>
 
-          <img
-              src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png"
-              class="card-img-top img-fluid"
-              style="z-index:99;position:absolute; top:0;left:0;height: 100%;  pointer-events: none; "
-            />
+    <div id="overlay" class="overlay">
+      <div
+        class="overlay-content d-flex align-items-center justify-content-center"
+      >
+        <center>
+          <div>
+            <h2 class="visitor">Halo, {{ visitor }}</h2>
+            <h2 class="greetings">You're Invited to The Wedding Of</h2>
+          </div>
+
+
+          <div class="" style="z-index: 1122;">
+            <div style="z-index: 2122;">
+              <img
+                :src="fotoGalleryCover"
+                class="imageAwal"
+              />
+            </div>
+          </div>
+          <h1 class="namaPasangan mt-1">{{ namaCowo }} & {{ namaCewe }}</h1>
+          <h5 class="tanggalNikah">{{tglNikah}}</h5>
+          <h5 class="lokasiNikah">{{alamatNikah}}</h5>
+          <button @click="continueToHomePage" class="btnUndangan">
+            Buka Undangan
+          </button>
+        </center>
+      </div>
+
             <img
-              src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png"
-              class="card-img-top img-fluid"
-              style="z-index:99;position:absolute; top:0;left:0; pointer-events: none; "
-            />
-            <img
-              src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png"
-              class="card-img-top img-fluid"
-              style="z-index: 99;position:absolute; top:0;right:0;height: 100%;  pointer-events: none; "
-            />
-            <img
-              src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png"
-              class="card-img-top img-fluid"
-              style="z-index:99;position:absolute; bottom:0;right:0;  pointer-events: none; "
-            />
+                src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png"
+                class="card-img-top img-fluid"
+                style="z-index:99;position:absolute; top:0;left:0;height: 100%;  pointer-events: none; "
+              />
+              <img
+                src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png"
+                class="card-img-top img-fluid"
+                style="z-index:99;position:absolute; top:0;left:0; pointer-events: none; "
+              />
+              <img
+                src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png"
+                class="card-img-top img-fluid"
+                style="z-index: 99;position:absolute; top:0;right:0;height: 100%;  pointer-events: none; "
+              />
+              <img
+                src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png"
+                class="card-img-top img-fluid"
+                style="z-index:99;position:absolute; bottom:0;right:0;  pointer-events: none; "
+              />
+    </div>
+
+    <div id="appButt">
+      <button @click="toggleMute" class="sticky-button btn btn-dark">   <i :class="'bi bi-volume' + (isMuted ? '-mute':'-up' )"></i></button>
+    </div>
+
+    <div  id="main-content" v-if="!isLoading" style="background-color: black;">
+      <body class="mb-5">
+        <!-- <Nav></Nav> -->
+        <router-view></router-view>
+      </body>
+
+      <footer class="mt-auto" style="background-color: black;">
+        <p>© 2024 Kartu Sera</p>
+      </footer>
+    </div>
   </div>
-
-  <div id="appButt">
-    <button @click="toggleMute" class="sticky-button btn btn-dark">   <i :class="'bi bi-volume' + (isMuted ? '-mute':'-up' )"></i></button>
-  </div>
-
-  <div  id="main-content" v-if="!isLoading" style="background-color: black;">
-    <body class="mb-5">
-      <!-- <Nav></Nav> -->
-      <router-view></router-view>
-    </body>
-
-    <footer class="mt-auto" style="background-color: black;">
-      <p>© 2024 Kartu Sera</p>
-    </footer>
+  <div>
+    <router-view></router-view>
   </div>
 </template>

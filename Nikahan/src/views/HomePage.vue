@@ -508,8 +508,10 @@ figure {
     border-radius: inherit;
 	}
 	video {
-    width: 100vh;
+    width: 100%;
+    height: 100%;
     transition: 0.25s;
+    object-fit: cover;
 	}
 	figcaption { 
 		position: absolute;
