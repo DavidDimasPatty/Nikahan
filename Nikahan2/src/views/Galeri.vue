@@ -1,0 +1,59 @@
+<script>
+import {useRoute,useRouter} from "vue-router";
+import store from '../store/index.js'; 
+import {computed} from 'vue';
+export default{
+setup(){
+  const data = computed(() => store.getters.getData);
+  const route = useRoute();
+  const id = route.params.id;
+  const visitor = route.params.visitor;
+  return{
+    data,
+    id,
+    visitor
+  }
+}
+
+}
+</script>
+<style>
+#bgGallery{
+  background:  url('/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png') left top repeat,url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png') right bottom repeat,url("/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png") left top repeat, url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png') right top repeat;
+  background-size:contain, contain, contain;
+  z-index: 10;
+}
+
+#namaPasangan{
+  font-family: "font2";
+  color:  goldenrod;
+  text-shadow: 0 0 2px;
+  font-size: 50px;
+  pointer-events: none; 
+}
+
+.gambar{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+#homeNav{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  goldenrod !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+#galNav{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  goldenrod !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+</style>
+<template>
+
+  <div id="bgGallery">
+
+
+  </div>
+</template>
