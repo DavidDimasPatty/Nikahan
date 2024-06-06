@@ -21,12 +21,11 @@ export default {
     const id = route.params.id;
     const visitor = route.params.visitor;
     const idAcara = ref(data.value["dataNikahan"]["id"]);
-    console.log(data.value["fotoGallery"][1]["url"]);
 
     const weddingPhotoStyle = computed(() => {
       if (data.value.fotoGallery && data.value.fotoGallery.length > 0 && data.value.fotoGallery[0].url) {
         return {
-          backgroundImage: `url(${data.value.fotoGallery[0].url})`,
+          backgroundImage: `url(${data.value.fotoGallery[3].url})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           height: '100vh',
@@ -144,12 +143,11 @@ export default {
 
 .main-content {
   margin-left: 50%;
-  padding: 20px;
   height: 100vh;
   overflow-y: scroll;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 888px) {
   #wedding-photo {
     display: none;
   }
@@ -161,12 +159,10 @@ export default {
 }
 </style>
 <template>
-<div>
   <div :style="weddingPhotoStyle" id="wedding-photo"></div>
     <div class="main-content">
       <h1>Selamat Datang di Undangan Pernikahan Kami</h1>
       <p>Konten utama undangan pernikahan...</p>
       <!-- Tambahkan konten lainnya di sini -->
     </div>
-  </div>
 </template>
