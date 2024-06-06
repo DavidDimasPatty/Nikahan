@@ -87,18 +87,20 @@ export default {
 
 .svg1{
   position: absolute;
-  width: 100%; /* Atur lebar SVG agar responsif */
+  width: 1004px; /* Atur lebar SVG agar responsif */
   display: flex;
-  top: 44%; /* Sesuaikan posisi SVG relatif terhadap overlay-content atau overlay-content2 */
-  transform: translateY(-38%); 
+  top: 100px; /* Sesuaikan posisi SVG relatif terhadap overlay-content atau overlay-content2 */
+  bottom: 0px;
 }
 
 .olbawah{
   background-color: white;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top:44%
 }
-.overlay-content{
-  background-color: white;
-}
+
 
 </style>
 <template>
@@ -116,7 +118,7 @@ export default {
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="svg1">
               <path fill="white" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,250.7C384,277,480,299,576,277.3C672,256,768,192,864,165.3C960,139,1056,149,1152,176C1248,203,1344,245,1392,266.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" ></path>
           </svg> 
-          <div class="align-item-center justify-content-center olbawah mt-5">
+          <div class="align-item-center justify-content-center olbawah">
             <h1 class="text-black">Farhan & Risma</h1>
             <h5 class="text-black">Minggu, 23 Maret 2025</h5>
             <h5 class="text-black">Gedung Perkumpulan 3A</h5>

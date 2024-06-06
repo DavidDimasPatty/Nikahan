@@ -112,19 +112,19 @@ export default {
 
 @font-face {
     font-family: "font1";
-    src: url("src/assets/THEME 1REV/FONT THEME 1/SCRIPALT.ttf");
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/SCRIPALT.ttf");
 }
 
 @font-face 
 {
     font-family: "font2";
-    src: url("src/assets/THEME 1REV/FONT THEME 1/SCRIPTIN.ttf");
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/SCRIPTIN.ttf");
 }
 
 @font-face 
 {
     font-family: "font3";
-    src: url("src/assets/THEME 1REV/FONT THEME 1/Vogue.ttf");
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/Vogue.ttf");
 }
 
 /* ///////////////////////////DIV 1 (UTAMA)////////////////////// */
