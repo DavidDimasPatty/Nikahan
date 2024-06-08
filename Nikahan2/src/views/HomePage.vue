@@ -169,9 +169,18 @@ overflow: hidden;
 }
 .gifAtas{
   position: absolute;
-  top:50%;
-  left: 30%;
-  width: 300px;
+  top:40%;
+  left: 20%;
+  width: 50%;
+}
+
+video{
+  width: 100%;
+  height: 100%;
+}
+.cardsLS img{
+  width: 100%;
+  height: 100%;
 }
 </style>
 <template>
@@ -295,7 +304,7 @@ overflow: hidden;
         <div class="cardImg2">
           <img
             :src='data["fotoGallery"][4]["url"]'
-            style="width: 80%; height: 80%; object-fit: cover;border-radius: inherit; position: relative; z-index: 0; border: 4px solid goldenrod;"
+            style=" width: 80%; height: 80%;object-fit: cover;border-radius: inherit; position: relative; z-index: 0; border: 4px solid goldenrod;"
             />
         </div>
       </div>
