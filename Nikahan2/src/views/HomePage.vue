@@ -30,8 +30,8 @@ export default {
           backgroundPosition: 'center',
           height: '100vh',
           width: '50%',
-          position: 'fixed',
-          top: '0',
+          position: 'absolute',
+          top: '100%',
           left: '0',
         };
       }
@@ -131,20 +131,13 @@ export default {
   src: url("/src/assets/THEME 1REV/FONT THEME 1/Vogue.ttf");
 }
 
-#wedding-photo {
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
 .main-content {
   margin-left: 50%;
   height: 100vh;
   overflow-y: scroll;
+  position: absolute;
+  top: 100%;
+  width: 50%;
 }
 
 @media (max-width: 888px) {
@@ -155,10 +148,45 @@ export default {
   .main-content {
     margin-left: 0;
     width: 100%;
+    height: 100%;
+    overflow-y: unset;
   }
+}
+
+#lockScreen{
+  height: 100%;
+  background-color: aqua;
+  width: 100%;
+  position: absolute;
+}
+
+.atasUcapan{
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+}
+.gifAtas{
+  position: absolute;
+  top:50%;
+  left: 30%;
+  width: 300px;
 }
 </style>
 <template>
+  <div id="lockScreen">
+    <img src="../assets/UDG7.gif" class="gifAtas"/>
+    <div class="atasUcapan">
+      <div class="col" align="center">
+          <h2 class="visitor">Halo {{ visitor }},</h2>
+          <h2 class="greetings">You're Invited to The Wedding Of</h2>
+          <h1 class="namaPasangan mt-1">{{ data["dataNikahan"]["namaPendekCowo"]  }} & {{ data["dataNikahan"]["namaPendekCewe"]  }}</h1>
+          <h5 class="tanggalNikah">{{data["nikah"]["tglAkad"].substring(0,10) }}</h5>
+          <h5 class="lokasiNikah">{{data["nikah"]["alamat"] }}</h5>
+      </div>
+    </div>
+  </div>
   <div :style="weddingPhotoStyle" id="wedding-photo"></div>
     <div class="main-content">
       <div id="bgAll">   
