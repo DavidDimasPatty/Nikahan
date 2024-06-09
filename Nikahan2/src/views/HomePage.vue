@@ -17,6 +17,7 @@ export default {
     const isiKomen = ref("");
     const namaKomen = ref("");
     const statusKomen = ref(true);
+    const isInvitationOpened = ref(false);
     const route = useRoute();
     const id = route.params.id;
     const visitor = route.params.visitor;
@@ -38,6 +39,12 @@ export default {
       return {};
     });
 
+    onMounted(() => {
+      if (!isInvitationOpened.value) {
+        document.documentElement.style.overflow = 'hidden'
+      }
+    });
+    
     // Mengupdate countdown setiap detik
     setInterval(() => {
       updateCountdown();
@@ -86,6 +93,13 @@ export default {
       window.open(url, '_blank');
     }
 
+    const openInvitation = () => {
+      console.log(isInvitationOpened.value);
+      isInvitationOpened.value = true;
+       document.documentElement.style.overflow = 'auto'
+      document.getElementById('contentUtama').scrollIntoView({ behavior: 'smooth' });
+    }
+
     const openGoogleMapsAkad = () => {
       var longt = parseFloat(store.getters.getData["nikah"]["longt"]);
       var lat = parseFloat(store.getters.getData["nikah"]["lat"]);
@@ -109,7 +123,9 @@ export default {
       visitor,
       openGoogleMapsResepsi,
       openGoogleMapsAkad,
-      weddingPhotoStyle
+      weddingPhotoStyle,
+      isInvitationOpened,
+      openInvitation
     };
   },
 };
@@ -167,24 +183,29 @@ align-items: center;
 justify-content: center;
 overflow: hidden;
 }
+
 .gifAtas{
   position: absolute;
   top:40%;
   left: 20%;
   width: 50%;
+  pointer-events: none; 
 }
 
 video{
   width: 100%;
   height: 100%;
 }
+
 .cardsLS img{
   width: 100%;
   height: 100%;
 }
+
+
 </style>
 <template>
-  <div id="lockScreen">
+  <div  id="lockScreen" class="lockScreen" >
     <img src="../assets/UDG7.gif" class="gifAtas"/>
     <div class="atasUcapan">
       <div class="col" align="center">
@@ -193,6 +214,7 @@ video{
           <h1 class="namaPasangan mt-1">{{ data["dataNikahan"]["namaPendekCowo"]  }} & {{ data["dataNikahan"]["namaPendekCewe"]  }}</h1>
           <h5 class="tanggalNikah">{{data["nikah"]["tglAkad"].substring(0,10) }}</h5>
           <h5 class="lokasiNikah">{{data["nikah"]["alamat"] }}</h5>
+          <button @click="openInvitation" class="bukaUndanganButton ">Buka Undangan</button>
       </div>
     </div>
   </div>
