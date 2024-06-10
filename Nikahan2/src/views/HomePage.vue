@@ -22,7 +22,7 @@ export default {
     const id = route.params.id;
     const visitor = route.params.visitor;
     const idAcara = ref(data.value["dataNikahan"]["id"]);
-
+    const isMuted= ref(false);
     const weddingPhotoStyle = computed(() => {
       if (data.value.fotoGallery && data.value.fotoGallery.length > 0 && data.value.fotoGallery[0].url) {
         return {
@@ -38,6 +38,19 @@ export default {
       }
       return {};
     });
+    
+    const addAudioElement = (urlSong) => {
+      const audioElement = document.createElement('audio');
+      audioElement.id = 'bg-music';
+      audioElement.loop = true;
+      audioElement.autoplay = true;
+      const sourceElement = document.createElement('source');
+      sourceElement.src = urlSong;
+      sourceElement.type = 'audio/mpeg';
+      audioElement.appendChild(sourceElement);
+      const appDiv = document.getElementById('appButt');
+      appDiv.appendChild(audioElement);
+    };
 
     onMounted(() => {
       if (!isInvitationOpened.value) {
@@ -98,6 +111,11 @@ export default {
       isInvitationOpened.value = true;
        document.documentElement.style.overflow = 'auto'
       document.getElementById('contentUtama').scrollIntoView({ behavior: 'smooth' });
+      document.getElementsByClassName("bukaUndanganButton")[0].disabled=true;
+      if (store.getters.getData["dataSong"]["urlSong"]) {
+          addAudioElement(store.getters.getData["dataSong"]["urlSong"]);
+        }
+      
     }
 
     const openGoogleMapsAkad = () => {
@@ -106,6 +124,12 @@ export default {
       const url = `https://www.google.com/maps?q=${lat},${longt}`;
       window.open(url, '_blank');
     }
+
+    const toggleMute = () => {
+    const music = document.getElementById('bg-music');
+    isMuted.value = !isMuted.value;
+    music.muted = isMuted.value; // Menggunakan nilai isMuted.value, bukan isMuted
+  }
 
     return {
       data,
@@ -125,7 +149,9 @@ export default {
       openGoogleMapsAkad,
       weddingPhotoStyle,
       isInvitationOpened,
-      openInvitation
+      openInvitation,
+      toggleMute,
+      isMuted
     };
   },
 };
@@ -174,6 +200,7 @@ export default {
   background-color: aqua;
   width: 100%;
   position: absolute;
+  z-index: 300;
 }
 
 .atasUcapan{
@@ -202,9 +229,20 @@ video{
   height: 100%;
 }
 
+#appButt{
+position: fixed;
+bottom: 0;
+right: 0;
+z-index: 200;
+margin-bottom: 10px;
+margin-right: 10px;
+}
 
 </style>
 <template>
+   <div id="appButt">
+      <button @click="toggleMute" class="sticky-button btn btn-dark">   <i :class="'bi bi-volume' + (isMuted ? '-mute':'-up' )"></i></button>
+    </div>
   <div  id="lockScreen" class="lockScreen" >
     <img src="../assets/UDG7.gif" class="gifAtas"/>
     <div class="atasUcapan">
