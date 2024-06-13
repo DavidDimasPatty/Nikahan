@@ -108,6 +108,7 @@ export default {
 </script>
 
 <style scoped>
+
 @font-face {
     font-family: "font1";
     src: url("src/assets/THEME 1REV/FONT THEME 1/SCRIPALT.ttf");
@@ -123,6 +124,41 @@ export default {
 {
     font-family: "font3";
     src: url("src/assets/THEME 1REV/FONT THEME 1/Vogue.ttf");
+}
+
+@font-face {
+    font-family: "font4";
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/Century Gothic.ttf");
+}
+
+@font-face {
+    font-family: "font5";
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/CenturyGothic.ttf");
+}
+
+@font-face {
+    font-family: "font6";
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/GOTHIC.TTF");
+}
+
+@font-face {
+    font-family: "font7";
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/GOTHICB.TTF");
+}
+
+@font-face {
+    font-family: "font8";
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/GOTHICB0.TTF");
+}
+
+@font-face {
+    font-family: "font9";
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/GOTHICBI.TTF");
+}
+
+@font-face {
+    font-family: "font10";
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/GOTHICI.TTF");
 }
 
 #main-content{
@@ -198,28 +234,110 @@ export default {
   }
 }
 
-.visitor{
+.visitor-gold{
   font-family: "font3";
   color:  goldenrod;
   text-shadow: 0 0 4px;
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
-.greetings{
+.visitor-hijau{
   font-family: "font3";
-  color:  goldenrod;
+  color:  #90cf8e;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.visitor-orange{
+  font-family: "font3";
+  color:  #d89956;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.visitor-pink{
+  font-family: "font3";
+  color:  #e39e9e;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.visitor-biru{
+  font-family: "font3";
+  color:  #7d95b9;
   text-shadow: 0 0 4px;
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
-.namaPasangan{
+.greetings-gold{
+  font-family: "font3";
+  color:  goldenrod;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.greetings-hijau{
+  font-family: "font3";
+  color:  #90cf8e;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.greetings-orange{
+  font-family: "font3";
+  color:  #d89956;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.greetings-pink{
+  font-family: "font3";
+  color:  #e39e9e;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.greetings-biru{
+  font-family: "font3";
+  color:  #7d95b9;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.namaPasangan-gold{
   font-family: "font2";
   color:  goldenrod;
   text-shadow: 0 0 4px;
   font-size: 40px;
 }
-.tanggalNikah{
+.namaPasangan-hijau{
+  font-family: "font2";
+  color:  #90cf8e;
+  text-shadow: 0 0 4px;
+  font-size: 40px;
+}
+.namaPasangan-orange{
+  font-family: "font2";
+  color:  #d89956;
+  text-shadow: 0 0 4px;
+  font-size: 40px;
+}
+.namaPasangan-pink{
+  font-family: "font2";
+  color:  #e39e9e;
+  text-shadow: 0 0 4px;
+  font-size: 40px;
+}
+.namaPasangan-biru{
+  font-family: "font2";
+  color:  #7d95b9;
+  text-shadow: 0 0 4px;
+  font-size: 40px;
+}
+
+.tanggalNikah-gold{
   font-family: "font3";
   color:  goldenrod;
   font-size: 18px;
@@ -227,14 +345,76 @@ export default {
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
-.lokasiNikah{
+.tanggalNikah-hijau{
+  font-family: "font3";
+  color:  #90cf8e;
+  font-size: 18px;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.tanggalNikah-orange{
+  font-family: "font3";
+  color:  #d89956;
+  font-size: 18px;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.tanggalNikah-pink{
+  font-family: "font3";
+  color:  #e39e9e;
+  font-size: 18px;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.tanggalNikah-biru{
+  font-family: "font3";
+  color:  #7d95b9;
+  font-size: 18px;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.lokasiNikah-gold{
   font-family: "font3";
   color:  goldenrod;
   text-shadow: 0 0 4px;
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
-.imageAwal{
+.lokasiNikah-hijau{
+  font-family: "font3";
+  color:  #90cf8e;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.lokasiNikah-orange{
+  font-family: "font3";
+  color:  #d89956;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.lokasiNikah-pink{
+  font-family: "font3";
+  color:  #e39e9e;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.lokasiNikah-biru{
+  font-family: "font3";
+  color:  #7d95b9;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.imageAwal-gold{
   position: relative;
   border:2px solid goldenrod;
   height: 350px;
@@ -243,10 +423,70 @@ export default {
   overflow: hidden;
   object-fit: cover;
 }
+.imageAwal-hijau{
+  position: relative;
+  border:2px solid #90cf8e;
+  height: 350px;
+  width: 250px;
+  border-radius: 150px 150px 30px 30px / 100px 100px 30px 30px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.imageAwal-orange{
+  position: relative;
+  border:2px solid #d89956;
+  height: 350px;
+  width: 250px;
+  border-radius: 150px 150px 30px 30px / 100px 100px 30px 30px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.imageAwal-pink{
+  position: relative;
+  border:2px solid #e39e9e;
+  height: 350px;
+  width: 250px;
+  border-radius: 150px 150px 30px 30px / 100px 100px 30px 30px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.imageAwal-biru{
+  position: relative;
+  border:2px solid #7d95b9;
+  height: 350px;
+  width: 250px;
+  border-radius: 150px 150px 30px 30px / 100px 100px 30px 30px;
+  overflow: hidden;
+  object-fit: cover;
+}
 
-.btnUndangan{
+.btnUndangan-gold{
   border-radius: 10px;
   background-color: goldenrod;
+  color:white;
+  border:none;
+}
+.btnUndangan-hijau{
+  border-radius: 10px;
+  background-color: #90cf8e;
+  color:white;
+  border:none;
+}
+.btnUndangan-orange{
+  border-radius: 10px;
+  background-color: #d89956;
+  color:white;
+  border:none;
+}
+.btnUndangan-pink{
+  border-radius: 10px;
+  background-color: #e39e9e;
+  color:white;
+  border:none;
+}
+.btnUndangan-biru{
+  border-radius: 10px;
+  background-color: #7d95b9;
   color:white;
   border:none;
 }
@@ -265,8 +505,8 @@ export default {
       >
         <center>
           <div>
-            <h2 class="visitor">Halo, {{ visitor }}</h2>
-            <h2 class="greetings">You're Invited to The Wedding Of</h2>
+            <h2 class="visitor-gold">Halo, {{ visitor }}</h2>
+            <h2 class="greetings-gold">You're Invited to The Wedding Of</h2>
           </div>
 
 
@@ -274,14 +514,14 @@ export default {
             <div style="z-index: 2122;">
               <img
                 :src="fotoGalleryCover"
-                class="imageAwal"
+                class="imageAwal-gold"
               />
             </div>
           </div>
-          <h1 class="namaPasangan mt-1">{{ namaCowo }} & {{ namaCewe }}</h1>
-          <h5 class="tanggalNikah">{{tglNikah}}</h5>
-          <h5 class="lokasiNikah">{{alamatNikah}}</h5>
-          <button @click="continueToHomePage" class="btnUndangan">
+          <h1 class="namaPasangan-gold mt-1">{{ namaCowo }} & {{ namaCewe }}</h1>
+          <h5 class="tanggalNikah-gold">{{tglNikah}}</h5>
+          <h5 class="lokasiNikah-gold">{{alamatNikah}}</h5>
+          <button @click="continueToHomePage" class="btnUndangan-gold">
             Buka Undangan
           </button>
         </center>

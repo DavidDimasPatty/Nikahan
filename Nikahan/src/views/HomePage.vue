@@ -127,8 +127,43 @@ export default {
     src: url("/src/assets/THEME 1REV/FONT THEME 1/Vogue.ttf");
 }
 
+@font-face {
+    font-family: "font4";
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/Century Gothic.ttf");
+}
+
+@font-face {
+    font-family: "font5";
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/CenturyGothic.ttf");
+}
+
+@font-face {
+    font-family: "font6";
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/GOTHIC.TTF");
+}
+
+@font-face {
+    font-family: "font7";
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/GOTHICB.TTF");
+}
+
+@font-face {
+    font-family: "font8";
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/GOTHICB0.TTF");
+}
+
+@font-face {
+    font-family: "font9";
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/GOTHICBI.TTF");
+}
+
+@font-face {
+    font-family: "font10";
+    src: url("/src/assets/THEME 1REV/FONT THEME 1/GOTHICI.TTF");
+}
+
 /* ///////////////////////////DIV 1 (UTAMA)////////////////////// */
-#judulAtas{
+#judulAtas-gold{
   font-family: "font3";
   color:  goldenrod;
   text-shadow: 0 0 4px;
@@ -136,43 +171,253 @@ export default {
                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
-#namaPasangan{
+#judulAtas-hijau{
+  font-family: "font3";
+  color:  #90cf8e;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+#judulAtas-orange{
+  font-family: "font3";
+  color:  #d89956;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+#judulAtas-pink{
+  font-family: "font3";
+  color:  #e39e9e;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+#judulAtas-biru{
+  font-family: "font3";
+  color:  #7d95b9;
+  text-shadow: 0 0 4px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+#namaPasangan-gold{
   font-family: "font2";
   color:  goldenrod;
   text-shadow: 0 0 2px;
   font-size: xx-large;
 }
 
-#namaCewe{
+#namaPasangan-hijau{
+  font-family: "font2";
+  color:  #90cf8e;
+  text-shadow: 0 0 2px;
+  font-size: xx-large;
+}
+
+#namaPasangan-orange{
+  font-family: "font2";
+  color: #d89956;
+  text-shadow: 0 0 2px;
+  font-size: xx-large;
+}
+
+#namaPasangan-pink{
+  font-family: "font2";
+  color:  #e39e9e;
+  text-shadow: 0 0 2px;
+  font-size: xx-large;
+}
+
+#namaPasangan-biru{
+  font-family: "font2";
+  color:  #7d95b9;
+  text-shadow: 0 0 2px;
+  font-size: xx-large;
+}
+
+#namaCewe-gold{
   font-family: "font3";
   color:  goldenrod;
   text-shadow: 0 0 2px;
   font-size: 50px;
 }
-#tanggalNikah{
+
+#namaCewe-hijau{
+  font-family: "font3";
+  color:  #90cf8e;
+  text-shadow: 0 0 2px;
+  font-size: 50px;
+}
+
+#namaCewe-orange{
+  font-family: "font3";
+  color:  #d89956;
+  text-shadow: 0 0 2px;
+  font-size: 50px;
+}
+
+#namaCewe-pink{
+  font-family: "font3";
+  color:  #e39e9e;
+  text-shadow: 0 0 2px;
+  font-size: 50px;
+}
+
+#namaCewe-biru{
+  font-family: "font3";
+  color:  #7d95b9;
+  text-shadow: 0 0 2px;
+  font-size: 50px;
+}
+
+#tanggalNikah-gold{
   font-family: "font3";
   color:  goldenrod;
   text-shadow: 0 0 1px;
   font-size: 30px;
 }
-.fontWaktu{
+
+#tanggalNikah-hijau{
+  font-family: "font3";
+  color:  #90cf8e;
+  text-shadow: 0 0 1px;
+  font-size: 30px;
+}
+
+#tanggalNikah-orange{
+  font-family: "font3";
+  color:  #d89956;
+  text-shadow: 0 0 1px;
+  font-size: 30px;
+}
+
+#tanggalNikah-pink{
+  font-family: "font3";
+  color:  #e39e9e;
+  text-shadow: 0 0 1px;
+  font-size: 30px;
+}
+
+#tanggalNikah-biru{
+  font-family: "font3";
+  color:  #7d95b9;
+  text-shadow: 0 0 1px;
+  font-size: 30px;
+}
+
+.fontWaktu-gold{
   font-family: "font3";
   color:  gold !important;
   text-shadow: 0 0 1px;
   font-size: large;
 }
 
-.fontDescWaktu{
+.fontWaktu-hijau{
+  font-family: "font3";
+  color:  #90cf8e !important;
+  text-shadow: 0 0 1px;
+  font-size: large;
+}
+
+.fontWaktu-orange{
+  font-family: "font3";
+  color:  #d89956 !important;
+  text-shadow: 0 0 1px;
+  font-size: large;
+}
+
+.fontWaktu-pink{
+  font-family: "font3";
+  color:  #e39e9e !important;
+  text-shadow: 0 0 1px;
+  font-size: large;
+}
+
+.fontWaktu-biru{
+  font-family: "font3";
+  color:  #7d95b9 !important;
+  text-shadow: 0 0 1px;
+  font-size: large;
+}
+
+.fontDescWaktu-gold{
   font-family: "font3";
   color:  gold !important;
+  text-shadow: 0 0 1px;
+  font-size: large;
+}
+
+.fontDescWaktu-hijau{
+  font-family: "font3";
+  color:  #90cf8e !important;
+  text-shadow: 0 0 1px;
+  font-size: large;
+}
+
+.fontDescWaktu-orange{
+  font-family: "font3";
+  color:  #d89956 !important;
+  text-shadow: 0 0 1px;
+  font-size: large;
+}
+
+.fontDescWaktu-pink{
+  font-family: "font3";
+  color:  #e39e9e !important;
+  text-shadow: 0 0 1px;
+  font-size: large;
+}
+
+.fontDescWaktu-biru{
+  font-family: "font3";
+  color:  #7d95b9 !important;
   text-shadow: 0 0 1px;
   font-size: large;
 }
 /* ////////////////////// DIV 2 (QUOTES) //////////////////////////// */
 
-#blockQuotes{
+#blockQuotes-gold{
   font-family: century;
   color:  gold !important;
+  text-shadow: 0 0 1px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  font-size: 25px;
+}
+
+#blockQuotes-hijau{
+  font-family: century;
+  color:  #90cf8e !important;
+  text-shadow: 0 0 1px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  font-size: 25px;
+}
+
+#blockQuotes-orange{
+  font-family: century;
+  color:  #d89956 !important;
+  text-shadow: 0 0 1px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  font-size: 25px;
+}
+
+#blockQuotes-pink{
+  font-family: century;
+  color:  #e39e9e !important;
+  text-shadow: 0 0 1px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  font-size: 25px;
+}
+
+#blockQuotes-biru{
+  font-family: century;
+  color:  #7d95b9 !important;
   text-shadow: 0 0 1px;
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
@@ -183,7 +428,7 @@ export default {
 
 /* ////////////////////DIV 3 (PASANGAN)//////////////////////// */
 
-#ucapanDoa{
+#ucapanDoa-gold{
   font-family: "font3";
   color:  gold !important;
   text-shadow: 0 0 1px;
@@ -192,9 +437,81 @@ export default {
                1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
-#orangTua1{
+#ucapanDoa-hijau{
+  font-family: "font3";
+  color:  #90cf8e !important;
+  text-shadow: 0 0 1px;
+  font-size: 25px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+#ucapanDoa-orange{
+  font-family: "font3";
+  color:  #d89956 !important;
+  text-shadow: 0 0 1px;
+  font-size: 25px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+#ucapanDoa-pink{
+  font-family: "font3";
+  color:  #e39e9e !important;
+  text-shadow: 0 0 1px;
+  font-size: 25px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+#ucapanDoa-biru{
+  font-family: "font3";
+  color:  #7d95b9 !important;
+  text-shadow: 0 0 1px;
+  font-size: 25px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+#orangTua1-gold{
   font-family: "font3";
   color:  #ad8b43 !important;
+  text-shadow: 0 0 1px;
+  font-size: 25px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+#orangTua1-hijau{
+  font-family: "font3";
+  color:  #90cf8e !important;
+  text-shadow: 0 0 1px;
+  font-size: 25px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+#orangTua1-orange{
+  font-family: "font3";
+  color:  #d89956 !important;
+  text-shadow: 0 0 1px;
+  font-size: 25px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+#orangTua1-pink{
+  font-family: "font3";
+  color:  #e39e9e !important;
+  text-shadow: 0 0 1px;
+  font-size: 25px;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+#orangTua1-biru{
+  font-family: "font3";
+  color:  #7d95b9 !important;
   text-shadow: 0 0 1px;
   font-size: 25px;
   text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
@@ -216,9 +533,37 @@ export default {
   top:200px;
 }
 
-#andFont{
+#andFont-gold{
   font-family: "font2";
   color:  gold !important;
+  text-shadow: 0 0 1px;
+  font-size: 50px;
+}
+
+#andFont-hijau{
+  font-family: "font2";
+  color:  #90cf8e !important;
+  text-shadow: 0 0 1px;
+  font-size: 50px;
+}
+
+#andFont-orange{
+  font-family: "font2";
+  color:  #d89956 !important;
+  text-shadow: 0 0 1px;
+  font-size: 50px;
+}
+
+#andFont-pink{
+  font-family: "font2";
+  color:  #e39e9e !important;
+  text-shadow: 0 0 1px;
+  font-size: 50px;
+}
+
+#andFont-biru{
+  font-family: "font2";
+  color:  #7d95b9 !important;
   text-shadow: 0 0 1px;
   font-size: 50px;
 }
@@ -240,11 +585,30 @@ export default {
   position: relative;
   
 }
-#bgWeddingGift{
+#bgWeddingGift-biru{
   background: url('/src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
   background-size:cover;
   height: 100vh;
 }
+
+#bgWeddingGift-hijau{
+  background: url('/src/assets/THEME HIJAU/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background-size:cover;
+  height: 100vh;
+}
+
+#bgWeddingGift-orange{
+  background: url('/src/assets/THEME ORANGE/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background-size:cover;
+  height: 100vh;
+}
+
+#bgWeddingGift-pink{
+  background: url('/src/assets/THEME PINK/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background-size:cover;
+  height: 100vh;
+}
+
 .weddCard{
   position: absolute;
   top: 40%;
@@ -261,19 +625,56 @@ export default {
   text-wrap: wrap;
   font-size: 30px;
 }
-#lovestory{
+
+#lovestory-biru{
   background: url('/src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
   background-size:cover;
 }
 
-#pasangan{
+#lovestory-hijau{
+  background: url('/src/assets/THEME HIJAU/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background-size:cover;
+}
+
+#lovestory-orange{
+  background: url('/src/assets/THEME ORANGE/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background-size:cover;
+}
+
+#lovestory-pink{
+  background: url('/src/assets/THEME PINK/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background-size:cover;
+}
+
+#pasangan-biru{
   background: url('/src/assets/THEME 1REV/3.PASANGANNYA/KIRI.png') left no-repeat,url('/src/assets/THEME 1REV/3.PASANGANNYA/KANAN.png') right no-repeat;
   background-size:contain,contain;
   height: 100%;
   position: relative;
 }
 
-#quotes{
+#pasangan-hijau{
+  background: url('/src/assets/THEME HIJAU/3.PASANGANNYA/KIRI.png') left no-repeat,url('/src/assets/THEME HIJAU/3.PASANGANNYA/KANAN.png') right no-repeat;
+  background-size:contain,contain;
+  height: 100%;
+  position: relative;
+}
+
+#pasangan-orange{
+  background: url('/src/assets/THEME ORANGE/3.PASANGANNYA/KIRI.png') left no-repeat,url('/src/assets/THEME ORANGE/3.PASANGANNYA/KANAN.png') right no-repeat;
+  background-size:contain,contain;
+  height: 100%;
+  position: relative;
+}
+
+#pasangan-pink{
+  background: url('/src/assets/THEME PINK/3.PASANGANNYA/KIRI.png') left no-repeat,url('/src/assets/THEME PINK/3.PASANGANNYA/KANAN.png') right no-repeat;
+  background-size:contain,contain;
+  height: 100%;
+  position: relative;
+}
+
+#quotes-biru{
   background: url('/src/assets/THEME 1/LAYER 2/02.LAYER RIGHT 2.png') right repeat,url('/src/assets/THEME 1/LAYER 2/01.LAYER LEFT 2.png')  left no-repeat, url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url("/src/assets/THEME 1/LAYER 2/03.LAYER MID 1.png")  center no-repeat;
   background-size:cover,cover,cover,cover;
   height: 100vh;
@@ -286,14 +687,50 @@ export default {
   height: 100vh;
 } */
 
-#bgAll{
+#bgAll-biru{
   background: url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat,url("/src/assets/THEME 1REV/1.AWAL/KIRI.png") left top no-repeat, url('/src/assets/THEME 1REV/1.AWAL/KANAN.png') right top no-repeat;
   background-size: cover,contain,contain;
   height: 100vh;
 } 
 
-#lokasiBG{
+#bgAll-hijau{
+  background: url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/KIRI.png") left top no-repeat, url('/src/assets/THEME HIJAU/1.AWAL/KANAN.png') right top no-repeat;
+  background-size: cover,contain,contain;
+  height: 100vh;
+}
+
+#bgAll-orange{
+  background: url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat,url("/src/assets/THEME ORANGE/1.AWAL/KIRI.png") left top no-repeat, url('/src/assets/THEME ORANGE/1.AWAL/KANAN.png') right top no-repeat;
+  background-size: cover,contain,contain;
+  height: 100vh;
+}
+
+#bgAll-pink{
+  background: url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat,url("/src/assets/THEME PINK/1.AWAL/KIRI.png") left top no-repeat, url('/src/assets/THEME PINK/1.AWAL/KANAN.png') right top no-repeat;
+  background-size: cover,contain,contain;
+  height: 100vh;
+}
+
+#lokasiBG-biru{
   background: url("/src/assets/THEME 1REV/5.LOKASI/KIRI.png") left no-repeat,url("/src/assets/THEME 1REV/5.LOKASI/KANAN.png") right no-repeat;
+  background-size: contain,contain;
+  height: 100%;
+}
+
+#lokasiBG-hijau{
+  background: url("/src/assets/THEME HIJAU/5.LOKASI/KIRI.png") left no-repeat,url("/src/assets/THEME HIJAU/5.LOKASI/KANAN.png") right no-repeat;
+  background-size: contain,contain;
+  height: 100%;
+}
+
+#lokasiBG-orange{
+  background: url("/src/assets/THEME ORANGE/5.LOKASI/KIRI.png") left no-repeat,url("/src/assets/THEME ORANGE/5.LOKASI/KANAN.png") right no-repeat;
+  background-size: contain,contain;
+  height: 100%;
+}
+
+#lokasiBG-pink{
+  background: url("/src/assets/THEME PINK/5.LOKASI/KIRI.png") left no-repeat,url("/src/assets/THEME PINK/5.LOKASI/KANAN.png") right no-repeat;
   background-size: contain,contain;
   height: 100%;
 }
@@ -350,12 +787,53 @@ export default {
   border-radius: 100vw;
 }
 
-.cardBG{
+.hijau-background {
+  background: linear-gradient(45deg, rgba(0, 255, 0, 0.8), rgba(255, 255, 255, 0.5));
+  box-shadow: 0 0 20px rgba(144, 238, 144, 0.5);
+  border-radius: 100vw;
+}
+
+.orange-background {
+  background: linear-gradient(45deg, rgba(255, 165, 0, 0.8), rgba(255, 255, 255, 0.5));
+  box-shadow: 0 0 20px rgba(255, 213, 128, 0.5);
+  border-radius: 100vw;
+}
+
+.pink-background {
+  background: linear-gradient(45deg, rgba(255, 192, 203, 0.8), rgba(255, 255, 255, 0.5));
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+  border-radius: 100vw;
+}
+
+.biru-background {
+  background: linear-gradient(45deg, rgba(0,0,255, 0.8), rgba(255, 255, 255, 0.5));
+  box-shadow: 0 0 20px rgba(173, 216, 230, 0.5);
+  border-radius: 100vw;
+}
+
+.cardBG-biru{
   background: url('/src/assets/THEME 1REV/3.PASANGANNYA/KANAN.png') right no-repeat,url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat;
   background-size:contain,20%;
   height: 150px;
 }
 
+.cardBG-hijau{
+  background: url('/src/assets/THEME HIJAU/3.PASANGANNYA/KANAN.png') right no-repeat,url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat;
+  background-size:contain,20%;
+  height: 150px;
+}
+
+.cardBG-orange{
+  background: url('/src/assets/THEME ORANGE/3.PASANGANNYA/KANAN.png') right no-repeat,url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat;
+  background-size:contain,20%;
+  height: 150px;
+}
+
+.cardBG-pink{
+  background: url('/src/assets/THEME PINK/3.PASANGANNYA/KANAN.png') right no-repeat,url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat;
+  background-size:contain,20%;
+  height: 150px;
+}
 
 .cardImg 
 {
@@ -450,8 +928,7 @@ figure {
 	position: relative;
 	display: flex;
 	align-items: center;
-	justify-content: center;
-  border: 5px solid goldenrod;
+	justify-content: center;  
 	width: 100%;
   height: 508px;
 	border-radius: 30% 30% 20% 20% / 20% 20% 20% 20%;
@@ -537,7 +1014,6 @@ figure {
 			justify-content: center;
 			margin: 10px;
 			padding: 10px 30px;
-			background-color: goldenrod;
 			border: none;
 			border-radius: 5px;
 			color: white;
@@ -548,6 +1024,45 @@ figure {
 	}
 }
 
+.bordercol-gold{
+  border: 5px solid goldenrod;
+}
+
+.bordercol-hijau{
+  border: 5px solid #90cf8e;
+}
+
+.bordercol-orange{
+  border: 5px solid #d89956;
+}
+
+.bordercol-pink{
+  border: 5px solid #e39e9e;
+}
+
+.bordercol-biru{
+  border: 5px solid #7d95b9;
+}
+
+.figbtncol-gold{
+  background-color: goldenrod;
+}
+
+.figbtncol-hijau{
+  background-color: #90cf8e;
+}
+
+.figbtncol-orange{
+  background-color: #d89956;
+}
+
+.figbtncol-pink{
+  background-color: #e39e9e;
+}
+
+.figbtncol-biru{
+  background-color: #7d95b9;
+}
 
 main {
   display: flex;
@@ -578,7 +1093,7 @@ main {
     left: 0;
     opacity: 0.9;
     transition: opacity .2s ease-out;
-    border: 5px solid goldenrod;
+    
     border-radius: inherit;
   }
 
@@ -625,6 +1140,25 @@ main {
 
 }
 
+.cardLS.img.border-gold{
+  border: 5px solid goldenrod;
+}
+
+.cardLS.img.border-hijau{
+  border: 5px solid #90cf8e;
+}
+
+.cardLS.img.border-orange{
+  border: 5px solid #d89956;
+}
+
+.cardLS.img.border-pink{
+  border: 5px solid #e39e9e;
+}
+
+.cardLS.img.border-biru{
+  border: 5px solid #7d95b9;
+}
 
 
 /* Media queries untuk layar ponsel */
@@ -655,17 +1189,38 @@ main {
   height: 45vh;
   position: relative;
 }
-  #lokasiBG{
+  #lokasiBG-biru{
  background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') left no-repeat;
     background-size: cover;
 }
-  #pasangan {
+  #pasangan-biru {
     background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') left no-repeat;
     background-size: cover;
   }
 
-  #quotes {
+  #quotes-biru {
     background:  url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url("/src/assets/THEME 1/LAYER 2/03.LAYER MID 1.png")  center no-repeat;
+    background-size:cover,cover;
+    height: 120vh;
+    position: relative;
+  }
+
+  #quotes-hijau {
+    background:  url('/src/assets/THEME HIJAU/2.QUOTE/2.TENGAH 2.png') center repeat,url("/src/assets/THEME HIJAU/2.QUOTE/1.TENGAH 1.png")  center no-repeat;
+    background-size:cover,cover;
+    height: 120vh;
+    position: relative;
+  }
+
+  #quotes-orange {
+    background:  url('/src/assets/THEME ORANGE/2.QUOTE/2.TENGAH 2.png') center repeat,url("/src/assets/THEME ORANGE/2.QUOTE/1.TENGAH 1.png")  center no-repeat;
+    background-size:cover,cover;
+    height: 120vh;
+    position: relative;
+  }
+
+  #quotes-pink {
+    background:  url('/src/assets/THEME PINK/2.QUOTE/2.TENGAH 2.png') center repeat,url("/src/assets/THEME PINK/2.QUOTE/1.TENGAH 1.png")  center no-repeat;
     background-size:cover,cover;
     height: 120vh;
     position: relative;
@@ -677,7 +1232,7 @@ main {
   position:absolute;
 }
 
-  #bgAll{
+  #bgAll-biru{
   background: url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat;
   background-size: cover;
   height: 100vh;
@@ -723,7 +1278,7 @@ main {
   
 }
 
-.card__part{
+.card__part-gold{
     box-shadow: 1px 1px #aaa3a3;
     top: 0;
     position: absolute;
@@ -737,6 +1292,106 @@ main {
     background-size: cover;
     border-radius: 8px;
     background-color: gold;
+    -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.card__part-hijau{
+    box-shadow: 1px 1px #aaa3a3;
+    top: 0;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    display: inline-block;
+    width: 320px;
+    height: 190px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    background-color: #90cf8e;
+    -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.card__part-orange{
+    box-shadow: 1px 1px #aaa3a3;
+    top: 0;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    display: inline-block;
+    width: 320px;
+    height: 190px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    background-color: #d89956;
+    -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.card__part-pink{
+    box-shadow: 1px 1px #aaa3a3;
+    top: 0;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    display: inline-block;
+    width: 320px;
+    height: 190px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    background-color: #e39e9e;
+    -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.card__part-biru{
+    box-shadow: 1px 1px #aaa3a3;
+    top: 0;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    display: inline-block;
+    width: 320px;
+    height: 190px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    background-color: #7d95b9;
     -webkit-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     -moz-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     -ms-transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -902,15 +1557,72 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
   border: none;
 }
 
-#homeNav{
+#homeNav-gold{
   font-family: Georgia, 'Times New Roman', Times, serif;
   color:  goldenrod !important;
   text-shadow: 0 0 0px;
   font-size: 20px;
 }
-#galNav{
+
+#homeNav-hijau{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #90cf8e !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+
+#homeNav-orange{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #d89956 !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+
+#homeNav-pink{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #e39e9e !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+
+#homeNav-biru{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #7d95b9 !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+
+#galNav-gold{
   font-family: Georgia, 'Times New Roman', Times, serif;
   color:  goldenrod !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+
+#galNav-hijau{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #90cf8e !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+
+#galNav-orange{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #d89956 !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+
+#galNav-pink{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #e39e9e !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+
+#galNav-biru{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #7d95b9 !important;
   text-shadow: 0 0 0px;
   font-size: 20px;
 }
@@ -923,12 +1635,12 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 
     <div class="mb-2">
         <div>
-            <router-link :to="'/' + id+'/'+visitor" class="navi"  id="homeNav">Home</router-link> 
-            <router-link :to="'/Galeri/' + id+'/'+visitor" class="navi"id="galNav" >Galeri</router-link> 
+            <router-link :to="'/' + id+'/'+visitor" class="navi"  id="homeNav-gold">Home</router-link> 
+            <router-link :to="'/Galeri/' + id+'/'+visitor" class="navi"id="galNav-gold" >Galeri</router-link> 
         </div>
     </div>   
 
-    <h1 id="judulAtas"> YOU ARE INVITED TO THE WEDDING OF</h1>  
+    <h1 id="judulAtas-gold"> YOU ARE INVITED TO THE WEDDING OF</h1>  
      
 
     <div class="d-flex justify-content-center mt-2" >
@@ -941,8 +1653,8 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
       </div>
 
     <div id="contentUtama">
-      <h1 id="namaPasangan">{{ data["dataNikahan"]["namaPendekCowo"] }} & {{ data["dataNikahan"]["namaPendekCewe"] }}</h1>
-      <small id="tanggalNikah">{{data["nikah"]["tglAkad"].substring(0,10)}}</small>
+      <h1 id="namaPasangan-gold">{{ data["dataNikahan"]["namaPendekCowo"] }} & {{ data["dataNikahan"]["namaPendekCewe"] }}</h1>
+      <small id="tanggalNikah-gold">{{data["nikah"]["tglAkad"].substring(0,10)}}</small>
 
       <div class="container mt-4">
         <div class="row align-items-center justify-content-center g-2">
@@ -950,8 +1662,8 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
           <div class="col">
             <div class="card shadow rounded bg-light" id="hari">
               <div class="card-body">
-                <h4 class="fontWaktu">{{ days }}</h4>
-                <h6 class="card-title mt-auto fontDescWaktu">Hari</h6>
+                <h4 class="fontWaktu-gold">{{ days }}</h4>
+                <h6 class="card-title mt-auto fontDescWaktu-gold">Hari</h6>
               </div>
             </div>
           </div>
@@ -959,8 +1671,8 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
           <div class="col">
             <div class="card shadow rounded bg-light" id="jam">
               <div class="card-body">
-                <h4 class="fontWaktu">{{ hours }}</h4>
-                <h6 class="card-title mt-auto fontDescWaktu">Jam</h6>
+                <h4 class="fontWaktu-gold">{{ hours }}</h4>
+                <h6 class="card-title mt-auto fontDescWaktu-gold">Jam</h6>
               </div>
             </div>
           </div>
@@ -968,8 +1680,8 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
           <div class="col">
             <div class="card shadow rounded bg-light" id="menit">
               <div class="card-body">
-                <h4 class="fontWaktu">{{ minutes }}</h4>
-                <h6 class="card-title mt-auto fontDescWaktu">Menit</h6>
+                <h4 class="fontWaktu-gold">{{ minutes }}</h4>
+                <h6 class="card-title mt-auto fontDescWaktu-gold">Menit</h6>
               </div>
             </div>
           </div>
@@ -977,8 +1689,8 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
           <div class="col">
             <div class="card shadow rounded bg-light" id="detik">
               <div class="card-body">
-                <h4 class="fontWaktu">{{ seconds }}</h4>
-                <h6 class="card-title mt-auto fontDescWaktu">Detik</h6>
+                <h4 class="fontWaktu-gold">{{ seconds }}</h4>
+                <h6 class="card-title mt-auto fontDescWaktu-gold">Detik</h6>
               </div>
             </div>
           </div>
@@ -988,10 +1700,10 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
     </div>
   </div>
 
-  <div class="d-flex justify-content-center align-items-center" id="quotes">
+  <div class="d-flex justify-content-center align-items-center" id="quotes-biru">
     <hr class=""/>
       <blockquote class="blockquote" id="quotesPasangan">
-        <p id="blockQuotes">
+        <p id="blockQuotes-gold">
           {{data["dataNikahan"]["quotes"]}}
         </p>
         <footer class="blockquote-footer">
@@ -1000,17 +1712,17 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
       </blockquote>
   </div>
 
-<div id="pasangan">
+<div id="pasangan-biru">
       <div class="d-flex justify-content-center align-items-center">
         <div class="">
-          <h5 id="ucapanDoa">
+          <h5 id="ucapanDoa-gold">
             {{data["dataNikahan"]["ajakan"]}}
           </h5>
         </div>
       </div>
     
       <div class="mt-3">
-        <small id="orangTua1">{{data["dataNikahan"]["ceweSebagai"] }}</small>
+        <small id="orangTua1-gold">{{data["dataNikahan"]["ceweSebagai"] }}</small>
         <h6 id="orangTua2">{{data["dataNikahan"]["namaOrtuCewe1"]}} & {{data["dataNikahan"]["namaOrtuCewe2"]}}</h6>
       </div>
 
@@ -1023,13 +1735,13 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         </div>
       </div>
       
-      <h6 id="namaCewe">{{data["dataNikahan"]["namaCewe"] }}</h6>
+      <h6 id="namaCewe-gold">{{data["dataNikahan"]["namaCewe"] }}</h6>
 
       <div class="container">
-        <h1 id="andFont" class="mb-5">{{ "&" }}</h1>
+        <h1 id="andFont-gold" class="mb-5">{{ "&" }}</h1>
       </div>
 
-      <h6 id="namaCewe">{{data["dataNikahan"]["namaCowo"] }}</h6>
+      <h6 id="namaCewe-gold">{{data["dataNikahan"]["namaCowo"] }}</h6>
 
       <div class="d-flex justify-content-center mt-5">
         <div class="cardImg2">
@@ -1041,13 +1753,13 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
       </div>
 
       <div class="">
-        <small id="orangTua1">{{data["dataNikahan"]["cowoSebagai"] }}</small>
+        <small id="orangTua1-gold">{{data["dataNikahan"]["cowoSebagai"] }}</small>
         <h6 id="orangTua2">{{data["dataNikahan"]["namaOrtuCowo1"]}} & {{data["dataNikahan"]["namaOrtuCowo2"]}}</h6>
       </div>
 
 </div>
 
-<div id="lovestory">
+<div id="lovestory-biru">
 
   <div class="container pt-4 mt-5 mb-5">
     <div class="row gold-background">
@@ -1064,7 +1776,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         <div v-for="(item, i) in data.dataLoveStory"  :class="i % 2 === 1 ? 'timeline-2 left-2' : 'timeline-2 right-2'">
           
           <main>
-            <div class = "cardsLS">
+            <div class = "cardsLS img border-gold">
               <img  :src="item.url" alt="">
               <div class="card-content">
                 <h2>
@@ -1094,7 +1806,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
     </div>
   </div>
 
-<div id="lokasiBG"> 
+<div id="lokasiBG-biru"> 
   <div class="container">
     <div class="row">
 
@@ -1109,7 +1821,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
       <div class="col exTengah">
 
         <div class="col mb-4">
-          <figure class="image-block">
+          <figure class="image-block bordercol-gold">
             <h1>Resepsi</h1>
             <video autoplay loop muted >
               <source :src='data["dataVideo"]["urlVideo"]' type="video/mp4">
@@ -1127,7 +1839,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
                 <div>
                    Tanggal Resepsi : {{data.resepsi.tglResepsi.substring(0,10)}}
                 </div>
-              <button @click="openGoogleMapsResepsi">
+              <button @click="openGoogleMapsResepsi" class="figbtncol-gold">
                 Buka Google Maps
               </button>
             </figcaption>
@@ -1135,7 +1847,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         </div>
 
         <div class="col">
-          <figure class="image-block">
+          <figure class="image-block bordercol-gold">
             <h1>Akad Nikah</h1>
             <video autoplay loop muted >
               <source :src='data["dataVideo"]["urlVideo"]' type="video/mp4">
@@ -1155,7 +1867,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
                    Tanggal Akad : {{data.nikah.tglAkad.substring(0,10)}}
                 </div>
               </p>
-              <button @click="openGoogleMapsAkad">
+              <button @click="openGoogleMapsAkad" class="figbtncol-gold">
                 Buka Google Maps
               </button>
             </figcaption>
@@ -1184,11 +1896,11 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
     </div>
 </div>
 
-<div id="bgWeddingGift">
+<div id="bgWeddingGift-biru">
   <div v-for="(item, i) in data.dataGift" id="weddingGift">
     <div v-if="item.method==='Transfer Bank'" class="d-flex justify-content-center align-items-center weddCard">
         <div class="cardBank">
-          <div class="card__front card__part">
+          <div class="card__front card__part-gold">
             <p class="text-white">{{item.namaBank}}</p>
             <p class="card_numer">{{item.noRek}}</p>
             <div class="card__space-100">
@@ -1197,7 +1909,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
             </div>
           </div>
           
-          <div class="card__back card__part">
+          <div class="card__back card__part-gold">
             <div class="card__black-line"></div>
             <div class="card__back-content">
               <div class="card__secret">
@@ -1213,7 +1925,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 
     <div  v-else-if="item.method!='Transfer Bank'" class="d-flex justify-content-center align-items-center weddCard">
         <div class="cardBank">
-          <div class="card__front card__part">
+          <div class="card__front card__part-gold">
             <p class="text-white">{{item.method}}</p>
             <p class="card_numer">{{item.noHP}}</p>
             <div class="card__space-100">
@@ -1222,7 +1934,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
             </div>
           </div>
           
-          <div class="card__back card__part">
+          <div class="card__back card__part-gold">
             <div class="card__black-line"></div>
             <div class="card__back-content">
               <div class="card__secret">
@@ -1293,7 +2005,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         <hr/>
         <div class="text-dark mb-2 " v-for="(item, i) in dataKomen" :key="i" style="background-color: transparent; border: 0;">
          
-          <div class="cardBG" style="align-items: center;">
+          <div class="cardBG-biru" style="align-items: center;">
             <div>
               <div>
                 <h6 class="fw-bold d-flex justify-content-center align-items-center ms-3">{{ item.nama }}</h6>

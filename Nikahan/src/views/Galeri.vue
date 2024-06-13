@@ -24,7 +24,7 @@ setup(){
   z-index: 10;
 }
 
-#namaPasangan{
+#namaPasangan-gold{
   font-family: "font2";
   color:  goldenrod;
   text-shadow: 0 0 2px;
@@ -32,20 +32,100 @@ setup(){
   pointer-events: none; 
 }
 
+#namaPasangan-hijau{
+  font-family: "font2";
+  color:  #90cf8e;
+  text-shadow: 0 0 2px;
+  font-size: 50px;
+  pointer-events: none;
+}
+
+#namaPasangan-orange{
+  font-family: "font2";
+  color: #d89956;
+  text-shadow: 0 0 2px;
+  font-size: 50px;
+  pointer-events: none;
+}
+
+#namaPasangan-pink{
+  font-family: "font2";
+  color:  #e39e9e;
+  text-shadow: 0 0 2px;
+  font-size: 50px;
+  pointer-events: none;
+}
+
+#namaPasangan-biru{
+  font-family: "font2";
+  color:  #7d95b9;
+  text-shadow: 0 0 2px;
+  font-size: 50px;
+  pointer-events: none;
+}
+
 .gambar{
   width: 300px;
   height: 300px;
   object-fit: cover;
 }
-#homeNav{
+#homeNav-gold{
   font-family: Georgia, 'Times New Roman', Times, serif;
   color:  goldenrod !important;
   text-shadow: 0 0 0px;
   font-size: 20px;
 }
-#galNav{
+#homeNav-hijau{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #90cf8e !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+#homeNav-orange{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #d89956 !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+#homeNav-pink{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #e39e9e !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+#homeNav-biru{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #7d95b9 !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+#galNav-gold{
   font-family: Georgia, 'Times New Roman', Times, serif;
   color:  goldenrod !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+#galNav-hijau{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #90cf8e !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+#galNav-orange{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #d89956 !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+#galNav-pink{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #e39e9e !important;
+  text-shadow: 0 0 0px;
+  font-size: 20px;
+}
+#galNav-biru{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:  #7d95b9 !important;
   text-shadow: 0 0 0px;
   font-size: 20px;
 }
@@ -55,12 +135,12 @@ setup(){
   <div id="bgGallery">
     <div id="wrapper" class="">
       <div>
-            <router-link :to="'/' + id+'/'+visitor" class="navi"  id="homeNav">Home</router-link> 
-            <router-link :to="'/Galeri/' + id+'/'+visitor" class="navi"id="galNav" >Galeri</router-link> 
+            <router-link :to="'/' + id+'/'+visitor" class="navi"  id="homeNav-gold">Home</router-link> 
+            <router-link :to="'/Galeri/' + id+'/'+visitor" class="navi"id="galNav-gold" >Galeri</router-link> 
         </div>
     </div>
 
-    <h1 id="namaPasangan" class="mt-3 mb-5">{{ data["dataNikahan"]["namaPendekCowo"] }} & {{ data["dataNikahan"]["namaPendekCewe"] }}'s Gallery</h1>
+    <h1 id="namaPasangan-gold" class="mt-3 mb-5">{{ data["dataNikahan"]["namaPendekCowo"] }} & {{ data["dataNikahan"]["namaPendekCewe"] }}'s Gallery</h1>
     <div class="container d-flex justify-content-center align-items-center"> 
       <div class="row"> 
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0" v-for="(item, i) in data.fotoGallery.slice(3)" >
