@@ -10,11 +10,11 @@ const routes = [
     component: Error
   },
   {
-    path: '/:id/:visitor',
+    path: '/:id/:color/:visitor',
     name: 'Home',
     component: HomePage,
     beforeEnter: (to, from, next) => {
-      if (!to.params.id || !to.params.visitor) {
+      if (!to.params.id ||!to.params.color ||!to.params.visitor) {
         next({ name: 'Error' });
       } else {
         next();
@@ -22,11 +22,11 @@ const routes = [
     }
   },
   {
-    path: '/Galeri/:id/:visitor',
+    path: '/Galeri/:id/:color/:visitor',
     name: 'Galeri',
     component: Galeri,
     beforeEnter: (to, from, next) => {
-      if (!to.params.id || !to.params.visitor) {
+      if (!to.params.id ||!to.params.color ||!to.params.visitor) {
         next({ name: 'Error' });
       } else {
         next();

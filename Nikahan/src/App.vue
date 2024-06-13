@@ -23,9 +23,11 @@ export default {
     const laguBG=ref('');
     const isMuted= ref(false);
     const visitor = ref();
+    const color = ref();
     
     const fetchEventData = async () => {
       const id = route.params.id;
+
       try {
         const response = await axios.get("https://localhost:7241/Nikahan/allDataForm?trx_id=" + id);
         console.log(response.data);
@@ -69,6 +71,7 @@ export default {
       await router.isReady().then( async() => {
         isLoading.value = true; 
         visitor.value=route.params.visitor;
+        color.value=route.params.color;
         console.log(route.params.id);
         fetchEventData();
       });
@@ -98,7 +101,8 @@ export default {
       isMuted,
       toggleMute,
       continueToHomePage,
-      visitor
+      visitor,
+      color
     };
   },
 

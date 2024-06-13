@@ -30,6 +30,7 @@ export default {
     const route = useRoute();
     const id = route.params.id;
     const visitor = route.params.visitor;
+    const color = route.params.color;
     const idAcara=ref(data.value["dataNikahan"]["id"]);
     // Mengupdate countdown setiap detik
     setInterval(() => {
@@ -103,7 +104,8 @@ export default {
       id,
       visitor,
       openGoogleMapsResepsi,
-      openGoogleMapsAkad
+      openGoogleMapsAkad,
+      color
     };
   },
 };
@@ -706,7 +708,7 @@ export default {
 }
 
 #bgAll-pink{
-  background: url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat,url("/src/assets/THEME PINK/1.AWAL/KIRI.png") left top no-repeat, url('/src/assets/THEME PINK/1.AWAL/KANAN.png') right top no-repeat;
+  background: url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat,url("/src/assets/THEME PINK/1.AWAL/5.KIRI 1.png") left top no-repeat, url('/src/assets/THEME PINK/1.AWAL/KANAN.png') right top no-repeat;
   background-size: cover,contain,contain;
   height: 100vh;
 }
@@ -1631,7 +1633,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 </style>
 <template>
 
-  <div id="bgAll">   
+  <div :id="'bgAll-' + color">   
 
     <div class="mb-2">
         <div>
