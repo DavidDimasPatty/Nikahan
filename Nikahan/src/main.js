@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import { MotionPlugin } from '@vueuse/motion';
 import router from './router';  // Pastikan Anda mengganti dengan path yang benar
 import 'bootstrap/dist/css/bootstrap.css';
 import './assets/main.css'
@@ -7,4 +8,5 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 
 createApp(App)
   .use(router)
+  .use(MotionPlugin)
   .mount('#app');

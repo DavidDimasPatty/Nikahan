@@ -1658,19 +1658,24 @@ background-color: orange !important;
 color: white;
 border: none;
 }
+
 </style>
 <template>
 
-  <div :id="'bgAll-' + color">   
+  <div :id="'bgAll-' + color"   
+    v-motion
+    :initial="{ opacity: 0, y: 100 }"
+    :visible="{ opacity: 1, y: 0, scale: 1 }"
+    :delay="200"
+    :duration="800">   
     <div class="mb-2">
-        <div>
+        <div >
             <router-link :to="'/' + id+'/'+visitor" class="navi"  :id="'homeNav-'+color">Home</router-link> 
             <router-link :to="'/Galeri/' + id+'/'+visitor" class="navi" :id="'galNav-'+color" >Galeri</router-link> 
         </div>
     </div>   
 
     <h1 :id="'judulAtas-' + color"> YOU ARE INVITED TO THE WEDDING OF</h1>  
-     
 
     <div class="d-flex justify-content-center mt-2" >
         <div  id="circleFig">
@@ -1729,10 +1734,16 @@ border: none;
     </div>
   </div>
 
-  <div class="d-flex justify-content-center align-items-center" :id="'quotes-' + color">
+  <div class="d-flex justify-content-center align-items-center" :id="'quotes-' + color" 
+    v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :visible="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="200"
+      :duration="800"
+  >
     <hr class=""/>
       <blockquote class="blockquote" id="quotesPasangan">
-        <p id="blockQuotes-gold">
+        <p :id="'blockQuotes-'+color">
           {{data["dataNikahan"]["quotes"]}}
         </p>
         <footer class="blockquote-footer">
@@ -1741,7 +1752,12 @@ border: none;
       </blockquote>
   </div>
 
-<div :id="'pasangan-' + color">
+<div :id="'pasangan-' + color"   
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :visible="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="200"
+      :duration="800">
       <div class="d-flex justify-content-center align-items-center">
         <div class="">
           <h5 :id="'ucapanDoa-' + color">
@@ -1788,7 +1804,13 @@ border: none;
 
 </div>
 
-<div :id="'lovestory-' + color">
+<div :id="'lovestory-' + color" 
+v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :visible="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="200"
+      :duration="800"
+>
 
   <div class="container pt-4 mt-5 mb-5">
     <div :class="'row ' +color+'-background'">
@@ -1827,7 +1849,13 @@ border: none;
 </div>
 
 
-<div class="container pb-2 mt-5 mb-5">
+<div class="container pb-2 mt-5 mb-5" 
+v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :visible="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="200"
+      :duration="800"
+>
     <div :class="'row '+color+'-background'">
       <div class="col text-center">
         <h2 class="d-inline-block me-1 ms-1 text-white">LOKASI</h2>
@@ -1835,7 +1863,13 @@ border: none;
     </div>
   </div>
 
-<div :id="'lokasiBG-'+color"> 
+<div :id="'lokasiBG-'+color" 
+v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :visible="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="200"
+      :duration="800"
+> 
   <div class="container">
     <div class="row">
 
@@ -1868,7 +1902,7 @@ border: none;
                 <div>
                    Tanggal Resepsi : {{data.resepsi.tglResepsi.substring(0,10)}}
                 </div>
-              <button @click="openGoogleMapsResepsi" class="figbtncol-gold">
+              <button @click="openGoogleMapsResepsi" :class="'figbtncol-'+color">
                 Buka Google Maps
               </button>
             </figcaption>
@@ -1896,7 +1930,7 @@ border: none;
                    Tanggal Akad : {{data.nikah.tglAkad.substring(0,10)}}
                 </div>
               </p>
-              <button @click="openGoogleMapsAkad" class="figbtncol-gold">
+              <button @click="openGoogleMapsAkad" :class="'figbtncol-'+color">
                 Buka Google Maps
               </button>
             </figcaption>
@@ -1917,7 +1951,13 @@ border: none;
 </div>
 
 
-<div class="container mt-5 ">
+<div class="container mt-5 " 
+v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :visible="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="200"
+      :duration="800"
+>
     <div :class="'row '+color+'-background'">
       <div class="col text-center">
         <h2 class="d-inline-block me-1 ms-1 text-white">WEDDING GIFT</h2>
@@ -1925,7 +1965,13 @@ border: none;
     </div>
 </div>
 
-<div :id="'bgWeddingGift-'+color">
+<div :id="'bgWeddingGift-'+color" 
+v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :visible="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="200"
+      :duration="800"
+>
   <div v-for="(item, i) in data.dataGift" id="weddingGift">
     <div v-if="item.method==='Transfer Bank'" class="d-flex justify-content-center align-items-center weddCard">
         <div class="cardBank">
@@ -1980,7 +2026,13 @@ border: none;
   </div>
 </div>
 
-<div class="container pb-3 mt-5">
+<div class="container pb-3 mt-5" 
+v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :visible="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="200"
+      :duration="800"
+>
     <div class="row">
       <div :class="'col text-center '+color+'-background'">
         <h2 class="d-inline-block me-1 ms-1 text-white">UCAPAN SPESIAL</h2>
@@ -1988,7 +2040,13 @@ border: none;
     </div>
   </div>
 
-<div id="commentBG">
+<div id="commentBG"  
+v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :visible="{ opacity: 1, y: 0, scale: 1 }"
+      :delay="200"
+      :duration="800"
+>
 
  <div id="commentOne">
   <div class="d-flex justify-content-center align-items-center mb-4">
