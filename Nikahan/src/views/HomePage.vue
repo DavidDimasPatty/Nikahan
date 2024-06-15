@@ -1173,21 +1173,8 @@ main {
     align-items: center;
     height: 100%;
   }
-/* 
-  #weddingGift {
-    background: url('/src/assets/THEME 1/LAYER 7/01.LAYER LEFT 1.png') left top no-repeat,
-                url('/src/assets/THEME 1/LAYER 7/02.LAYER RIGHT 1.png') right top no-repeat;
-    background-size: 100% 100%, 100% 100%;
-  } */
 
-  /* #lovestory {
-    background: url("/src/assets/THEME 1/LAYER 4/02.LAYER RIGHT 1.png")  right top no-repeat;
-    background-size: cover;
-  } */
-  
 #weddingGift{
-  /* background: url('src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
-  background-size:cover; */
   height: 45vh;
   position: relative;
 }
@@ -1239,6 +1226,25 @@ main {
   background-size: cover;
   height: 100vh;
   }
+
+
+#bgAll-hijau{
+  background: url("/src/assets/THEME HIJAU/1.AWAL/1.TENGAH 1.png") center no-repeat;
+  background-size: cover,contain,contain;
+  height: 100vh;
+}
+
+#bgAll-orange{
+  background:url("/src/assets/THEME ORANGE/1.AWAL/1.TENGAH 1.png") center no-repeat;
+  background-size: cover,contain,contain;
+  height: 100vh;
+}
+
+#bgAll-pink{
+  background: url("/src/assets/THEME PINK/1.AWAL/1.TENGAH 1.png") center no-repeat;
+  background-size: cover,contain,contain;
+  height: 100vh;
+}
 
   .cardsExcKiri{
     display: none;
@@ -1629,20 +1635,41 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
   font-size: 20px;
 }
 
+#buttonPost-pink{
+background-color: pink !important; 
+color: white;
+border: none;
+}
 
+#buttonPost-biru{
+  background-color: blue !important;
+  color: white;
+  border: none;
+}
+
+#buttonPost-hijau{
+background-color: green !important;
+color: white;
+border: none;
+}
+
+#buttonPost-orange{
+background-color: orange !important;
+color: white;
+border: none;
+}
 </style>
 <template>
 
   <div :id="'bgAll-' + color">   
-
     <div class="mb-2">
         <div>
-            <router-link :to="'/' + id+'/'+visitor" class="navi"  id="homeNav-gold">Home</router-link> 
-            <router-link :to="'/Galeri/' + id+'/'+visitor" class="navi"id="galNav-gold" >Galeri</router-link> 
+            <router-link :to="'/' + id+'/'+visitor" class="navi"  :id="'homeNav-'+color">Home</router-link> 
+            <router-link :to="'/Galeri/' + id+'/'+visitor" class="navi" :id="'galNav-'+color" >Galeri</router-link> 
         </div>
     </div>   
 
-    <h1 id="judulAtas-gold"> YOU ARE INVITED TO THE WEDDING OF</h1>  
+    <h1 :id="'judulAtas-' + color"> YOU ARE INVITED TO THE WEDDING OF</h1>  
      
 
     <div class="d-flex justify-content-center mt-2" >
@@ -1655,8 +1682,8 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
       </div>
 
     <div id="contentUtama">
-      <h1 id="namaPasangan-gold">{{ data["dataNikahan"]["namaPendekCowo"] }} & {{ data["dataNikahan"]["namaPendekCewe"] }}</h1>
-      <small id="tanggalNikah-gold">{{data["nikah"]["tglAkad"].substring(0,10)}}</small>
+      <h1 :id="'namaPasangan-' + color">{{ data["dataNikahan"]["namaPendekCowo"] }} & {{ data["dataNikahan"]["namaPendekCewe"] }}</h1>
+      <small :id="'tanggalNikah-'+color">{{data["nikah"]["tglAkad"].substring(0,10)}}</small>
 
       <div class="container mt-4">
         <div class="row align-items-center justify-content-center g-2">
@@ -1664,8 +1691,8 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
           <div class="col">
             <div class="card shadow rounded bg-light" id="hari">
               <div class="card-body">
-                <h4 class="fontWaktu-gold">{{ days }}</h4>
-                <h6 class="card-title mt-auto fontDescWaktu-gold">Hari</h6>
+                <h4 :class="'fontWaktu-'+color">{{ days }}</h4>
+                <h6 :class="'card-title mt-auto fontDescWaktu-'+color">Hari</h6>
               </div>
             </div>
           </div>
@@ -1673,8 +1700,8 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
           <div class="col">
             <div class="card shadow rounded bg-light" id="jam">
               <div class="card-body">
-                <h4 class="fontWaktu-gold">{{ hours }}</h4>
-                <h6 class="card-title mt-auto fontDescWaktu-gold">Jam</h6>
+                <h4 :class="'fontWaktu-'+color">{{ hours }}</h4>
+                <h6 :class="'card-title mt-auto fontDescWaktu-'+color">Jam</h6>
               </div>
             </div>
           </div>
@@ -1682,8 +1709,8 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
           <div class="col">
             <div class="card shadow rounded bg-light" id="menit">
               <div class="card-body">
-                <h4 class="fontWaktu-gold">{{ minutes }}</h4>
-                <h6 class="card-title mt-auto fontDescWaktu-gold">Menit</h6>
+                <h4 :class="'fontWaktu-'+color">{{ minutes }}</h4>
+                <h6 :class="'card-title mt-auto fontDescWaktu-'+color">Menit</h6>
               </div>
             </div>
           </div>
@@ -1691,8 +1718,8 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
           <div class="col">
             <div class="card shadow rounded bg-light" id="detik">
               <div class="card-body">
-                <h4 class="fontWaktu-gold">{{ seconds }}</h4>
-                <h6 class="card-title mt-auto fontDescWaktu-gold">Detik</h6>
+                <h4 :class="'fontWaktu-'+color">{{ seconds }}</h4>
+                <h6 :class="'card-title mt-auto fontDescWaktu-'+color">Detik</h6>
               </div>
             </div>
           </div>
@@ -1702,7 +1729,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
     </div>
   </div>
 
-  <div class="d-flex justify-content-center align-items-center" id="quotes-biru">
+  <div class="d-flex justify-content-center align-items-center" :id="'quotes-' + color">
     <hr class=""/>
       <blockquote class="blockquote" id="quotesPasangan">
         <p id="blockQuotes-gold">
@@ -1714,17 +1741,17 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
       </blockquote>
   </div>
 
-<div id="pasangan-biru">
+<div :id="'pasangan-' + color">
       <div class="d-flex justify-content-center align-items-center">
         <div class="">
-          <h5 id="ucapanDoa-gold">
+          <h5 :id="'ucapanDoa-' + color">
             {{data["dataNikahan"]["ajakan"]}}
           </h5>
         </div>
       </div>
     
       <div class="mt-3">
-        <small id="orangTua1-gold">{{data["dataNikahan"]["ceweSebagai"] }}</small>
+        <small  :id="'orangTua1-' + color">{{data["dataNikahan"]["ceweSebagai"] }}</small>
         <h6 id="orangTua2">{{data["dataNikahan"]["namaOrtuCewe1"]}} & {{data["dataNikahan"]["namaOrtuCewe2"]}}</h6>
       </div>
 
@@ -1737,13 +1764,13 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         </div>
       </div>
       
-      <h6 id="namaCewe-gold">{{data["dataNikahan"]["namaCewe"] }}</h6>
+      <h6  :id="'namaCewe-' + color">{{data["dataNikahan"]["namaCewe"] }}</h6>
 
       <div class="container">
-        <h1 id="andFont-gold" class="mb-5">{{ "&" }}</h1>
+        <h1  :id="'andFont-' + color" class="mb-5">{{ "&" }}</h1>
       </div>
 
-      <h6 id="namaCewe-gold">{{data["dataNikahan"]["namaCowo"] }}</h6>
+      <h6 :id="'namaCewe-' + color">{{data["dataNikahan"]["namaCowo"] }}</h6>
 
       <div class="d-flex justify-content-center mt-5">
         <div class="cardImg2">
@@ -1755,16 +1782,16 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
       </div>
 
       <div class="">
-        <small id="orangTua1-gold">{{data["dataNikahan"]["cowoSebagai"] }}</small>
+        <small :id="'namaCewe-' + color">{{data["dataNikahan"]["cowoSebagai"] }}</small>
         <h6 id="orangTua2">{{data["dataNikahan"]["namaOrtuCowo1"]}} & {{data["dataNikahan"]["namaOrtuCowo2"]}}</h6>
       </div>
 
 </div>
 
-<div id="lovestory-biru">
+<div :id="'lovestory-' + color">
 
   <div class="container pt-4 mt-5 mb-5">
-    <div class="row gold-background">
+    <div :class="'row ' +color+'-background'">
       <div class="col text-center">
         <h2 class="d-inline-block me-1 ms-1 text-white">LOVE STORY</h2>
       </div>
@@ -1778,7 +1805,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         <div v-for="(item, i) in data.dataLoveStory"  :class="i % 2 === 1 ? 'timeline-2 left-2' : 'timeline-2 right-2'">
           
           <main>
-            <div class = "cardsLS img border-gold">
+            <div :class = "'cardsLS img border-'+color">
               <img  :src="item.url" alt="">
               <div class="card-content">
                 <h2>
@@ -1801,14 +1828,14 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 
 
 <div class="container pb-2 mt-5 mb-5">
-    <div class="row gold-background">
+    <div :class="'row '+color+'-background'">
       <div class="col text-center">
         <h2 class="d-inline-block me-1 ms-1 text-white">LOKASI</h2>
       </div>
     </div>
   </div>
 
-<div id="lokasiBG-biru"> 
+<div :id="'lokasiBG-'+color"> 
   <div class="container">
     <div class="row">
 
@@ -1823,7 +1850,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
       <div class="col exTengah">
 
         <div class="col mb-4">
-          <figure class="image-block bordercol-gold">
+          <figure :class="'image-block bordercol-'+color">
             <h1>Resepsi</h1>
             <video autoplay loop muted >
               <source :src='data["dataVideo"]["urlVideo"]' type="video/mp4">
@@ -1849,7 +1876,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         </div>
 
         <div class="col">
-          <figure class="image-block bordercol-gold">
+          <figure :class="'image-block bordercol-'+color">
             <h1>Akad Nikah</h1>
             <video autoplay loop muted >
               <source :src='data["dataVideo"]["urlVideo"]' type="video/mp4">
@@ -1891,18 +1918,18 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 
 
 <div class="container mt-5 ">
-    <div class="row gold-background">
+    <div :class="'row '+color+'-background'">
       <div class="col text-center">
         <h2 class="d-inline-block me-1 ms-1 text-white">WEDDING GIFT</h2>
       </div>
     </div>
 </div>
 
-<div id="bgWeddingGift-biru">
+<div :id="'bgWeddingGift-'+color">
   <div v-for="(item, i) in data.dataGift" id="weddingGift">
     <div v-if="item.method==='Transfer Bank'" class="d-flex justify-content-center align-items-center weddCard">
         <div class="cardBank">
-          <div class="card__front card__part-gold">
+          <div :class="'card__front card__part-'+color">
             <p class="text-white">{{item.namaBank}}</p>
             <p class="card_numer">{{item.noRek}}</p>
             <div class="card__space-100">
@@ -1911,7 +1938,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
             </div>
           </div>
           
-          <div class="card__back card__part-gold">
+          <div :class="'card__back card__part-'+color">
             <div class="card__black-line"></div>
             <div class="card__back-content">
               <div class="card__secret">
@@ -1927,7 +1954,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 
     <div  v-else-if="item.method!='Transfer Bank'" class="d-flex justify-content-center align-items-center weddCard">
         <div class="cardBank">
-          <div class="card__front card__part-gold">
+          <div :class="'card__front card__part-'+color">
             <p class="text-white">{{item.method}}</p>
             <p class="card_numer">{{item.noHP}}</p>
             <div class="card__space-100">
@@ -1936,7 +1963,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
             </div>
           </div>
           
-          <div class="card__back card__part-gold">
+          <div :class="'card__back card__part-'+color">
             <div class="card__black-line"></div>
             <div class="card__back-content">
               <div class="card__secret">
@@ -1955,7 +1982,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
 
 <div class="container pb-3 mt-5">
     <div class="row">
-      <div class="col text-center gold-background">
+      <div :class="'col text-center '+color+'-background'">
         <h2 class="d-inline-block me-1 ms-1 text-white">UCAPAN SPESIAL</h2>
       </div>
     </div>
@@ -1985,7 +2012,7 @@ background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 8
         <div class="card-footer">
           <div class="mt-2 pb-2">
             <div class="col">
-              <button type="button" class="btn btn-dark btn-md" @click="postKomen">Post</button>
+              <button type="button" class="btn btn-primary btn-md" :id="'buttonPost-'+color" @click="postKomen">Post</button>
             </div>
           </div>
         </div>
