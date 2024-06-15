@@ -312,70 +312,70 @@ export default {
 
 .fontWaktu-gold{
   font-family: "font3";
-  color:  gold !important;
+  color:  whitesmoke !important;
   text-shadow: 0 0 1px;
   font-size: large;
 }
 
 .fontWaktu-hijau{
   font-family: "font3";
-  color:  #90cf8e !important;
+  color:  whitesmoke !important;
   text-shadow: 0 0 1px;
   font-size: large;
 }
 
 .fontWaktu-orange{
   font-family: "font3";
-  color:  #d89956 !important;
+  color:  whitesmoke !important;
   text-shadow: 0 0 1px;
   font-size: large;
 }
 
 .fontWaktu-pink{
   font-family: "font3";
-  color:  #e39e9e !important;
+  color:  whitesmoke !important;
   text-shadow: 0 0 1px;
   font-size: large;
 }
 
 .fontWaktu-biru{
   font-family: "font3";
-  color:  #7d95b9 !important;
+  color:  whitesmoke !important;
   text-shadow: 0 0 1px;
   font-size: large;
 }
 
 .fontDescWaktu-gold{
   font-family: "font3";
-  color:  gold !important;
+  color:  whitesmoke !important;
   text-shadow: 0 0 1px;
   font-size: large;
 }
 
 .fontDescWaktu-hijau{
   font-family: "font3";
-  color:  #90cf8e !important;
+  color:  whitesmoke !important;
   text-shadow: 0 0 1px;
   font-size: large;
 }
 
 .fontDescWaktu-orange{
   font-family: "font3";
-  color:  #d89956 !important;
+  color:  whitesmoke !important;
   text-shadow: 0 0 1px;
   font-size: large;
 }
 
 .fontDescWaktu-pink{
   font-family: "font3";
-  color:  #e39e9e !important;
+  color:  whitesmoke !important;
   text-shadow: 0 0 1px;
   font-size: large;
 }
 
 .fontDescWaktu-biru{
   font-family: "font3";
-  color:  #7d95b9 !important;
+  color:  whitesmoke !important;
   text-shadow: 0 0 1px;
   font-size: large;
 }
@@ -683,6 +683,27 @@ export default {
   position: relative;
 }
 
+
+  #quotes-hijau {
+    background:  url('/src/assets/THEME HIJAU/2.QUOTE/2.TENGAH 2.png') center repeat,url("/src/assets/THEME HIJAU/2.QUOTE/1.TENGAH 1.png")  center no-repeat;
+    background-size:cover,cover;
+    height: 120vh;
+    position: relative;
+  }
+
+  #quotes-orange {
+    background:  url('/src/assets/THEME ORANGE/2.QUOTE/2.TENGAH 2.png') center repeat,url("/src/assets/THEME ORANGE/2.QUOTE/1.TENGAH 1.png")  center no-repeat;
+    background-size:cover,cover;
+    height: 120vh;
+    position: relative;
+  }
+
+  #quotes-pink {
+    background:  url('/src/assets/THEME PINK/2.QUOTE/2.TENGAH 2.png') center repeat,url("/src/assets/THEME PINK/2.QUOTE/1.TENGAH 1.png")  center no-repeat;
+    background-size:cover,cover;
+    height: 120vh;
+    position: relative;
+  }
 /* #bgAll{
   background: url("/src/assets/THEME 1REV/1.AWAL/TENGAH.png") center no-repeat,url("/src/assets/THEME 1REV/1.AWAL/KIRI.png") left top no-repeat, url('/src/assets/THEME 1REV/1.AWAL/KANAN.png') right top no-repeat;
   background-size: cover,contain,contain;
@@ -696,19 +717,19 @@ export default {
 } 
 
 #bgAll-hijau{
-  background: url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/5.KIRI 1.png") left top no-repeat, url('/src/assets/THEME HIJAU/1.AWAL/3.KANAN 1.png') right top no-repeat;
+  background: url("/src/assets/THEME HIJAU/1.AWAL/1.TENGAH 1.png") center no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/5.KIRI 1.png") left top no-repeat, url('/src/assets/THEME HIJAU/1.AWAL/3.KANAN 1.png') right top no-repeat;
   background-size: cover,contain,contain;
   height: 100vh;
 }
 
 #bgAll-orange{
-  background: url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat,url("/src/assets/THEME ORANGE/1.AWAL/5.KIRI 1.png") left top no-repeat, url('/src/assets/THEME ORANGE/1.AWAL/3.KANAN 1.png') right top no-repeat;
+  background: url("/src/assets/THEME ORANGE/1.AWAL/1.TENGAH 1.png") center no-repeat,url("/src/assets/THEME ORANGE/1.AWAL/5.KIRI 1.png") left top no-repeat, url('/src/assets/THEME ORANGE/1.AWAL/3.KANAN 1.png') right top no-repeat;
   background-size: cover,contain,contain;
   height: 100vh;
 }
 
 #bgAll-pink{
-  background: url("/src/assets/THEME 1/LAYER 1/03.LAYER MID 1.png") center no-repeat,url("/src/assets/THEME PINK/1.AWAL/5.KIRI 1.png") left top no-repeat, url('/src/assets/THEME PINK/1.AWAL/3.KANAN 1.png') right top no-repeat;
+  background: url("/src/assets/THEME PINK/1.AWAL/1.TENGAH 1.png") center no-repeat,url("/src/assets/THEME PINK/1.AWAL/5.KIRI 1.png") left top no-repeat, url('/src/assets/THEME PINK/1.AWAL/3.KANAN 1.png') right top no-repeat;
   background-size: cover,contain,contain;
   height: 100vh;
 }
@@ -1544,25 +1565,88 @@ main {
   height:400px;
   min-width: 80%;
 }
-#hari{
-  background: rgb(125,149,185);
-background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 84%);
+#hari-biru{
+  background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 84%);
   border: none;
+  color: white;
 }
-#jam{
-  background: rgb(125,149,185);
-background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 84%);
+#jam-biru{
+  background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 84%);
   border: none;
+  color: white;
 }
-#menit{
-  background: rgb(125,149,185);
-background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 84%);
+#menit-biru{
+  background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 84%);
   border: none;
+  color: white;
 }
-#detik{
-  background: rgb(125,149,185);
-background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 84%);
+#detik-biru{
+  background: linear-gradient(38deg, rgba(125,149,185,1) 0%, rgba(202,213,231,1) 84%);
   border: none;
+  color: white;
+}
+
+#hari-hijau{
+  background: linear-gradient(38deg, rgba(60, 179, 113,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+  color: white;
+}
+#jam-hijau{
+  background: linear-gradient(38deg, rgba(60, 179, 113,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+  color: white;
+}
+#menit-hijau{
+  background: linear-gradient(38deg, rgba(60, 179, 113,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+  color: white;
+}
+#detik-hijau{
+  background: linear-gradient(38deg, rgba(60, 179, 113,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+  color: white;
+}
+
+#hari-orange{
+  background: linear-gradient(38deg, rgba(255, 165, 0,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+  color: white;
+}
+#jam-orange{
+  background: linear-gradient(38deg, rgba(255, 165, 0,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+  color: white;
+}
+#menit-orange{
+  background: linear-gradient(38deg, rgba(255, 165, 0,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+  color: white;
+}
+#detik-orange{
+  background: linear-gradient(38deg, rgba(255, 165, 0,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+  color: white;
+}
+
+#hari-pink{
+  background: linear-gradient(38deg, rgba(238, 130, 238,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+  color: white;
+}
+#jam-pink{
+  background: linear-gradient(38deg, rgba(238, 130, 238,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+  color: white;
+}
+#menit-pink{
+  background: linear-gradient(38deg, rgba(238, 130, 238,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+  color: white;
+}
+#detik-pink{
+  background: linear-gradient(38deg, rgba(238, 130, 238,1) 0%, rgba(202,213,231,1) 84%);
+  border: none;
+  color: white;
 }
 
 #homeNav-gold{
@@ -1694,7 +1778,7 @@ border: none;
         <div class="row align-items-center justify-content-center g-2">
 
           <div class="col">
-            <div class="card shadow rounded bg-light" id="hari">
+            <div class="card shadow rounded bg-light" :id="'hari-'+color">
               <div class="card-body">
                 <h4 :class="'fontWaktu-'+color">{{ days }}</h4>
                 <h6 :class="'card-title mt-auto fontDescWaktu-'+color">Hari</h6>
@@ -1703,7 +1787,7 @@ border: none;
           </div>
 
           <div class="col">
-            <div class="card shadow rounded bg-light" id="jam">
+            <div class="card shadow rounded bg-light" :id="'jam-'+color">
               <div class="card-body">
                 <h4 :class="'fontWaktu-'+color">{{ hours }}</h4>
                 <h6 :class="'card-title mt-auto fontDescWaktu-'+color">Jam</h6>
@@ -1712,7 +1796,7 @@ border: none;
           </div>
 
           <div class="col">
-            <div class="card shadow rounded bg-light" id="menit">
+            <div class="card shadow rounded bg-light" :id="'menit-'+color">
               <div class="card-body">
                 <h4 :class="'fontWaktu-'+color">{{ minutes }}</h4>
                 <h6 :class="'card-title mt-auto fontDescWaktu-'+color">Menit</h6>
@@ -1721,7 +1805,7 @@ border: none;
           </div>
 
           <div class="col">
-            <div class="card shadow rounded bg-light" id="detik">
+            <div class="card shadow rounded bg-light" :id="'detik-'+color">
               <div class="card-body">
                 <h4 :class="'fontWaktu-'+color">{{ seconds }}</h4>
                 <h6 :class="'card-title mt-auto fontDescWaktu-'+color">Detik</h6>
@@ -1741,7 +1825,6 @@ border: none;
       :delay="200"
       :duration="800"
   >
-    <hr class=""/>
       <blockquote class="blockquote" id="quotesPasangan">
         <p :id="'blockQuotes-'+color">
           {{data["dataNikahan"]["quotes"]}}
@@ -2092,7 +2175,7 @@ v-motion
         <hr/>
         <div class="text-dark mb-2 " v-for="(item, i) in dataKomen" :key="i" style="background-color: transparent; border: 0;">
          
-          <div class="cardBG-biru" style="align-items: center;">
+          <div :class="'cardBG-'+color" style="align-items: center;">
             <div>
               <div>
                 <h6 class="fw-bold d-flex justify-content-center align-items-center ms-3">{{ item.nama }}</h6>
