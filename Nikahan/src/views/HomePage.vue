@@ -108,7 +108,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 
 @font-face {
     font-family: "font1";
@@ -586,25 +586,25 @@ export default {
   
 }
 #bgWeddingGift-biru{
-  background: url('/src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background: url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url('/src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
   background-size:cover;
   height: 100vh;
 }
 
 #bgWeddingGift-hijau{
-  background: url('/src/assets/THEME HIJAU/4.LOVE STORY/1.TENGAH.png') center no-repeat;
+  background: url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url('/src/assets/THEME HIJAU/4.LOVE STORY/1.TENGAH.png') center no-repeat;
   background-size:cover;
   height: 100vh;
 }
 
 #bgWeddingGift-orange{
-  background: url('/src/assets/THEME ORANGE/4.LOVE STORY/1.TENGAH.png') center no-repeat;
+  background: url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url('/src/assets/THEME ORANGE/4.LOVE STORY/1.TENGAH.png') center no-repeat;
   background-size:cover;
   height: 100vh;
 }
 
 #bgWeddingGift-pink{
-  background: url('/src/assets/THEME PINK/4.LOVE STORY/1.TENGAH.png') center no-repeat;
+  background: url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url('/src/assets/THEME PINK/4.LOVE STORY/1.TENGAH.png') center no-repeat;
   background-size:cover;
   height: 100vh;
 }
@@ -627,22 +627,22 @@ export default {
 }
 
 #lovestory-biru{
-  background: url('/src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
+  background: url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url('/src/assets/THEME 1REV/4.LOVE STORY/TENGAH.png') center no-repeat;
   background-size:cover;
 }
 
 #lovestory-hijau{
-  background: url('/src/assets/THEME HIJAU/4.LOVE STORY/1.TENGAH.png') center no-repeat;
+  background: url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url('/src/assets/THEME HIJAU/4.LOVE STORY/1.TENGAH.png') center no-repeat;
   background-size:cover;
 }
 
 #lovestory-orange{
-  background: url('/src/assets/THEME ORANGE/4.LOVE STORY/1.TENGAH.png') center no-repeat;
+  background: url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url('/src/assets/THEME ORANGE/4.LOVE STORY/1.TENGAH.png') center no-repeat;
   background-size:cover;
 }
 
 #lovestory-pink{
-  background: url('/src/assets/THEME PINK/4.LOVE STORY/1.TENGAH.png') center no-repeat;
+  background: url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url('/src/assets/THEME PINK/4.LOVE STORY/1.TENGAH.png') center no-repeat;
   background-size:cover;
 }
 
@@ -654,21 +654,21 @@ export default {
 }
 
 #pasangan-hijau{
-  background: url('/src/assets/THEME HIJAU/3.PASANGANNYA/3.KIRI 1.png') left no-repeat,url('/src/assets/THEME HIJAU/3.PASANGANNYA/1.KANAN 1.png') right no-repeat;
+  background: url("/src/assets/THEME HIJAU/1.AWAL/6.KIRI 2.png") left top no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/4.KANAN 2.png") right top no-repeat,url('/src/assets/THEME HIJAU/3.PASANGANNYA/3.KIRI 1.png') left no-repeat,url('/src/assets/THEME HIJAU/3.PASANGANNYA/1.KANAN 1.png') right no-repeat;
   background-size:contain,contain;
   height: 100%;
   position: relative;
 }
 
 #pasangan-orange{
-  background: url('/src/assets/THEME ORANGE/3.PASANGANNYA/3.KIRI 1.png') left no-repeat,url('/src/assets/THEME ORANGE/3.PASANGANNYA/1.KANAN 1.png') right no-repeat;
+  background: url("/src/assets/THEME HIJAU/1.AWAL/6.KIRI 2.png") left top no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/4.KANAN 2.png") right top no-repeat,url('/src/assets/THEME ORANGE/3.PASANGANNYA/3.KIRI 1.png') left no-repeat,url('/src/assets/THEME ORANGE/3.PASANGANNYA/1.KANAN 1.png') right no-repeat;
   background-size:contain,contain;
   height: 100%;
   position: relative;
 }
 
 #pasangan-pink{
-  background: url('/src/assets/THEME PINK/3.PASANGANNYA/3.KIRI 1.png') left no-repeat,url('/src/assets/THEME PINK/3.PASANGANNYA/1.KANAN 1.png') right no-repeat;
+  background: url("/src/assets/THEME HIJAU/1.AWAL/6.KIRI 2.png") left top no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/4.KANAN 2.png") right top no-repeat,url('/src/assets/THEME PINK/3.PASANGANNYA/3.KIRI 1.png') left no-repeat,url('/src/assets/THEME PINK/3.PASANGANNYA/1.KANAN 1.png') right no-repeat;
   background-size:contain,contain;
   height: 100%;
   position: relative;
@@ -715,43 +715,43 @@ export default {
 } 
 
 #bgAll-hijau{
-  background: url("/src/assets/THEME HIJAU/1.AWAL/1.TENGAH 1.png") center no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/5.KIRI 1.png") left top no-repeat, url('/src/assets/THEME HIJAU/1.AWAL/3.KANAN 1.png') right top no-repeat;
+  background: url("/src/assets/THEME HIJAU/1.AWAL/1.TENGAH 1.png") center no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/6.KIRI 2.png") left top no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/4.KANAN 2.png") right top no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/5.KIRI 1.png") left top no-repeat, url('/src/assets/THEME HIJAU/1.AWAL/3.KANAN 1.png') right top no-repeat;
   background-size: cover,contain,contain;
   height: 100vh;
 }
 
 #bgAll-orange{
-  background: url("/src/assets/THEME ORANGE/1.AWAL/1.TENGAH 1.png") center no-repeat,url("/src/assets/THEME ORANGE/1.AWAL/5.KIRI 1.png") left top no-repeat, url('/src/assets/THEME ORANGE/1.AWAL/3.KANAN 1.png') right top no-repeat;
+  background: url("/src/assets/THEME ORANGE/1.AWAL/1.TENGAH 1.png") center no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/6.KIRI 2.png") left top no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/4.KANAN 2.png") right top no-repeat,url("/src/assets/THEME ORANGE/1.AWAL/5.KIRI 1.png") left top no-repeat, url('/src/assets/THEME ORANGE/1.AWAL/3.KANAN 1.png') right top no-repeat;
   background-size: cover,contain,contain;
   height: 100vh;
 }
 
 #bgAll-pink{
-  background: url("/src/assets/THEME PINK/1.AWAL/1.TENGAH 1.png") center no-repeat,url("/src/assets/THEME PINK/1.AWAL/5.KIRI 1.png") left top no-repeat, url('/src/assets/THEME PINK/1.AWAL/3.KANAN 1.png') right top no-repeat;
+  background: url("/src/assets/THEME PINK/1.AWAL/1.TENGAH 1.png") center no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/6.KIRI 2.png") left top no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/4.KANAN 2.png") right top no-repeat,url("/src/assets/THEME PINK/1.AWAL/5.KIRI 1.png") left top no-repeat, url('/src/assets/THEME PINK/1.AWAL/3.KANAN 1.png') right top no-repeat;
   background-size: cover,contain,contain;
   height: 100vh;
 }
 
 #lokasiBG-biru{
-  background: url("/src/assets/THEME 1REV/5.LOKASI/KIRI.png") left no-repeat,url("/src/assets/THEME 1REV/5.LOKASI/KANAN.png") right no-repeat;
+  background: url("/src/assets/THEME HIJAU/1.AWAL/6.KIRI 2.png") left top no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/4.KANAN 2.png") right top no-repeat,url("/src/assets/THEME 1REV/5.LOKASI/KIRI.png") left no-repeat,url("/src/assets/THEME 1REV/5.LOKASI/KANAN.png") right no-repeat;
   background-size: contain,contain;
   height: 100%;
 }
 
 #lokasiBG-hijau{
-  background: url("/src/assets/THEME HIJAU/5.LOKASI/4.KIRI.png") left no-repeat,url("/src/assets/THEME HIJAU/5.LOKASI/2.KANAN 1.png") right no-repeat;
+  background: url("/src/assets/THEME HIJAU/1.AWAL/6.KIRI 2.png") left top no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/4.KANAN 2.png") right top no-repeat,url("/src/assets/THEME HIJAU/5.LOKASI/4.KIRI.png") left no-repeat,url("/src/assets/THEME HIJAU/5.LOKASI/2.KANAN 1.png") right no-repeat;
   background-size: contain,contain;
   height: 100%;
 }
 
 #lokasiBG-orange{
-  background: url("/src/assets/THEME ORANGE/5.LOKASI/4.KIRI.png") left no-repeat,url("/src/assets/THEME ORANGE/5.LOKASI/2.KANAN 1.png") right no-repeat;
+  background: url("/src/assets/THEME HIJAU/1.AWAL/6.KIRI 2.png") left top no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/4.KANAN 2.png") right top no-repeat,url("/src/assets/THEME ORANGE/5.LOKASI/4.KIRI.png") left no-repeat,url("/src/assets/THEME ORANGE/5.LOKASI/2.KANAN 1.png") right no-repeat;
   background-size: contain,contain;
   height: 100%;
 }
 
 #lokasiBG-pink{
-  background: url("/src/assets/THEME PINK/5.LOKASI/4.KIRI.png") left no-repeat,url("/src/assets/THEME PINK/5.LOKASI/2.KANAN 1.png") right no-repeat;
+  background: url("/src/assets/THEME HIJAU/1.AWAL/6.KIRI 2.png") left top no-repeat,url("/src/assets/THEME HIJAU/1.AWAL/4.KANAN 2.png") right top no-repeat,url("/src/assets/THEME PINK/5.LOKASI/4.KIRI.png") left no-repeat,url("/src/assets/THEME PINK/5.LOKASI/2.KANAN 1.png") right no-repeat;
   background-size: contain,contain;
   height: 100%;
 }
@@ -1198,6 +1198,21 @@ main {
   position: relative;
 }
   #lokasiBG-biru{
+ background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') left no-repeat;
+    background-size: cover;
+}
+
+#lokasiBG-pink{
+ background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') left no-repeat;
+    background-size: cover;
+}
+
+#lokasiBG-hijau{
+ background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') left no-repeat;
+    background-size: cover;
+}
+
+#lokasiBG-orange{
  background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') left no-repeat;
     background-size: cover;
 }
@@ -1667,6 +1682,7 @@ main {
   color:  goldenrod !important;
   text-shadow: 0 0 0px;
   font-size: 20px;
+  border-bottom: goldenrod;
 }
 
 #homeNav-hijau{
@@ -1674,6 +1690,7 @@ main {
   color:  #90cf8e !important;
   text-shadow: 0 0 0px;
   font-size: 20px;
+  border-bottom: #90cf8e 4px solid;
 }
 
 #homeNav-orange{
@@ -1681,6 +1698,7 @@ main {
   color:  #d89956 !important;
   text-shadow: 0 0 0px;
   font-size: 20px;
+  border-bottom: #d89956 4px solid;
 }
 
 #homeNav-pink{
@@ -1688,6 +1706,7 @@ main {
   color:  #e39e9e !important;
   text-shadow: 0 0 0px;
   font-size: 20px;
+  border-bottom: #e39e9e 4px solid;
 }
 
 #homeNav-biru{
@@ -1695,6 +1714,7 @@ main {
   color:  #7d95b9 !important;
   text-shadow: 0 0 0px;
   font-size: 20px;
+  border-bottom: #7d95b9 4px solid;
 }
 
 #galNav-gold{

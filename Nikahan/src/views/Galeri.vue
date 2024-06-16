@@ -21,25 +21,25 @@ setup(){
 </script>
 <style scoped>
 #bgGallery-biru{
-  background:  url('/src/assets/THEME BIRU/6.FOTO GALLERY NIKAH/1.TENGAH.png') center,url("/src/assets/THEME BIRU/6.FOTO GALLERY NIKAH/3.KIRI.png") left bottom repeat;
+  background:  url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url('/src/assets/THEME BIRU/6.FOTO GALLERY NIKAH/1.TENGAH.png') center,url("/src/assets/THEME BIRU/6.FOTO GALLERY NIKAH/3.KIRI.png") left bottom repeat;
   background-size:cover, cover;
   z-index: 10;
 }
 
 #bgGallery-pink{
-  background:  url('/src/assets/THEME PINK/6.FOTO GALLERY NIKAH/1.TENGAH.png') center,url("/src/assets/THEME PINK/6.FOTO GALLERY NIKAH/3.KIRI.png") left bottom repeat;
+  background:  url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url('/src/assets/THEME PINK/6.FOTO GALLERY NIKAH/1.TENGAH.png') center,url("/src/assets/THEME PINK/6.FOTO GALLERY NIKAH/3.KIRI.png") left bottom repeat;
   background-size:cover, cover;
   z-index: 10;
 }
 
 #bgGallery-hijau{
-  background:  url('/src/assets/THEME HIJAU/6.FOTO GALLERY NIKAH/1.TENGAH.png') center,url("/src/assets/THEME HIJAU/6.FOTO GALLERY NIKAH/3.KIRI.png") left bottom repeat;
+  background:  url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url('/src/assets/THEME HIJAU/6.FOTO GALLERY NIKAH/1.TENGAH.png') center,url("/src/assets/THEME HIJAU/6.FOTO GALLERY NIKAH/3.KIRI.png") left bottom repeat;
   background-size:cover, cover;
   z-index: 10;
 }
 
 #bgGallery-orange{
-  background:  url('/src/assets/THEME ORANGE/6.FOTO GALLERY NIKAH/1.TENGAH.png') center,url("/src/assets/THEME ORANGE/6.FOTO GALLERY NIKAH/3.KIRI.png") left bottom repeat;
+  background:  url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url('/src/assets/THEME ORANGE/6.FOTO GALLERY NIKAH/1.TENGAH.png') center,url("/src/assets/THEME ORANGE/6.FOTO GALLERY NIKAH/3.KIRI.png") left bottom repeat;
   background-size:cover, cover;
   z-index: 10;
 }
@@ -119,36 +119,63 @@ setup(){
   text-shadow: 0 0 0px;
   font-size: 20px;
 }
+
 #galNav-gold{
   font-family: Georgia, 'Times New Roman', Times, serif;
   color:  goldenrod !important;
   text-shadow: 0 0 0px;
   font-size: 20px;
+  border-bottom: goldenrod;
 }
+
 #galNav-hijau{
   font-family: Georgia, 'Times New Roman', Times, serif;
   color:  #90cf8e !important;
   text-shadow: 0 0 0px;
   font-size: 20px;
+  border-bottom: #90cf8e 4px solid;
 }
+
 #galNav-orange{
   font-family: Georgia, 'Times New Roman', Times, serif;
   color:  #d89956 !important;
   text-shadow: 0 0 0px;
   font-size: 20px;
+  border-bottom: #d89956 4px solid;
 }
+
 #galNav-pink{
   font-family: Georgia, 'Times New Roman', Times, serif;
   color:  #e39e9e !important;
   text-shadow: 0 0 0px;
   font-size: 20px;
+  border-bottom: #e39e9e 4px solid;
 }
+
 #galNav-biru{
   font-family: Georgia, 'Times New Roman', Times, serif;
   color:  #7d95b9 !important;
   text-shadow: 0 0 0px;
   font-size: 20px;
+  border-bottom: #7d95b9 4px solid;
 }
+
+#img-biru{
+border: #7d95b9 3px solid;
+}
+
+#img-hijau{
+  border: #90cf8e 3px solid;
+}
+
+#img-orange{
+  border: #d89956 3px solid;
+}
+
+#img-pink{
+  border: #e39e9e 3px solid;
+}
+
 </style>
 <template>
 
@@ -169,9 +196,9 @@ setup(){
     :delay="200"
     :duration="800">
           <img
+            :id="'img-'+color"
             :src="item.url"
             class="shadow-1-strong rounded mb-4 gambar"
-            alt="Boat on Calm Water"
           />
 
         </div>
