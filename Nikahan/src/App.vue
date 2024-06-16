@@ -168,6 +168,8 @@ export default {
   /* background-image: url('/src/assets/THEME 1/LAYER 1/00.BACKGROUND THEME 1.png');
   background-size:contain; */
 }
+
+
 .overlay {
   position: fixed;
   width: 100%;
@@ -493,6 +495,27 @@ export default {
   color:white;
   border:none;
 }
+
+#footer-biru{
+  background-color: #7d95b9;
+  color: whitesmoke;
+  height: 30px;
+}
+#footer-hijau{
+  background-color: #90cf8e;
+  color: whitesmoke;
+  height: 30px;
+}
+#footer-pink{
+  background-color: #e39e9e;
+  color: whitesmoke;
+  height: 30px;
+}
+#footer-orange{
+  background-color: #d89956;
+  color: whitesmoke;
+  height: 30px;
+}
 </style>
 
 <template>
@@ -530,8 +553,9 @@ export default {
         </center>
       </div>
 
+          <div v-if="color=='biru'">
             <img
-                src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png"
+                src="/src/assets/THEME BIRU/3.PASANGANNYA/3.KIRI 1.png"
                 class="card-img-top img-fluid"
                 style="z-index:99;position:absolute; top:0;left:0;height: 100%;  pointer-events: none; "
               />
@@ -541,7 +565,7 @@ export default {
                 style="z-index:99;position:absolute; top:0;left:0; pointer-events: none; "
               />
               <img
-                src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png"
+                src="/src/assets/THEME BIRU/3.PASANGANNYA/1.KANAN 1.png"
                 class="card-img-top img-fluid"
                 style="z-index: 99;position:absolute; top:0;right:0;height: 100%;  pointer-events: none; "
               />
@@ -550,6 +574,76 @@ export default {
                 class="card-img-top img-fluid"
                 style="z-index:99;position:absolute; bottom:0;right:0;  pointer-events: none; "
               />
+          </div>
+
+          <div v-if="color=='pink'">
+            <img
+                src="/src/assets/THEME PINK/3.PASANGANNYA/3.KIRI 1.png"
+                class="card-img-top img-fluid"
+                style="z-index:99;position:absolute; top:0;left:0;height: 100%;  pointer-events: none; "
+              />
+              <img
+                src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png"
+                class="card-img-top img-fluid"
+                style="z-index:99;position:absolute; top:0;left:0; pointer-events: none; "
+              />
+              <img
+                src="/src/assets/THEME PINK/3.PASANGANNYA/1.KANAN 1.png"
+                class="card-img-top img-fluid"
+                style="z-index: 99;position:absolute; top:0;right:0;height: 100%;  pointer-events: none; "
+              />
+              <img
+                src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png"
+                class="card-img-top img-fluid"
+                style="z-index:99;position:absolute; bottom:0;right:0;  pointer-events: none; "
+              />
+          </div>
+
+          <div v-if="color=='orange'">
+            <img
+                src="/src/assets/THEME ORANGE/3.PASANGANNYA/3.KIRI 1.png"
+                class="card-img-top img-fluid"
+                style="z-index:99;position:absolute; top:0;left:0;height: 100%;  pointer-events: none; "
+              />
+              <img
+                src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png"
+                class="card-img-top img-fluid"
+                style="z-index:99;position:absolute; top:0;left:0; pointer-events: none; "
+              />
+              <img
+                src="/src/assets/THEME ORANGE/3.PASANGANNYA/1.KANAN 1.png"
+                class="card-img-top img-fluid"
+                style="z-index: 99;position:absolute; top:0;right:0;height: 100%;  pointer-events: none; "
+              />
+              <img
+                src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png"
+                class="card-img-top img-fluid"
+                style="z-index:99;position:absolute; bottom:0;right:0;  pointer-events: none; "
+              />
+          </div>
+
+          <div v-if="color=='hijau'">
+            <img
+                src="/src/assets/THEME HIJAU/3.PASANGANNYA/3.KIRI 1.png"
+                class="card-img-top img-fluid"
+                style="z-index:99;position:absolute; top:0;left:0;height: 100%;  pointer-events: none; "
+              />
+              <img
+                src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png"
+                class="card-img-top img-fluid"
+                style="z-index:99;position:absolute; top:0;left:0; pointer-events: none; "
+              />
+              <img
+                src="/src/assets/THEME HIJAU/3.PASANGANNYA/1.KANAN 1.png"
+                class="card-img-top img-fluid"
+                style="z-index: 99;position:absolute; top:0;right:0;height: 100%;  pointer-events: none; "
+              />
+              <img
+                src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png"
+                class="card-img-top img-fluid"
+                style="z-index:99;position:absolute; bottom:0;right:0;  pointer-events: none; "
+              />
+          </div>
     </div>
 
     <div id="appButt">
@@ -557,13 +651,13 @@ export default {
     </div>
 
     <div  id="main-content" v-if="!isLoading" style="background-color: black;">
-      <body class="mb-5">
+      <body>
         <!-- <Nav></Nav> -->
         <router-view></router-view>
       </body>
 
-      <footer class="mt-auto" style="background-color: black;">
-        <p>© 2024 Kartu Sera</p>
+      <footer :id="'footer-'+color">
+        © 2024 Kartu Sera
       </footer>
     </div>
   </div>
