@@ -1741,6 +1741,21 @@ color: white;
 border: none;
 }
 
+#cardImgBorder-biru{
+  border: 4px solid #7d95b9;
+}
+
+#cardImgBorder-hijau{
+  border: 4px solid  #90cf8e;
+}
+
+#cardImgBorder-pink{
+  border: 4px solid #e39e9e;
+}
+
+#cardImgBorder-orange{
+  border: 4px solid #d89956;
+}
 </style>
 <template>
 
@@ -1856,7 +1871,8 @@ border: none;
         <div class="cardImg">
           <img
             :src='data["fotoGallery"][5]["url"]'
-            style="width: 80%; height: 80%; object-fit: cover; border-radius: inherit; position: relative; z-index: 0; border: 4px solid goldenrod;"
+            style="width: 80%; height: 80%; object-fit: cover; border-radius: inherit; position: relative; z-index: 0;"
+            :id="'cardImgBorder-'+color"
             />
         </div>
       </div>
@@ -1873,7 +1889,8 @@ border: none;
         <div class="cardImg2">
           <img
             :src='data["fotoGallery"][4]["url"]'
-            style="width: 80%; height: 80%; object-fit: cover;border-radius: inherit; position: relative; z-index: 0; border: 4px solid goldenrod;"
+            style="width: 80%; height: 80%; object-fit: cover;border-radius: inherit; position: relative; z-index: 0;"
+            :id="'cardImgBorder-'+color"
             />
         </div>
       </div>
