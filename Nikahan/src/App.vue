@@ -584,18 +584,18 @@ export default {
               />
               <img
                 src="/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png"
-                class="card-img-top img-fluid"
-                style="z-index:99;position:absolute; top:0;left:0; pointer-events: none; "
+                
+                style="z-index:99;position:absolute; top:0;left:0; pointer-events: none;  width: 100vh;"
               />
               <img
                 src="/src/assets/THEME PINK/3.PASANGANNYA/1.KANAN 1.png"
                 class="card-img-top img-fluid"
-                style="z-index: 99;position:absolute; top:0;right:0;height: 100%;  pointer-events: none; "
+                style="z-index: 99;position:absolute; top:0;right:0;height: 100%;   pointer-events: none; "
               />
               <img
                 src="/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png"
-                class="card-img-top img-fluid"
-                style="z-index:99;position:absolute; bottom:0;right:0;  pointer-events: none; "
+               
+                style="z-index:99;position:absolute; bottom:0;right:0;  pointer-events: none;  width: 100vh;"
               />
           </div>
 
