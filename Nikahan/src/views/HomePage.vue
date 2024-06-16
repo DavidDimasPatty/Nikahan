@@ -1206,6 +1206,21 @@ main {
     background-size: cover;
   }
 
+#pasangan-hijau{
+  background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') left no-repeat;
+    background-size: cover;
+}
+
+#pasangan-orange{
+  background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') left no-repeat;
+  background-size: cover;
+}
+
+#pasangan-pink{
+  background: url('/src/assets/THEME 1/LAYER 3/01.LAYER LEFT 2.png') left no-repeat;
+    background-size: cover;
+}
+
   #quotes-biru {
     background:  url('/src/assets/THEME 1/LAYER 2/03.LAYER MID 2.png') center repeat,url("/src/assets/THEME 1/LAYER 2/03.LAYER MID 1.png")  center no-repeat;
     background-size:cover,cover;
