@@ -1,5 +1,4 @@
 <script>
-import Nav from "./components/Nav.vue";
 import axios from "axios";
 import { onMounted } from 'vue';
 import {useRoute,useRouter} from "vue-router";
@@ -8,7 +7,7 @@ import { useStore } from 'vuex';
 import store from './store/index.js'; 
 export default {
   components: {
-    Nav,
+    //Nav,
   },
   setup() {
     const router = useRouter();
@@ -497,7 +496,7 @@ export default {
 </style>
 
 <template>
-  <div v-if="id!=null || visitor!=null ||tglNikah!=null">
+  <div>
     <title>Pernikahan {{ namaCowo }} & {{ namaCewe }}</title>
     <div v-if="isLoading" class="spinner-overlay">
         <div class="spinner"></div>
@@ -509,8 +508,8 @@ export default {
       >
         <center>
           <div>
-            <h2 class="visitor-gold">Halo, {{ visitor }}</h2>
-            <h2 class="greetings-gold">You're Invited to The Wedding Of</h2>
+            <h2 :class="'visitor-'+color">Halo, {{ visitor }}</h2>
+            <h2 :class="'greetings-'+color">You're Invited to The Wedding Of</h2>
           </div>
 
 
@@ -518,14 +517,14 @@ export default {
             <div style="z-index: 2122;">
               <img
                 :src="fotoGalleryCover"
-                class="imageAwal-gold"
+                :class="'imageAwal-'+color"
               />
             </div>
           </div>
-          <h1 class="namaPasangan-gold mt-1">{{ namaCowo }} & {{ namaCewe }}</h1>
-          <h5 class="tanggalNikah-gold">{{tglNikah}}</h5>
-          <h5 class="lokasiNikah-gold">{{alamatNikah}}</h5>
-          <button @click="continueToHomePage" class="btnUndangan-gold">
+          <h1 :class="'namaPasangan-'+color+' mt-1'">{{ namaCowo }} & {{ namaCewe }}</h1>
+          <h5 :class="'tanggalNikah-'+color">{{tglNikah}}</h5>
+          <h5 :class="'lokasiNikah-'+color">{{alamatNikah}}</h5>
+          <button @click="continueToHomePage" :class="'btnUndangan-'+color">
             Buka Undangan
           </button>
         </center>
@@ -567,8 +566,5 @@ export default {
         <p>© 2024 Kartu Sera</p>
       </footer>
     </div>
-  </div>
-  <div>
-    <router-view></router-view>
   </div>
 </template>

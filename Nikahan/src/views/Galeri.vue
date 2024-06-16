@@ -1,5 +1,5 @@
 <script>
-import {useRoute,useRouter} from "vue-router";
+import {useRoute} from "vue-router";
 import store from '../store/index.js'; 
 import {computed} from 'vue';
 export default{
@@ -8,19 +8,39 @@ setup(){
   const route = useRoute();
   const id = route.params.id;
   const visitor = route.params.visitor;
+  const color = route.params.color;
   return{
     data,
     id,
-    visitor
+    visitor,
+    color
   }
 }
 
 }
 </script>
-<style>
-#bgGallery{
-  background:  url('/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 1.png') left top repeat,url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 1.png') right bottom repeat,url("/src/assets/THEME 1/LAYER 1/01.LAYER LEFT 2.png") left top repeat, url('/src/assets/THEME 1/LAYER 1/02.LAYER RIGHT 2.png') right top repeat;
-  background-size:contain, contain, contain;
+<style scoped>
+#bgGallery-biru{
+  background:  url('/src/assets/THEME BIRU/6.FOTO GALLERY NIKAH/1.TENGAH.png') center,url("/src/assets/THEME BIRU/6.FOTO GALLERY NIKAH/3.KIRI.png") left bottom repeat;
+  background-size:cover, cover;
+  z-index: 10;
+}
+
+#bgGallery-pink{
+  background:  url('/src/assets/THEME PINK/6.FOTO GALLERY NIKAH/1.TENGAH.png') center,url("/src/assets/THEME PINK/6.FOTO GALLERY NIKAH/3.KIRI.png") left bottom repeat;
+  background-size:cover, cover;
+  z-index: 10;
+}
+
+#bgGallery-hijau{
+  background:  url('/src/assets/THEME HIJAU/6.FOTO GALLERY NIKAH/1.TENGAH.png') center,url("/src/assets/THEME HIJAU/6.FOTO GALLERY NIKAH/3.KIRI.png") left bottom repeat;
+  background-size:cover, cover;
+  z-index: 10;
+}
+
+#bgGallery-orange{
+  background:  url('/src/assets/THEME ORANGE/6.FOTO GALLERY NIKAH/1.TENGAH.png') center,url("/src/assets/THEME ORANGE/6.FOTO GALLERY NIKAH/3.KIRI.png") left bottom repeat;
+  background-size:cover, cover;
   z-index: 10;
 }
 
@@ -132,18 +152,22 @@ setup(){
 </style>
 <template>
 
-  <div id="bgGallery">
+  <div :id="'bgGallery-'+color">
     <div id="wrapper" class="">
       <div>
-            <router-link :to="'/' + id+'/'+visitor" class="navi"  id="homeNav-gold">Home</router-link> 
-            <router-link :to="'/Galeri/' + id+'/'+visitor" class="navi"id="galNav-gold" >Galeri</router-link> 
+            <router-link :to="'/' + id+'/'+color+'/'+visitor" class="navi"  :id="'homeNav-'+color">Home</router-link> 
+            <router-link :to="'/Galeri/' + id+'/'+color+'/'+visitor" class="navi" :id="'galNav-'+color" >Galeri</router-link> 
         </div>
     </div>
 
-    <h1 id="namaPasangan-gold" class="mt-3 mb-5">{{ data["dataNikahan"]["namaPendekCowo"] }} & {{ data["dataNikahan"]["namaPendekCewe"] }}'s Gallery</h1>
+    <h1 :id="'namaPasangan-'+color" class="mt-3 mb-5">{{ data["dataNikahan"]["namaPendekCowo"] }} & {{ data["dataNikahan"]["namaPendekCewe"] }}'s Gallery</h1>
     <div class="container d-flex justify-content-center align-items-center"> 
       <div class="row"> 
-        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0" v-for="(item, i) in data.fotoGallery.slice(3)" >
+        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0" v-for="(item, i) in data.fotoGallery.slice(3)"  v-motion
+    :initial="{ opacity: 0, y: 100 }"
+    :visible="{ opacity: 1, y: 0, scale: 1 }"
+    :delay="200"
+    :duration="800">
           <img
             :src="item.url"
             class="shadow-1-strong rounded mb-4 gambar"

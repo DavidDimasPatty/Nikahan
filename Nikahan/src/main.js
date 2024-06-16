@@ -10,3 +10,4 @@ createApp(App)
   .use(router)
   .use(MotionPlugin)
   .mount('#app');
+  

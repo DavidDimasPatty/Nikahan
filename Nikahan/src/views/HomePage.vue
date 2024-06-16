@@ -1,6 +1,5 @@
 <script>
 import "../assets/home.css";
-import axios from "axios";
 import { computed, watch,ref,onMounted } from 'vue';
 import store from '../store/index.js';
 import {useRoute,useRouter} from "vue-router";
@@ -11,7 +10,6 @@ export default {
       // Ambil nilai longitude dari data
       const longt = store.getters.getData["nikah"]["longt"];
       const lat = store.getters.getData["nikah"]["lat"];
-      console.log(lat);
       // Bangun URL Google Maps dengan longitude yang diambil
       return `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15845.029593698011!2d${longt}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1711286546661!5m2!1sid!2sid`;
     }
@@ -1754,8 +1752,8 @@ border: none;
     :duration="800">   
     <div class="mb-2">
         <div >
-            <router-link :to="'/' + id+'/'+visitor" class="navi"  :id="'homeNav-'+color">Home</router-link> 
-            <router-link :to="'/Galeri/' + id+'/'+visitor" class="navi" :id="'galNav-'+color" >Galeri</router-link> 
+            <router-link :to="'/' + id+'/'+color+'/'+visitor" class="navi"  :id="'homeNav-'+color">Home</router-link> 
+            <router-link :to="'/Galeri/' + id+'/'+color+'/'+visitor" class="navi" :id="'galNav-'+color" >Galeri</router-link> 
         </div>
     </div>   
 
